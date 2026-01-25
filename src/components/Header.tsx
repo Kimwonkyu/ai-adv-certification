@@ -1,4 +1,4 @@
-import { BookOpen, BarChart3, Settings } from 'lucide-react';
+import { BookOpen, BarChart3, Settings, GraduationCap } from 'lucide-react';
 
 interface HeaderProps {
     activeTab: 'dashboard' | 'study' | 'mistakes' | 'material';
@@ -13,33 +13,38 @@ export function Header({ activeTab, setActiveTab }: HeaderProps) {
                     <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                         <BookOpen className="w-5 h-5 text-white" />
                     </div>
-                    AI <span className="text-zinc-500 font-medium">Certification</span>
+                    <div className="hidden md:block">
+                        AI <span className="text-zinc-500 font-medium">Certification</span>
+                    </div>
+                    <div className="md:hidden">
+                        AI
+                    </div>
                 </div>
 
                 <div className="flex items-center gap-1">
                     <button
                         onClick={() => setActiveTab('dashboard')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${activeTab === 'dashboard' ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:text-zinc-200'
+                        className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-full transition-all ${activeTab === 'dashboard' ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:text-zinc-200'
                             }`}
                     >
-                        <BarChart3 className="w-4 h-4" />
-                        <span className="text-sm font-medium">대시보드</span>
+                        <BarChart3 className="w-5 h-5 md:w-4 md:h-4" />
+                        <span className="text-sm font-medium hidden md:block">대시보드</span>
                     </button>
                     <button
                         onClick={() => setActiveTab('study')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${activeTab === 'study' ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:text-zinc-200'
+                        className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-full transition-all ${activeTab === 'study' ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:text-zinc-200'
                             }`}
                     >
-                        <BookOpen className="w-4 h-4" />
-                        <span className="text-sm font-medium">학습하기</span>
+                        <GraduationCap className="w-5 h-5 md:w-4 md:h-4" />
+                        <span className="text-sm font-medium hidden md:block">학습하기</span>
                     </button>
                     <button
                         onClick={() => setActiveTab('material')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${activeTab === 'material' ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:text-zinc-200'
+                        className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-full transition-all ${activeTab === 'material' ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:text-zinc-200'
                             }`}
                     >
-                        <BookOpen className="w-4 h-4" />
-                        <span className="text-sm font-medium">교재</span>
+                        <BookOpen className="w-5 h-5 md:w-4 md:h-4" />
+                        <span className="text-sm font-medium hidden md:block">교재</span>
                     </button>
                 </div>
             </div>
