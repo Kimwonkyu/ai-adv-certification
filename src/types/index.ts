@@ -1,4 +1,4 @@
-export type QuestionType = '객관식' | '주관식';
+export type QuestionType = '객관식' | '코드 완성형';
 export type ConfidenceLevel = 'again' | 'hard' | 'good' | 'easy';
 
 export interface Question {

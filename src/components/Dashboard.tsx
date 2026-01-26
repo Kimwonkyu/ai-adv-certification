@@ -12,7 +12,7 @@ interface ChapterProgress {
 interface DashboardProps {
     progress: UserProgress;
     chapters: ChapterProgress[];
-    onStartStudy: (selectedChapters: string[], shuffleOptions: boolean, count: number, type?: 'all' | '객관식' | '주관식') => void;
+    onStartStudy: (selectedChapters: string[], shuffleOptions: boolean, count: number, type?: 'all' | '객관식' | '코드 완성형') => void;
     onStartMockExam: (shuffleOptions: boolean) => void;
     onStartWeakness: (shuffleOptions: boolean) => void;
     onResetProgress: () => void;
@@ -36,7 +36,7 @@ export function Dashboard({
     const [shuffleEnabled, setShuffleEnabled] = useState(true);
     const [studyMode, setStudyMode] = useState<'deep' | 'speed' | 'custom' | 'pure'>('deep');
     const [customCount, setCustomCount] = useState(5);
-    const [pureTarget, setPureTarget] = useState<'all' | '객관식' | '주관식'>('all');
+    const [pureTarget, setPureTarget] = useState<'all' | '객관식' | '코드 완성형'>('all');
     const [showResetConfirm, setShowResetConfirm] = useState(false);
     const [showProgressResetConfirm, setShowProgressResetConfirm] = useState(false);
 
@@ -60,15 +60,14 @@ export function Dashboard({
                         <h2 className="text-3xl font-black text-white mb-2 tracking-tighter uppercase italic">AI ADV. 모의고사 <span className="text-blue-500 not-italic ml-2">Dashboard</span></h2>
                         <p className="text-zinc-400 font-medium">실전을 위한 모의고사 훈련을 진행하세요.</p>
                     </div>
-                    <div className="flex items-center gap-4 bg-black/40 p-4 rounded-2xl border border-white/5">
-                        <div className="text-center px-4">
-                            <span className="block text-2xl font-black text-blue-500">{progressPercent}%</span>
-                            <span className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest px-1">Progress</span>
+                    <div className="flex items-center bg-black/40 p-3 sm:p-4 rounded-2xl border border-white/5 divide-x divide-zinc-800 w-full md:w-auto">
+                        <div className="flex-1 text-center px-2 sm:px-4">
+                            <span className="block text-xl sm:text-2xl font-black text-blue-500 leading-tight">{progressPercent}%</span>
+                            <span className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest block mt-1">Progress</span>
                         </div>
-                        <div className="w-px h-10 bg-zinc-800" />
-                        <div className="text-center px-4">
-                            <span className="block text-2xl font-black text-emerald-500">{masteredCount}</span>
-                            <span className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest px-1">Mastered</span>
+                        <div className="flex-1 text-center px-2 sm:px-4">
+                            <span className="block text-xl sm:text-2xl font-black text-emerald-500 leading-tight">{masteredCount}</span>
+                            <span className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest block mt-1">Mastered</span>
                         </div>
                     </div>
                 </div>
@@ -130,11 +129,11 @@ export function Dashboard({
                                 </div>
                                 <h3 className="text-xl font-black text-white mb-2 uppercase italic">전체 실전 모의고사</h3>
                                 <p className="text-sm text-zinc-400 leading-relaxed max-w-[280px]">
-                                    60분 타이머 적용. 전 단원 문항을 무작위로 섞어서 실전과 동일한 환경으로 테스트합니다.
+                                    100분 타이머 적용. 객관식 100문항과 코드 완성형 10문항을 실전과 동일한 환경으로 테스트합니다.
                                 </p>
                             </div>
                             <div className="text-xs font-bold text-emerald-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                                실전 모드 시작 (1시간) →
+                                실전 모드 시작 (100분) →
                             </div>
                         </div>
                     </button>
@@ -166,7 +165,7 @@ export function Dashboard({
 
             {/* 3. Personalized Study Configuration */}
             <div className="glass-card p-8 border-zinc-800 bg-zinc-900/40 space-y-8">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div className="flex items-center gap-3">
                         <PlayCircle className="w-6 h-6 text-blue-500" />
                         <div>
@@ -175,16 +174,16 @@ export function Dashboard({
                         </div>
                     </div>
                     {hasActiveSession && (
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
                             <button
                                 onClick={onResumeStudy}
-                                className="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-black text-sm shadow-lg shadow-emerald-500/20 transition-all active:scale-95 flex items-center gap-2"
+                                className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-black text-sm shadow-lg shadow-emerald-500/20 transition-all active:scale-95 flex items-center justify-center gap-2"
                             >
                                 <PlayCircle className="w-4 h-4" /> 이어 학습하기
                             </button>
                             <button
                                 onClick={() => setShowResetConfirm(true)}
-                                className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-400 rounded-xl font-bold text-xs transition-all flex items-center gap-2"
+                                className="px-4 py-3 bg-zinc-800 hover:bg-zinc-700 text-zinc-400 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2"
                             >
                                 <Shuffle className="w-3 h-3" /> 세션 초기화
                             </button>
@@ -280,7 +279,7 @@ export function Dashboard({
                     <div className="p-6 bg-black/40 rounded-2xl border border-amber-500/20 animate-in slide-in-from-top-4 duration-500">
                         <p className="text-sm font-black text-zinc-400 uppercase tracking-widest mb-4">학습 문항 유형 선택</p>
                         <div className="flex gap-4">
-                            {(['all', '객관식', '주관식'] as const).map((type) => (
+                            {(['all', '객관식', '코드 완성형'] as const).map((type) => (
                                 <button
                                     key={type}
                                     onClick={() => setPureTarget(type)}
