@@ -110,7 +110,14 @@
       "정규표현식이나 윈도우 파일 경로 작성 시 필수적임"
     ],
     "difficulty": "easy",
-    "id": "0006"
+    "id": "0006",
+    "options": [
+      "r",
+      "f",
+      "b",
+      "u",
+      "L"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -183,7 +190,14 @@
       "반대로 설정할 때는 setattr()을 사용함"
     ],
     "difficulty": "medium",
-    "id": "0010"
+    "id": "0010",
+    "options": [
+      "getattr()",
+      "setattr()",
+      "hasattr()",
+      "delattr()",
+      "get_var()"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -376,7 +390,14 @@
       "최근에는 객체 지향적인 pathlib 사용도 권장됨"
     ],
     "difficulty": "easy",
-    "id": "0020"
+    "id": "0020",
+    "options": [
+      "os",
+      "sys",
+      "pathlib",
+      "shutil",
+      "glob"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -469,7 +490,14 @@
       "lstrip()은 왼쪽만, rstrip()은 오른쪽만 제거함"
     ],
     "difficulty": "easy",
-    "id": "0025"
+    "id": "0025",
+    "options": [
+      "strip()",
+      "trim()",
+      "clean()",
+      "replace()",
+      "split()"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -562,7 +590,14 @@
       "values()는 값들을, items()는 키-값 쌍을 반환함"
     ],
     "difficulty": "easy",
-    "id": "0030"
+    "id": "0030",
+    "options": [
+      "keys()",
+      "values()",
+      "items()",
+      "get()",
+      "pop()"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -675,7 +710,14 @@
       "Java의 try-catch와 용어가 다름"
     ],
     "difficulty": "easy",
-    "id": "0036"
+    "id": "0036",
+    "options": [
+      "try, except",
+      "if, else",
+      "begin, end",
+      "start, stop",
+      "do, catch"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -748,7 +790,14 @@
       "conda와는 별개의 도구임"
     ],
     "difficulty": "easy",
-    "id": "0040"
+    "id": "0040",
+    "options": [
+      "pip",
+      "npm",
+      "gem",
+      "brew",
+      "apt"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -901,7 +950,14 @@
       ">= 는 해당 버전 이상을 의미함"
     ],
     "difficulty": "easy",
-    "id": "0048"
+    "id": "0048",
+    "options": [
+      "==",
+      ">=",
+      "<=",
+      "~=",
+      "!="
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -974,7 +1030,14 @@
       "좌변과 우변의 개수가 맞지 않으면 ValueError가 발생함"
     ],
     "difficulty": "medium",
-    "id": "0052"
+    "id": "0052",
+    "options": [
+      "언패킹 (Unpacking) 또는 다중 할당",
+      "상속",
+      "캡슐화",
+      "메서드 오버라이딩",
+      "제네레이터"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -1047,7 +1110,14 @@
       "조건문이나 반복문 내부에서 코드를 간결하게 줄여줌"
     ],
     "difficulty": "medium",
-    "id": "0056"
+    "id": "0056",
+    "options": [
+      "바다표범 연산자 (Walrus Operator)",
+      "파이프 연산자",
+      "슬라이스 연산자",
+      "삼항 연산자",
+      "람다 연산자"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -1180,7 +1250,14 @@
       "매개변수 없이 호출하면 현재 로컬 스코프의 변수들을 보여줌"
     ],
     "difficulty": "medium",
-    "id": "0063"
+    "id": "0063",
+    "options": [
+      "dir()",
+      "help()",
+      "type()",
+      "list()",
+      "vars()"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -1253,7 +1330,14 @@
       "전역 변수 수정 시에는 global을 써야 함"
     ],
     "difficulty": "hard",
-    "id": "0067"
+    "id": "0067",
+    "options": [
+      "nonlocal",
+      "global",
+      "static",
+      "private",
+      "protected"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -1266,7 +1350,14 @@
       "enumerate()는 인덱와 값을 동시에 가져올 때 사용함"
     ],
     "difficulty": "medium",
-    "id": "0068"
+    "id": "0068",
+    "options": [
+      "zip()",
+      "map()",
+      "filter()",
+      "enumerate()",
+      "range()"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -1399,7 +1490,14 @@
       "대화형 셸(IPython 등) 환경에서 매우 자주 쓰임"
     ],
     "difficulty": "hard",
-    "id": "0075"
+    "id": "0075",
+    "options": [
+      "reload()",
+      "refresh()",
+      "update()",
+      "load()",
+      "restart()"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -1512,7 +1610,14 @@
       "pd, np 같은 별명은 커뮤니티의 관례임"
     ],
     "difficulty": "easy",
-    "id": "0081"
+    "id": "0081",
+    "options": [
+      "Aliasing (에일리어싱/별칭 지정)",
+      "Inheritance",
+      "Polymorphism",
+      "Encapsulation",
+      "Decoration"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -1585,7 +1690,14 @@
       "C언어 등에서 발생하는 오버플로우 걱정이 없음"
     ],
     "difficulty": "medium",
-    "id": "0085"
+    "id": "0085",
+    "options": [
+      "메모리가 허용하는 한 무제한으로 지원함",
+      "최대 64비트까지만 지원함",
+      "숫자가 너무 크면 에러(Overflow) 발생",
+      "별도의 'LargeInt' 클래스를 써야 함",
+      "소수점으로 자동 변환됨"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -1698,7 +1810,14 @@
       "from ... import ... 형식을 쓰면 특정 기능만 가져올 수 있음"
     ],
     "difficulty": "easy",
-    "id": "0091"
+    "id": "0091",
+    "options": [
+      "import",
+      "include",
+      "using",
+      "require",
+      "load"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -1771,7 +1890,14 @@
       "==는 값이 같은지(동등성)를 비교함"
     ],
     "difficulty": "medium",
-    "id": "0095"
+    "id": "0095",
+    "options": [
+      "is",
+      "==",
+      "===",
+      "equals",
+      "match"
+    ]
   },
   {
     "chapter_name": "Python 기초",
@@ -2184,7 +2310,14 @@
       "데이터가 너무 많으면 점들이 겹쳐서 투명도(alpha) 조절이 필요함"
     ],
     "difficulty": "easy",
-    "id": "0126"
+    "id": "0126",
+    "options": [
+      "산점도 (Scatter Plot)",
+      "히스토그램",
+      "바 차트",
+      "파이 차트",
+      "라인 그래프"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -2257,7 +2390,14 @@
       "분석 결과 전처리 시 행 번호를 맞추기 위해 자주 쓰임"
     ],
     "difficulty": "medium",
-    "id": "0130"
+    "id": "0130",
+    "options": [
+      "df.reset_index(drop=True)",
+      "df.clear_index()",
+      "df.set_index(0)",
+      "df.reindex()",
+      "df.drop_index()"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -2370,7 +2510,14 @@
       "Series 객체에서만 바로 사용 가능함 (데이터프레임 전체 X)"
     ],
     "difficulty": "easy",
-    "id": "0136"
+    "id": "0136",
+    "options": [
+      "unique()",
+      "distinct()",
+      "set()",
+      "list()",
+      "values()"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -2443,7 +2590,14 @@
       "데이터 전처리에서 아주 작은 값(epsilon)을 더해주기도 함"
     ],
     "difficulty": "medium",
-    "id": "0140"
+    "id": "0140",
+    "options": [
+      "분모가 0인 경우 (Divide by zero)",
+      "데이터 타입 불일치",
+      "행렬 크기 불일치",
+      "메모리 부족",
+      "소수점 오차"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -2556,7 +2710,14 @@
       "* 연산자는 요소별(element-wise) 곱셈임에 극히 주의"
     ],
     "difficulty": "medium",
-    "id": "0146"
+    "id": "0146",
+    "options": [
+      "@",
+      "*",
+      "**",
+      "dot()",
+      "mult()"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -2629,7 +2790,14 @@
       "\\S(대문자)는 공백이 아닌 문자를 의미함"
     ],
     "difficulty": "medium",
-    "id": "0150"
+    "id": "0150",
+    "options": [
+      "\\s",
+      "\\w",
+      "\\d",
+      "\\t",
+      "\\n"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -2742,7 +2910,14 @@
       "concat()은 단순 수직/수평 결합임"
     ],
     "difficulty": "medium",
-    "id": "0156"
+    "id": "0156",
+    "options": [
+      "merge()",
+      "join()",
+      "concat()",
+      "combine()",
+      "append()"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -2815,7 +2990,14 @@
       "필요한 경우 특정 열만 기준으로 중복을 체크할 수 있음"
     ],
     "difficulty": "easy",
-    "id": "0160"
+    "id": "0160",
+    "options": [
+      "drop_duplicates()",
+      "remove_duplicates()",
+      "unique()",
+      "clean()",
+      "delete_same()"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -2928,7 +3110,14 @@
       "unstack()은 다시 가로로 펼치는 반대 기능임"
     ],
     "difficulty": "hard",
-    "id": "0166"
+    "id": "0166",
+    "options": [
+      "stack()",
+      "unstack()",
+      "pivot()",
+      "melt()",
+      "reshape()"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -3001,7 +3190,14 @@
       "파이썬 문자열에서는 r'...' 처럼 raw string을 권장함"
     ],
     "difficulty": "easy",
-    "id": "0170"
+    "id": "0170",
+    "options": [
+      "\\ (역슬래시)",
+      "# (해시)",
+      "@ (앳)",
+      "$ (달러)",
+      "! (느낌표)"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -3114,7 +3310,14 @@
       "속성이므로 함수처럼 ()를 붙이지 않음"
     ],
     "difficulty": "easy",
-    "id": "0176"
+    "id": "0176",
+    "options": [
+      "T",
+      "S",
+      "R",
+      "X",
+      "P"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -3247,7 +3450,14 @@
       "속성이므로 ()를 붙이지 않음"
     ],
     "difficulty": "easy",
-    "id": "0183"
+    "id": "0183",
+    "options": [
+      "shape",
+      "size",
+      "length",
+      "dim",
+      "count"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -3320,7 +3530,14 @@
       "진짜 마침표 문자를 찾으려면 \\. 으로 써야 함"
     ],
     "difficulty": "easy",
-    "id": "0187"
+    "id": "0187",
+    "options": [
+      ".",
+      "*",
+      "+",
+      "?",
+      "^"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -3333,7 +3550,14 @@
       "\\s는 공백을 의미함"
     ],
     "difficulty": "easy",
-    "id": "0188"
+    "id": "0188",
+    "options": [
+      "\\d",
+      "\\s",
+      "\\w",
+      "\\D",
+      "\\S"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -3486,7 +3710,14 @@
       "axis=1 옵션을 주면 결측치가 있는 '열'을 지움"
     ],
     "difficulty": "easy",
-    "id": "0196"
+    "id": "0196",
+    "options": [
+      "dropna()",
+      "fillna()",
+      "isna()",
+      "null_drop()",
+      "clear_na()"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -3599,7 +3830,14 @@
       "n이 커질수록 가능한 조합이 기하급수적으로 늘어남"
     ],
     "difficulty": "medium",
-    "id": "0202"
+    "id": "0202",
+    "options": [
+      "N-gram",
+      "Skip-gram",
+      "Bag of Words",
+      "TF-IDF",
+      "Word2Vec"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -3672,7 +3910,14 @@
       "제거하려면 drop_duplicates()를 써야 함"
     ],
     "difficulty": "easy",
-    "id": "0206"
+    "id": "0206",
+    "options": [
+      "duplicated()",
+      "is_same()",
+      "check_copy()",
+      "count_rows()",
+      "repeat()"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -3785,7 +4030,14 @@
       "열 자체가 datetime 타입이어야 사용 가능함"
     ],
     "difficulty": "medium",
-    "id": "0212"
+    "id": "0212",
+    "options": [
+      ".dt.year",
+      ".dt.month",
+      ".dt.day",
+      ".get_year()",
+      ".year"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -3858,7 +4110,14 @@
       "매개변수 axis를 주면 행별/열별 평균도 가능함"
     ],
     "difficulty": "easy",
-    "id": "0216"
+    "id": "0216",
+    "options": [
+      "mean()",
+      "avg()",
+      "sum()",
+      "median()",
+      "std()"
+    ]
   },
   {
     "chapter_name": "데이터 분석",
@@ -4251,7 +4510,14 @@
       "모델 자체가 실제 자아를 가지는 것은 아님"
     ],
     "difficulty": "easy",
-    "id": "0246"
+    "id": "0246",
+    "options": [
+      "System Prompt (또는 Persona SFT 데이터)",
+      "Pre-training Data",
+      "Reward Model",
+      "Tokenizer",
+      "Inference Engine"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -4324,7 +4590,14 @@
       "현재는 PyTorch의 FSDP와 함께 가장 널리 쓰임"
     ],
     "difficulty": "hard",
-    "id": "0250"
+    "id": "0250",
+    "options": [
+      "DeepSpeed",
+      "PyTorch",
+      "TensorFlow",
+      "JAX",
+      "Keras"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -4437,7 +4710,14 @@
       "프롬프트를 통해 '다시 검토해'라고 할 때 발현됨"
     ],
     "difficulty": "medium",
-    "id": "0256"
+    "id": "0256",
+    "options": [
+      "Self-Correction (자기 수정)",
+      "Auto-Complete",
+      "Fine-tuning",
+      "Prompt Injection",
+      "Knowledge Retrieval"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -4510,7 +4790,14 @@
       "보상 모델(Reward Model) 학습 단계가 포함됨"
     ],
     "difficulty": "medium",
-    "id": "0260"
+    "id": "0260",
+    "options": [
+      "RLHF (Reinforcement Learning from Human Feedback)",
+      "SFT",
+      "Pre-training",
+      "Quantization",
+      "Pruning"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -4623,7 +4910,14 @@
       "이후에 하는 것이 파인튜닝임"
     ],
     "difficulty": "easy",
-    "id": "0266"
+    "id": "0266",
+    "options": [
+      "Pre-training (사전 학습)",
+      "Fine-tuning",
+      "Optimization",
+      "Sampling",
+      "Normalization"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -4696,7 +4990,14 @@
       "단순히 텍스트만 하는 모델과 구분됨"
     ],
     "difficulty": "easy",
-    "id": "0270"
+    "id": "0270",
+    "options": [
+      "Multimodal (멀티모달)",
+      "Unimodal",
+      "Omnimodal",
+      "General AI",
+      "Hyper AI"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -4809,7 +5110,14 @@
       "RAG를 통해 이 문제를 어느 정도 완화할 수 있음"
     ],
     "difficulty": "easy",
-    "id": "0276"
+    "id": "0276",
+    "options": [
+      "Hallucination (환각)",
+      "Delusion",
+      "Bias",
+      "Overfitting",
+      "Stochasticity"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -4882,7 +5190,14 @@
       "RAG는 이를 실시간 검색으로 해결함"
     ],
     "difficulty": "easy",
-    "id": "0280"
+    "id": "0280",
+    "options": [
+      "Knowledge Cut-off (지식 컷오프)",
+      "Deadline",
+      "Limit",
+      "Boundary",
+      "Data Freeze"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -4995,7 +5310,14 @@
       "2017년 발표되어 '만물 어텐션설'을 유행시킴"
     ],
     "difficulty": "medium",
-    "id": "0286"
+    "id": "0286",
+    "options": [
+      "Attention Is All You Need",
+      "BERT: Pre-training of Deep Bidirectional Transformers",
+      "Language Models are Few-Shot Learners",
+      "Generative Pre-trained Transformer",
+      "Scaling Laws for Neural Language Models"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -5068,7 +5390,14 @@
       "최신 추론 특화 모델(o1, R1 등)이 이 성능에 집중함"
     ],
     "difficulty": "medium",
-    "id": "0290"
+    "id": "0290",
+    "options": [
+      "Reasoning (추론)",
+      "Memorizing",
+      "Streaming",
+      "Encoding",
+      "Decoding"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -5181,7 +5510,14 @@
       "사전 학습(Pre-training) 다음에 이루어지는 단계임"
     ],
     "difficulty": "medium",
-    "id": "0296"
+    "id": "0296",
+    "options": [
+      "SFT (Supervised Fine-Tuning)",
+      "RLHF",
+      "DPO",
+      "Lora",
+      "Pruning"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -5254,7 +5590,14 @@
       "과도하게 적용되면 유익한 질문에도 거부 반응(Over-refusal)을 보임"
     ],
     "difficulty": "medium",
-    "id": "0300"
+    "id": "0300",
+    "options": [
+      "Safety Alignment (안전 정렬) 또는 RLHF",
+      "Quantization",
+      "Tokenizer",
+      "Vector DB",
+      "Chain-of-Thought"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -5427,7 +5770,14 @@
       "128k, 1M 등 모델마다 컨텍스트 한도가 다름"
     ],
     "difficulty": "easy",
-    "id": "0309"
+    "id": "0309",
+    "options": [
+      "Context Window (컨텍스트 윈도우/문맥 창)",
+      "RAM",
+      "Cache",
+      "HDD",
+      "VRAM"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -5540,7 +5890,14 @@
       "이 성질 때문에 생성 속도는 병렬화가 불가능하여 다소 느림"
     ],
     "difficulty": "medium",
-    "id": "0315"
+    "id": "0315",
+    "options": [
+      "Autoregressive (자기회귀)",
+      "Convolutional",
+      "Recursive",
+      "Generative",
+      "Discriminative"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -5613,7 +5970,14 @@
       "파인튜닝 시 너무 많은 에포크를 돌리면 발생함"
     ],
     "difficulty": "easy",
-    "id": "0319"
+    "id": "0319",
+    "options": [
+      "Overfitting (과적합)",
+      "Underfitting",
+      "Vanishing Gradient",
+      "Exploding Gradient",
+      "Dropout"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -5726,7 +6090,14 @@
       "임베딩 공간 상의 거리가 가까울수록 의미가 유사함"
     ],
     "difficulty": "easy",
-    "id": "0325"
+    "id": "0325",
+    "options": [
+      "Embedding (임베딩)",
+      "Tokenizing",
+      "Parsing",
+      "Formatting",
+      "Encoding"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -5799,7 +6170,14 @@
       "한글은 영어보다 토큰이 더 많이 소모되는 경향이 있음"
     ],
     "difficulty": "easy",
-    "id": "0329"
+    "id": "0329",
+    "options": [
+      "Token (토큰)",
+      "Character",
+      "Word",
+      "Sentence",
+      "Paragraph"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -5912,7 +6290,14 @@
       "지식 컷오프(Knowledge Cut-off) 문제를 해결하는 표준 해법임"
     ],
     "difficulty": "easy",
-    "id": "0335"
+    "id": "0335",
+    "options": [
+      "RAG (Retrieval-Augmented Generation)",
+      "Fine-tuning",
+      "Zero-shot",
+      "Chain-of-Thought",
+      "Beam Search"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -5985,7 +6370,14 @@
       "추론(Inference) 단계에서는 드롭아웃을 끄고 모든 뉴런을 사용함"
     ],
     "difficulty": "hard",
-    "id": "0339"
+    "id": "0339",
+    "options": [
+      "Dropout (드롭아웃)",
+      "Normalization",
+      "Regularization",
+      "Batching",
+      "Pooling"
+    ]
   },
   {
     "chapter_name": "LLM 기본",
@@ -6318,7 +6710,14 @@
       "'모르는 것이 있으면 답변 전 질문부터 하라'고 지시함"
     ],
     "difficulty": "medium",
-    "id": "0366"
+    "id": "0366",
+    "options": [
+      "Clarification Prompting (명확화 요청)",
+      "Negative Prompting",
+      "Few-shot Prompting",
+      "Chain-of-Thought",
+      "Zero-shot Prompting"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -6391,7 +6790,14 @@
       "답변의 일관성을 높이는 데 매우 효과적임"
     ],
     "difficulty": "medium",
-    "id": "0370"
+    "id": "0370",
+    "options": [
+      "Prompt Completion (또는 Pre-filling)",
+      "Prompt Injection",
+      "Prompt Leakage",
+      "System Prompting",
+      "Negative Prompting"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -6504,7 +6910,14 @@
       "일반 텍스트보다 훨씬 명확한 지침 전달이 가능함"
     ],
     "difficulty": "easy",
-    "id": "0376"
+    "id": "0376",
+    "options": [
+      "가독성 및 논리 구조화",
+      "이미지 삽입",
+      "수식 계산",
+      "API 호출",
+      "속도 향상"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -6557,7 +6970,14 @@
       "중요한 규칙은 맨 끝에 한 번 더 강조해 주는 것이 팁임"
     ],
     "difficulty": "medium",
-    "id": "0379"
+    "id": "0379",
+    "options": [
+      "프롬프트의 가장 마지막 부분 (Bottom)",
+      "프롬프트의 맨 처음 부분 (Top)",
+      "프롬프트의 중간 부분 (Middle)",
+      "따로 설정한 시스템 메시지 영역",
+      "사용자 닉네임 부분"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -6689,7 +7109,14 @@
       "모델의 성능이 좋을수록 Zero-shot만으로도 좋은 결과가 나옴"
     ],
     "difficulty": "easy",
-    "id": "0386"
+    "id": "0386",
+    "options": [
+      "Zero-shot Prompting",
+      "One-shot Prompting",
+      "Few-shot Prompting",
+      "Multi-turn Prompting",
+      "CoT Prompting"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -6742,7 +7169,14 @@
       "대화가 길어지면 토큰 소모가 급증하므로 요약 메모리 등을 고려해야 함"
     ],
     "difficulty": "medium",
-    "id": "0389"
+    "id": "0389",
+    "options": [
+      "ConversationBufferMemory",
+      "VectorStoreRetrieverMemory",
+      "FileMemory",
+      "RedisMemory",
+      "SummaryMemory"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -6874,7 +7308,14 @@
       "XML 태그나 마크다운 기호를 활용하면 정확도가 올라감"
     ],
     "difficulty": "medium",
-    "id": "0396"
+    "id": "0396",
+    "options": [
+      "프롬프트 구조화 (Structuring)",
+      "번역",
+      "요약",
+      "코드 생성",
+      "데이터 증강"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -6927,7 +7368,14 @@
       "스테이트리스(Stateless)한 API를 스테이트풀(Stateful)하게 만듦"
     ],
     "difficulty": "medium",
-    "id": "0399"
+    "id": "0399",
+    "options": [
+      "Memory (메모리)",
+      "Chain",
+      "Agent",
+      "Tool",
+      "Prompt"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7060,7 +7508,14 @@
       "'모르면 질문해'라는 제약과 함께 쓰면 매우 강력함"
     ],
     "difficulty": "medium",
-    "id": "0406"
+    "id": "0406",
+    "options": [
+      "Reverse Prompting (또는 질문 유도)",
+      "Forward Prompting",
+      "Negative Prompting",
+      "Self-Correction",
+      "Clarification"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7113,7 +7568,14 @@
       "Anthropic 모델군에서 공식적으로 권장하는 방식임"
     ],
     "difficulty": "hard",
-    "id": "0409"
+    "id": "0409",
+    "options": [
+      "JSON Prefilling (또는 앞글자 채우기)",
+      "XML Tagging",
+      "Markdown Formatting",
+      "Strict JSON Mode",
+      "Schema Enforcement"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7246,7 +7708,14 @@
       "시스템 프롬프트에 넣을 때 가장 효과가 좋음"
     ],
     "difficulty": "easy",
-    "id": "0416"
+    "id": "0416",
+    "options": [
+      "Persona (페르소나) 또는 Role (역할)",
+      "Task",
+      "Constraint",
+      "Style",
+      "Output Format"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7319,7 +7788,14 @@
       "Zero-shot 보다 훨씬 안정적인 결과를 보임"
     ],
     "difficulty": "easy",
-    "id": "0420"
+    "id": "0420",
+    "options": [
+      "One-shot Prompting (원샷 프롬프팅)",
+      "Zero-shot",
+      "Few-shot",
+      "N-shot",
+      "Continuous"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7352,7 +7828,14 @@
       "단순한 RAG와는 구분되는 프롬프트 설계 기법임"
     ],
     "difficulty": "medium",
-    "id": "0422"
+    "id": "0422",
+    "options": [
+      "Prompt Chaining",
+      "Prompt Engineering",
+      "Prompt Design",
+      "Prompt Optimization",
+      "Prompt Routing"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7485,7 +7968,14 @@
       "비용과 소요 시간은 늘어나지만 정확도가 비약적으로 올라감"
     ],
     "difficulty": "medium",
-    "id": "0429"
+    "id": "0429",
+    "options": [
+      "Reflection (또는 성찰/반성 프롬프팅)",
+      "Refactoring",
+      "Recursive Prompting",
+      "Re-ranking",
+      "Retrieving"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7598,7 +8088,14 @@
       "마크다운(Markdown) 형식을 쓰면 가독성이 좋아짐"
     ],
     "difficulty": "easy",
-    "id": "0435"
+    "id": "0435",
+    "options": [
+      "Format (형식)",
+      "Content",
+      "Context",
+      "Style",
+      "Persona"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7651,7 +8148,14 @@
       "너무 짧게 제한하면 정보가 손실될 수 있음"
     ],
     "difficulty": "easy",
-    "id": "0438"
+    "id": "0438",
+    "options": [
+      "Length Constraint (길이 제약)",
+      "Language Constraint",
+      "Topic Constraint",
+      "Tone Constraint",
+      "Privacy Constraint"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7783,7 +8287,14 @@
       "JSON 출력 유도 시 '{' 를 미리 적어주는 것도 여기에 해당함"
     ],
     "difficulty": "medium",
-    "id": "0445"
+    "id": "0445",
+    "options": [
+      "Completion Prompting (또는 프리필 Pre-fill)",
+      "Injection",
+      "Leakage",
+      "System Message",
+      "User Prompt"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7836,7 +8347,14 @@
       "총 3단계(번역-처리-재번역)가 소요되어 속도는 다소 느려짐"
     ],
     "difficulty": "medium",
-    "id": "0448"
+    "id": "0448",
+    "options": [
+      "Translation Chain (또는 영문-한문 브릿지)",
+      "Summary Chain",
+      "Math Chain",
+      "Reasoning Chain",
+      "Code Chain"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -7969,7 +8487,14 @@
       "한 번에 완벽한 프롬프트를 짜는 것보다 피드백 루프를 도는 게 더 효율적일 때가 많음"
     ],
     "difficulty": "medium",
-    "id": "0455"
+    "id": "0455",
+    "options": [
+      "Iterative Refinement (반복적 개선)",
+      "One-time generation",
+      "Random sampling",
+      "Batch processing",
+      "Static prompt"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -8042,7 +8567,14 @@
       "프롬프트에 들어가는 데이터의 '최신성'을 보장하는 핵심 기술임"
     ],
     "difficulty": "easy",
-    "id": "0459"
+    "id": "0459",
+    "options": [
+      "RAG (Retrieval-Augmented Generation)",
+      "Fine-tuning",
+      "Few-shot",
+      "Zero-shot",
+      "Chain-of-Thought"
+    ]
   },
   {
     "chapter_name": "프롬프트 엔지니어링",
@@ -8375,7 +8907,14 @@
       "설명이 부실하면 에이전트가 어한 도구를 부름"
     ],
     "difficulty": "easy",
-    "id": "0486"
+    "id": "0486",
+    "options": [
+      "Description (설명)",
+      "Name (이름)",
+      "Output (출력)",
+      "Input (입력)",
+      "Cost (비용)"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -8448,7 +8987,14 @@
       "지식의 최신성 유지를 위해 필수적인 기술임"
     ],
     "difficulty": "easy",
-    "id": "0490"
+    "id": "0490",
+    "options": [
+      "RAG (Retrieval-Augmented Generation)",
+      "Fine-tuning",
+      "Prompt Engineering",
+      "Semantic Search",
+      "Web Scraping"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -8541,7 +9087,14 @@
       "Plan-and-Execute 구조의 핵심임"
     ],
     "difficulty": "easy",
-    "id": "0495"
+    "id": "0495",
+    "options": [
+      "Planning (계획)",
+      "Acting",
+      "Observing",
+      "Thinking",
+      "Evaluating"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -8614,7 +9167,14 @@
       "보통 5~10회 정도로 설정함"
     ],
     "difficulty": "medium",
-    "id": "0499"
+    "id": "0499",
+    "options": [
+      "Max Iterations (최대 반복 횟수)",
+      "Max Tokens",
+      "Timeout",
+      "Memory Limit",
+      "API Quota"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -8727,7 +9287,14 @@
       "를 해결하기 위해 Reordering 기법이 사용됨"
     ],
     "difficulty": "hard",
-    "id": "0505"
+    "id": "0505",
+    "options": [
+      "Lost in the Middle",
+      "Recency Bias",
+      "Primacy Bias",
+      "Hallucination",
+      "Context Leakage"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -8800,7 +9367,14 @@
       "모델 자체가 인터넷을 돌아다니는 것이 아니라 도구를 '사용'하는 것임"
     ],
     "difficulty": "easy",
-    "id": "0509"
+    "id": "0509",
+    "options": [
+      "Search Tool (또는 Web Search/Browsing Tool)",
+      "Calculator",
+      "DB Query Tool",
+      "Writer Tool",
+      "Translator Tool"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -8913,7 +9487,14 @@
       "Processing 단계에서 주로 수행됨"
     ],
     "difficulty": "medium",
-    "id": "0515"
+    "id": "0515",
+    "options": [
+      "Query Reformulation (또는 리프레이징)",
+      "Query Execution",
+      "Query Parsing",
+      "Query Encoding",
+      "Query Decoding"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -8986,7 +9567,14 @@
       "단순히 텍스트만 뽑는 도구보다 표 인식 능력이 뛰어남"
     ],
     "difficulty": "medium",
-    "id": "0519"
+    "id": "0519",
+    "options": [
+      "Docling",
+      "PyPDF2",
+      "PDFMiner",
+      "Tesseract",
+      "Tabula"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -9099,7 +9687,14 @@
       "에이전트는 반복(Loop)적인 사고가 가능함"
     ],
     "difficulty": "easy",
-    "id": "0525"
+    "id": "0525",
+    "options": [
+      "AI Agent (에이전트)",
+      "Chatbot",
+      "Search Engine",
+      "Retrieval System",
+      "Classifier"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -9172,7 +9767,14 @@
       "모델이 직접 함수를 실행하는 것이 아닌 '실행 계획'만 주는 것임"
     ],
     "difficulty": "medium",
-    "id": "0529"
+    "id": "0529",
+    "options": [
+      "Function Calling (함수 호출)",
+      "API Routing",
+      "Schema Matching",
+      "Zero-shot classification",
+      "Text generation"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -9305,7 +9907,14 @@
       "청크가 너무 작으면 맥락이 끊기고, 너무 크면 주제가 섞임"
     ],
     "difficulty": "easy",
-    "id": "0536"
+    "id": "0536",
+    "options": [
+      "Chunk (청크)",
+      "Fragment",
+      "Slice",
+      "Segment",
+      "Particle"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -9378,7 +9987,14 @@
       "ReAct 프레임워크의 생각-행동-관찰 기록이 여기에 해당함"
     ],
     "difficulty": "medium",
-    "id": "0540"
+    "id": "0540",
+    "options": [
+      "Scratchpad (스크래치패드) 또는 Working Memory",
+      "Hard Drive",
+      "Cloud Storage",
+      "Long-term Memory",
+      "Database"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -9571,7 +10187,14 @@
       "LangChain 에이전트들이 주로 사용하는 핵심 로직임"
     ],
     "difficulty": "medium",
-    "id": "0550"
+    "id": "0550",
+    "options": [
+      "ReAct (Reason + Act)",
+      "CoT (Chain of Thought)",
+      "ToT (Tree of Thought)",
+      "DSP (Demonstrate-Search-Predict)",
+      "Reflexion"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -9664,7 +10287,14 @@
       "속도는 수백 배 빠르지만 순위가 100% 정확하지 않을 수 있음"
     ],
     "difficulty": "medium",
-    "id": "0555"
+    "id": "0555",
+    "options": [
+      "ANN (Approximate Nearest Neighbor)",
+      "KNN (K-Nearest Neighbor)",
+      "Dijkstra",
+      "A* Search",
+      "Linear Search"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -9737,7 +10367,14 @@
       "ReAct 프레임워크의 Thought 단계가 여기에 해당함"
     ],
     "difficulty": "medium",
-    "id": "0559"
+    "id": "0559",
+    "options": [
+      "Reasoning (추론) 또는 Planning (계획)",
+      "Memorizing",
+      "Summarizing",
+      "Translating",
+      "Formatting"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -9850,7 +10487,14 @@
       "의미가 끊기지 않도록 문장이나 단락 단위로 자르는 것이 좋음"
     ],
     "difficulty": "easy",
-    "id": "0565"
+    "id": "0565",
+    "options": [
+      "Chunking (청킹)",
+      "Splitting",
+      "Dividing",
+      "Slicing",
+      "Breaking"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -9923,7 +10567,14 @@
       "모델은 이 기능의 '이름과 사용법'만 알고 필요시 호출을 요청함"
     ],
     "difficulty": "easy",
-    "id": "0569"
+    "id": "0569",
+    "options": [
+      "Tool (또는 Function)",
+      "Prompt",
+      "Script",
+      "Plugin",
+      "Extension"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -10056,7 +10707,14 @@
       "관찰 내용이 부실하면 에이전트가 잘못된 판단을 내림"
     ],
     "difficulty": "medium",
-    "id": "0576"
+    "id": "0576",
+    "options": [
+      "Observation (관찰)",
+      "Action",
+      "Thought",
+      "Evaluation",
+      "Conclusion"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -10129,7 +10787,14 @@
       "Multi-query나 HyDE 기법이 여기에 포함됨"
     ],
     "difficulty": "medium",
-    "id": "0580"
+    "id": "0580",
+    "options": [
+      "Query Transformation (질문 변환)",
+      "Query Augmentation",
+      "Query Selection",
+      "Query Filtering",
+      "Query Deletion"
+    ]
   },
   {
     "chapter_name": "RAG & Agent",
@@ -10422,7 +11087,14 @@
       "학습 후 베이스 모델과 합쳐서(Merge) 사용할 수 있음"
     ],
     "difficulty": "easy",
-    "id": "0605"
+    "id": "0605",
+    "options": [
+      "Adapter (어댑터)",
+      "Head",
+      "Backbone",
+      "Stem",
+      "Bridge"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -10515,7 +11187,14 @@
       "Sparse해진 행렬을 효율적으로 처리하는 전용 커널이 필요함"
     ],
     "difficulty": "medium",
-    "id": "0610"
+    "id": "0610",
+    "options": [
+      "Pruning (가지치기)",
+      "Quantization",
+      "Distillation",
+      "Sparsification",
+      "Compression"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -10588,7 +11267,14 @@
       "최근에는 사람보다 AI가 만든 데이터로 학습한 성능이 더 높기도 함"
     ],
     "difficulty": "medium",
-    "id": "0614"
+    "id": "0614",
+    "options": [
+      "Synthetic Data Generation (합성 데이터 생성)",
+      "Data Mining",
+      "Web Scraping",
+      "Crowdsourcing",
+      "Manual Labeling"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -10701,7 +11387,14 @@
       "NF4(Normal Float 4)라는 특수 양자화 분포를 사용함"
     ],
     "difficulty": "hard",
-    "id": "0620"
+    "id": "0620",
+    "options": [
+      "QLoRA",
+      "LoRA",
+      "Adapter",
+      "PEFT",
+      "Full Fine-tuning"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -10774,7 +11467,14 @@
       "합성 데이터 학습도 이 범주에 포함됨"
     ],
     "difficulty": "medium",
-    "id": "0624"
+    "id": "0624",
+    "options": [
+      "Knowledge Distillation (지식 증류)",
+      "Knowledge Transfer",
+      "Fine-tuning",
+      "Pre-training",
+      "Quantization"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -10887,7 +11587,14 @@
       "KL 거리가 너무 크면 모델이 헛소리를 할 확률이 올라감"
     ],
     "difficulty": "hard",
-    "id": "0630"
+    "id": "0630",
+    "options": [
+      "KL Divergence (KL 발산)",
+      "Euclidean Distance",
+      "Cosine Similarity",
+      "L1 Norm",
+      "L2 Norm"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -10960,7 +11667,14 @@
       "KL Divergence를 통해 이를 억제할 수 있음"
     ],
     "difficulty": "hard",
-    "id": "0634"
+    "id": "0634",
+    "options": [
+      "Reward Hacking (보상 해킹)",
+      "Model Bias",
+      "Overfitting",
+      "Gradient Explosion",
+      "Mode Collapse"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11073,7 +11787,14 @@
       "기존 의미가 훼손되지 않는 선에서 변형해야 함"
     ],
     "difficulty": "medium",
-    "id": "0640"
+    "id": "0640",
+    "options": [
+      "Data Augmentation (데이터 증강)",
+      "Data Cleansing",
+      "Data Normalization",
+      "Data Sampling",
+      "Data Shuffling"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11146,7 +11867,14 @@
       "사용자의 부적절한 질문에 대해 단호하게 거절하는 능력을 학습함"
     ],
     "difficulty": "medium",
-    "id": "0644"
+    "id": "0644",
+    "options": [
+      "Safety Alignment (안전 정렬)",
+      "Policy Optimization",
+      "Preference Learning",
+      "Bias Mitigation",
+      "Topic Control"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11259,7 +11987,14 @@
       "이 덕분에 아주 적은 양의 GPU로도 학습이 가능해짐"
     ],
     "difficulty": "medium",
-    "id": "0650"
+    "id": "0650",
+    "options": [
+      "Freezing (동결)",
+      "Melting",
+      "Dropping",
+      "Skipping",
+      "Weighting"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11332,7 +12067,14 @@
       "이를 막기 위해 비식별화 처리가 필수적임"
     ],
     "difficulty": "medium",
-    "id": "0654"
+    "id": "0654",
+    "options": [
+      "Data Leakage (데이터 유출) 또는 Privacy Memorization",
+      "Overfitting",
+      "Bias",
+      "Hallucination",
+      "Underfitting"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11385,7 +12127,14 @@
       "파인튜닝과는 별개의 최적화 단계임"
     ],
     "difficulty": "easy",
-    "id": "0657"
+    "id": "0657",
+    "options": [
+      "Quantization (양자화)",
+      "Pruning",
+      "蒸溜 (Distillation)",
+      "Compression",
+      "Sparsification"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11518,7 +12267,14 @@
       "sLLM들의 비약적 발전의 숨은 공신임"
     ],
     "difficulty": "medium",
-    "id": "0664"
+    "id": "0664",
+    "options": [
+      "Knowledge Distillation (지식 증류)",
+      "Fine-tuning",
+      "Quantization",
+      "Prompting",
+      "Pruning"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11591,7 +12347,14 @@
       "단순히 거절 프롬프트를 넣는 것과는 차원이 다른 기술임"
     ],
     "difficulty": "hard",
-    "id": "0668"
+    "id": "0668",
+    "options": [
+      "Machine Unlearning (기계 언러닝)",
+      "Data Deletion",
+      "Privacy Scrubbing",
+      "Model Retraining",
+      "Bias Removal"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11704,7 +12467,14 @@
       "마이크로소프트에서 개발한 기술임"
     ],
     "difficulty": "hard",
-    "id": "0674"
+    "id": "0674",
+    "options": [
+      "DeepSpeed (또는 FSDP)",
+      "NumPy",
+      "Pandas",
+      "Scikit-learn",
+      "Keras"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11777,7 +12547,14 @@
       "성능은 Full FT에 가깝게 유지하면서 비용을 줄일 수 있음"
     ],
     "difficulty": "medium",
-    "id": "0678"
+    "id": "0678",
+    "options": [
+      "Selective Fine-tuning",
+      "Full Fine-tuning",
+      "Zero Fine-tuning",
+      "Random Fine-tuning",
+      "Top-down Fine-tuning"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11890,7 +12667,14 @@
       "이 어댑터 파일만 공유하면 누구나 똑같은 성능을 낼 수 있음"
     ],
     "difficulty": "medium",
-    "id": "0684"
+    "id": "0684",
+    "options": [
+      "Adapter (어댑터)",
+      "Plug-in",
+      "Extender",
+      "Module",
+      "Part"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -11983,7 +12767,14 @@
       "학습 후 베이스 모델과 합쳐서(Merge) 사용할 수 있음"
     ],
     "difficulty": "easy",
-    "id": "0689"
+    "id": "0689",
+    "options": [
+      "Adapter (어댑터)",
+      "Weights",
+      "Gates",
+      "Links",
+      "Cells"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -12076,7 +12867,14 @@
       "Sparse해진 행렬을 효율적으로 처리하는 전용 커널이 필요함"
     ],
     "difficulty": "medium",
-    "id": "0694"
+    "id": "0694",
+    "options": [
+      "Pruning (가지치기)",
+      "Quantization",
+      "Pooling",
+      "Sampling",
+      "Normalization"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -12149,7 +12947,14 @@
       "최근에는 사람보다 AI가 만든 데이터로 학습한 성능이 더 높기도 함"
     ],
     "difficulty": "medium",
-    "id": "0698"
+    "id": "0698",
+    "options": [
+      "Synthetic Data Generation (합성 데이터 생성)",
+      "Scraping",
+      "Transcription",
+      "Augmentation",
+      "Labeling"
+    ]
   },
   {
     "chapter_name": "Fine Tuning",
@@ -12194,7 +12999,7 @@
   {
     "chapter_name": "Fine Tuning",
     "type": "코드 완성형",
-    "question": "모든 파라미터를 학습시키는 대신, 저차원의 어댑터(Adapter) 행렬만 추가하여 학습시키는 기법의 약칭은?\n\n```python\n# Low-Rank Adaptation의 줄임말\n```",
+    "question": "모든 파라미터를 학습시키는 대신, 저차원의 어댑터(Adapter) 행렬만 추가하여 학습시키는 기법의 약칭은?\n\n```python\n# Low-Rank Adaptation\n# 이 기법은 ____ 라고 불립니다.\n```",
     "options": [],
     "answer": "LoRA",
     "why": "LoRA는 효율적인 파라미터 튜닝 기법으로, 적은 자원으로도 대규모 모델을 최적화할 수 있게 해줍니다.",
@@ -12204,7 +13009,7 @@
   {
     "chapter_name": "Fine Tuning",
     "type": "코드 완성형",
-    "question": "4비트로 양자화된 베이스 모델 위에 LoRA를 적용하여 VRAM 사용량을 극도로 낮춘 파인 튜닝 기법은?\n\n```python\n# Quantized LoRA의 줄임말\n```",
+    "question": "4비트로 양자화된 베이스 모델 위에 LoRA를 적용하여 VRAM 사용량을 극도로 낮춘 파인 튜닝 기법은?\n\n```python\n# Quantized LoRA\n# 이 기법은 ____ 라고 불립니다.\n```",
     "options": [],
     "answer": "QLoRA",
     "why": "QLoRA는 일반 소비자용 GPU에서도 수십억 파라미터 모델을 튜닝할 수 있게 만든 핵심 기술입니다.",
@@ -12294,7 +13099,7 @@
   {
     "chapter_name": "Fine Tuning",
     "type": "코드 완성형",
-    "question": "전체 파이처미터를 건드리지 않고 일부만 효율적으로 튜닝하는 모든 기법을 통칭하는 용어는?\n\n```python\n# Parameter-Efficient Fine-Tuning의 약자\n```",
+    "question": "전체 파라미터를 건드리지 않고 일부만 효율적으로 튜닝하는 모든 기법을 통칭하는 용어는?\n\n```python\n# Parameter-Efficient Fine-Tuning\n# 약자로 ____ 라고 합니다.\n```",
     "options": [],
     "answer": "PEFT",
     "why": "PEFT는 LoRA, Prefix Tuning, P-tuning 등을 아우르는 파라미터 효율적 학습 기술의 총칭입니다.",

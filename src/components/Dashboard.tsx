@@ -51,6 +51,14 @@ export function Dashboard({
         );
     };
 
+    const selectAllChapters = () => {
+        setSelectedChapters(chapters.map(c => c.name));
+    };
+
+    const deselectAllChapters = () => {
+        setSelectedChapters([]);
+    };
+
     return (
         <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000">
             {/* 1. Statistics Overview */}
@@ -299,9 +307,25 @@ export function Dashboard({
             {/* 4. Multi-Chapter Selection */}
             <div className="space-y-6">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800 pb-4">
-                    <div className="flex items-center gap-2">
-                        <Layers className="w-5 h-5 text-zinc-500" />
-                        <h3 className="text-xs font-black text-zinc-500 uppercase tracking-[0.3em]">단원별 맞춤 학습 (중복 선택 가능)</h3>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                        <div className="flex items-center gap-2">
+                            <Layers className="w-5 h-5 text-zinc-500" />
+                            <h3 className="text-xs font-black text-zinc-500 uppercase tracking-[0.3em]">단원별 맞춤 학습 (중복 선택 가능)</h3>
+                        </div>
+                        <div className="flex gap-2">
+                            <button
+                                onClick={selectAllChapters}
+                                className="text-[10px] px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white font-bold transition-all border border-zinc-700"
+                            >
+                                전체 선택
+                            </button>
+                            <button
+                                onClick={deselectAllChapters}
+                                className="text-[10px] px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white font-bold transition-all border border-zinc-700"
+                            >
+                                전체 해제
+                            </button>
+                        </div>
                     </div>
                     <button
                         disabled={selectedChapters.length === 0}
