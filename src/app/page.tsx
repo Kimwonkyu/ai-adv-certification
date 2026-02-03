@@ -183,6 +183,33 @@ export default function Home() {
     initStudy(selectedPool, 'Weakness Targeting', 600);
   };
 
+  const startReview = (shuffleOptions: boolean) => {
+    let filtered = allQuestions.filter(q => {
+      const conf = progress.confidence_map[q.id];
+      return conf === 'good';
+    });
+
+    if (filtered.length === 0) {
+      alert('현재 복습할 문항이 없습니다! 먼저 학습을 통해 실력을 다져보세요.');
+      return;
+    }
+
+    if (shuffleOptions) {
+      filtered = filtered.map(q => ({
+        ...q,
+        options: q.options ? shuffleArray(q.options) : q.options
+      }));
+    }
+
+    const selectedPool = shuffleArray(filtered).slice(0, 10);
+    setStudyPool(selectedPool);
+    setStudyMode('Spaced Review');
+    setTimerSeconds(600);
+    setSessionStartTime(Date.now());
+    setTimeLogs([]);
+    initStudy(selectedPool, 'Spaced Review', 600);
+  };
+
   const initStudy = (pool: Question[], mode: string, timer: number) => {
     setCurrentIdx(0);
     setIsResultView(false);
@@ -281,6 +308,7 @@ export default function Home() {
               onStartStudy={startChapterStudy}
               onStartMockExam={startMockExam}
               onStartWeakness={startWeakness}
+              onStartReview={startReview}
               onResetProgress={() => {
                 resetProgress();
                 clearSession();

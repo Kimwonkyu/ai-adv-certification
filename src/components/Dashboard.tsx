@@ -15,6 +15,7 @@ interface DashboardProps {
     onStartStudy: (selectedChapters: string[], shuffleOptions: boolean, count: number, type?: 'all' | '객관식' | '코드 완성형') => void;
     onStartMockExam: (shuffleOptions: boolean) => void;
     onStartWeakness: (shuffleOptions: boolean) => void;
+    onStartReview: (shuffleOptions: boolean) => void;
     onResetProgress: () => void;
     onResetSession: () => void;
     hasActiveSession: boolean;
@@ -27,6 +28,7 @@ export function Dashboard({
     onStartStudy,
     onStartMockExam,
     onStartWeakness,
+    onStartReview,
     onResetProgress,
     onResetSession,
     hasActiveSession,
@@ -122,7 +124,7 @@ export function Dashboard({
                     </button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <button
                         onClick={() => onStartMockExam(shuffleEnabled)}
                         className="group relative overflow-hidden glass-card h-52 border-emerald-500/30 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-emerald-500/60 transition-all text-left"
@@ -165,6 +167,29 @@ export function Dashboard({
                             </div>
                             <div className="text-xs font-bold text-rose-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                                 취약점 보완하기 (10분) →
+                            </div>
+                        </div>
+                    </button>
+
+                    <button
+                        onClick={() => onStartReview(shuffleEnabled)}
+                        className="group relative overflow-hidden glass-card h-52 border-blue-500/30 bg-blue-500/5 hover:bg-blue-500/10 hover:border-blue-500/60 transition-all text-left"
+                    >
+                        <div className="absolute -right-6 -bottom-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <CheckCircle2 className="w-32 h-32 text-blue-500" />
+                        </div>
+                        <div className="relative z-10 flex flex-col h-full justify-between">
+                            <div>
+                                <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-blue-500/20">
+                                    <CheckCircle2 className="w-5 h-5 text-white" />
+                                </div>
+                                <h3 className="text-xl font-black text-white mb-2 uppercase italic">간격 복습 모드</h3>
+                                <p className="text-sm text-zinc-400 leading-relaxed max-w-[280px]">
+                                    &apos;알맞음&apos;으로 평가했던 문항들을 다시 복습하여 장기 기억으로 전환합니다. (10분 집중)
+                                </p>
+                            </div>
+                            <div className="text-xs font-bold text-blue-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                복습 시작 (10분) →
                             </div>
                         </div>
                     </button>
