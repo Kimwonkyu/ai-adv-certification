@@ -10119,16 +10119,16 @@
   {
     "chapter_name": "RAG & Agent",
     "type": "객관식",
-    "question": "에이전트가 목표를 달성하기 위해 '스스로 도구를 부르고 결과를 확인'하는 루프를 중단시켜야 하는 상황은?",
+    "question": "에이전트가 목표 달성 루프를 긴급 중단해야 하는 '안전 조건'으로 가장 적절한 것은?",
     "options": [
-      "답을 찾았을 때",
-      "설정된 최대 반복 횟수(Max Iterations)에 도달했을 때",
-      "사용자가 중단했을 때",
-      "위 셋 모두 해당",
-      "단순히 지루할 때"
+      "답변이 너무 짧을 때",
+      "설정된 최대 반복 횟수(Max Iterations)에 도달하여 무한 루프 위험이 있을 때",
+      "사용자가 칭찬했을 때",
+      "인터넷 연결이 너무 빠를 때",
+      "배터리가 100%일 때"
     ],
-    "answer": "위 셋 모두 해당",
-    "why": "무한 루프에 빠져 비용이 폭주하는 것을 막기 위해 강력한 종료 조건이 필수적입니다.",
+    "answer": "설정된 최대 반복 횟수(Max Iterations)에 도달하여 무한 루프 위험이 있을 때",
+    "why": "비용 폭주와 시스템 과부하를 막기 위해 에이전트는 반드시 '최대 시도 횟수'라는 안전장치를 가져야 합니다.",
     "hint": "안전하게 멈춰야(Stop) 합니다.",
     "trap_points": [
       "에이전트 개발 시 가장 먼저 구현해야 할 안전장치임"
@@ -12678,326 +12678,6 @@
   },
   {
     "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "DPO(Direct Preference Optimization) 모델 학습을 위해 필요한 데이터 형태는?",
-    "options": [
-      "질문 하나와 답변 하나",
-      "질문 하나와 (좋은 답변, 싫은 답변) 한 쌍",
-      "문서 뭉치 하나",
-      "영단어 리스트",
-      "이미지 데이터"
-    ],
-    "answer": "질문 하나와 (좋은 답변, 싫은 답변) 한 쌍",
-    "why": "두 답변 중 더 나은 쪽을 선호(Preference)하도록 모델의 확률 분포를 직접 조정하기 때문입니다.",
-    "hint": "선택지 한 쌍이 필요합니다.",
-    "trap_points": [
-      "최근 RLHF를 대체하는 강력한 파인튜닝 기법임"
-    ],
-    "difficulty": "hard",
-    "id": "0685"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "파인튜닝된 모델을 배포할 때, 모델의 레이어 정규화 값을 학습 시 값으로 고정하여 추론 속도를 높이는 과정은?",
-    "options": [
-      "Quantization",
-      "Model Merging",
-      "Graph Optimization",
-      "Layer Folding",
-      "Cashing"
-    ],
-    "answer": "Graph Optimization",
-    "why": "연산 그래프를 분석하여 중복되거나 불필요한 계산을 합치거나 상수화하여 속도를 높입니다.",
-    "hint": "그래프 최적화입니다.",
-    "trap_points": [
-      "ONNX, TensorRT 등이 이 과정을 수행함"
-    ],
-    "difficulty": "hard",
-    "id": "0686"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "파인튜닝 시 ‘데이터 오염(Data Contamination)’이란 무엇을 의미하나요?",
-    "options": [
-      "데이터가 사라지는 것",
-      "평가에 쓰일 문제들이 학습 데이터에 포함되어 있어 실제 실력보다 점수가 높게 나오는 것",
-      "인터넷이 끊기는 것",
-      "영어로만 코딩하는 것",
-      "파일이 깨지는 것"
-    ],
-    "answer": "평가에 쓰일 문제들이 학습 데이터에 포함되어 있어 실제 실력보다 점수가 높게 나오는 것",
-    "why": "모델이 규칙을 배운 게 아니라 정답을 암기해버린 상태이므로 실전 성능을 신뢰할 수 없게 만듭니다.",
-    "hint": "시험 정답을 미리 보고 시험을 치는 것과 같습니다.",
-    "trap_points": [
-      "학습 전 평가 데이터와의 중복 검사(De-contamination)가 필수임"
-    ],
-    "difficulty": "hard",
-    "id": "0687"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "파인튜닝 시 'Overfitting'을 감지하는 가장 직접적인 지표는?",
-    "options": [
-      "학습 데이터의 손실(Loss)은 줄어드는데, 검증(Validation) 데이터의 손실은 정체되거나 올라갈 때",
-      "전원이 꺼질 때",
-      "데이터가 사라졌을 때",
-      "영어로만 답할 때",
-      "손실 값이 0이 될 때"
-    ],
-    "answer": "학습 데이터의 손실(Loss)은 줄어드는데, 검증(Validation) 데이터의 손실은 정체되거나 올라갈 때",
-    "why": "학습 데이터에만 과하게 맞춰져 새로운 데이터에 대한 일반화 능력을 잃었음을 뜻합니다.",
-    "hint": "학습셋과 검증셋의 손실 값 차이를 보세요.",
-    "trap_points": [
-      "이 시점이 학습을 중단해야 하는 'Early Stopping' 타이밍임"
-    ],
-    "difficulty": "medium",
-    "id": "0688"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "LoRA 학습에서 학습되는 아주 작은 두 개의 행렬 조각을 통칭하는 용어는?",
-    "answer": "Adapter (어댑터)",
-    "why": "기존 모델에 수수료처럼 덧붙여서(Adapt) 성능을 조절하는 조각이라는 뜻입니다.",
-    "hint": "끼우다, 적응시키다라는 단어입니다.",
-    "trap_points": [
-      "학습 후 베이스 모델과 합쳐서(Merge) 사용할 수 있음"
-    ],
-    "difficulty": "easy",
-    "id": "0689",
-    "options": [
-      "Adapter (어댑터)",
-      "Weights",
-      "Gates",
-      "Links",
-      "Cells"
-    ]
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "LoRA 파인튜닝 시 'Rank(r)' 파라미터가 가지는 의미는?",
-    "options": [
-      "모델의 순위",
-      "추가되는 어댑터 행렬의 차원 크기 (작을수록 메모리 절약, 클수록 정교함)",
-      "데이터의 개수",
-      "학습 모델의 가격",
-      "인터넷 속도"
-    ],
-    "answer": "추가되는 어댑터 행렬의 차원 크기 (작을수록 메모리 절약, 클수록 정교함)",
-    "why": "랭크는 파인튜닝할 수 있는 '용량'을 결정하며, 보통 8, 16, 32 등이 널리 사용됩니다.",
-    "hint": "행렬의 차원 수입니다.",
-    "trap_points": [
-      "너무 크면 전체 파라미터 학습과 차이가 없어 효율이 떨어짐"
-    ],
-    "difficulty": "hard",
-    "id": "0690"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "파인튜닝 학습 중 모델이 원본의 선한 의도나 안전 지침을 무시하고 사용자에게 욕설을 하거나 거칠게 답하는 것을 막는 과정을 무엇이라 하나요?",
-    "options": [
-      "Normalization",
-      "Alignment (정렬)",
-      "Scaling",
-      "Cleaning",
-      "Encryption"
-    ],
-    "answer": "Alignment (정렬)",
-    "why": "모델의 가치관과 인간의 가치관을 일치(Align)시키는 RLHF, DPO 등의 기법이 여기에 포함됩니다.",
-    "hint": "인간의 의도에 맞게 조정(Align)합니다.",
-    "trap_points": [
-      "정렬이 잘 안 된 모델은 자의적인 주장을 펼칠 수 있음"
-    ],
-    "difficulty": "medium",
-    "id": "0691"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "파인튜닝된 모델 배포 시 가장 많이 쓰이는 최적화 라이브러리로, 특히 엔비디아 GPU 성능을 100% 끌어내는 것은?",
-    "options": [
-      "vLLM",
-      "TensorRT-LLM",
-      "Ollama",
-      "Llama.cpp",
-      "Auto-GPT"
-    ],
-    "answer": "TensorRT-LLM",
-    "why": "엔비디아 하드웨어에 최적화된 추론 라이브러리로 배치 처리와 지연 시간을 획기적으로 줄여줍니다.",
-    "hint": "엔비디아 공식 최적화 툴입니다.",
-    "trap_points": [
-      "설치는 어렵지만 성능은 압도적임"
-    ],
-    "difficulty": "hard",
-    "id": "0692"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "사전 학습(Pre-training)과 파인튜닝(Fine-tuning)의 가장 큰 재료 차이는?",
-    "options": [
-      "재료가 똑같다.",
-      "사전 학습은 레이블이 없는 방대한 인터넷 데이터(Next Token Prediction)를 쓰고, 파인튜닝은 질문-답변 쌍과 같은 레이블된 정제 데이터를 쓴다.",
-      "사전 학습만 영어다.",
-      "파인튜닝은 이미지를 안 쓴다.",
-      "차이가 없다."
-    ],
-    "answer": "사전 학습은 레이블이 없는 방대한 인터넷 데이터(Next Token Prediction)를 쓰고, 파인튜닝은 질문-답변 쌍과 같은 레이블된 정제 데이터를 쓴다.",
-    "why": "사전 학습은 세상의 일반적 패턴을 배우는 과정이고, 파인튜닝은 특정 목적으로 ‘길들이는’ 과정입니다.",
-    "hint": "데이터의 덩어리(Bulk)와 정제(Curated)의 차이입니다.",
-    "trap_points": [
-      "최근에는 파인튜닝 단계의 데이터 질이 모델 품질을 결정함"
-    ],
-    "difficulty": "easy",
-    "id": "0693"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "가중치 행렬 중 일부 중요한 값만 남기고 0으로 만들어 모델 용량을 줄이는 최적화 방식은?",
-    "answer": "Pruning (가지치기)",
-    "why": "신경망 연결망 중 불필요한 가지를 쳐내어 속도와 용량을 개선합니다.",
-    "hint": "나뭇가지를 친다는 뜻입니다.",
-    "trap_points": [
-      "Sparse해진 행렬을 효율적으로 처리하는 전용 커널이 필요함"
-    ],
-    "difficulty": "medium",
-    "id": "0694",
-    "options": [
-      "Pruning (가지치기)",
-      "Quantization",
-      "Pooling",
-      "Sampling",
-      "Normalization"
-    ]
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "파인튜닝 시 'Learning Rate (학습률)'가 너무 높을 때 나타나는 일반적인 증상은?",
-    "options": [
-      "학습이 너무 완벽하게 된다.",
-      "손실 값(Loss)이 발산하거나 요동치며 모델이 아무 기술도 배우지 못하고 망가진다.",
-      "속도가 100배 빨라진다.",
-      "영어로만 답한다.",
-      "글자 수가 길어진다."
-    ],
-    "answer": "손실 값(Loss)이 발산하거나 요동치며 모델이 아무 기술도 배우지 못하고 망가진다.",
-    "why": "보폭(Learning Rate)이 너무 크면 최적의 지점(Minimum)을 지나쳐버리기 때문입니다.",
-    "hint": "너무 큰 보폭의 부작용을 생각하세요.",
-    "trap_points": [
-      "반대로 너무 작으면 학습 진행이 아예 안 될 수도 있음"
-    ],
-    "difficulty": "medium",
-    "id": "0695"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "파인튜닝 후 모델의 '할루시네이션(환각)'이 오히려 심해지는 주된 원인은?",
-    "options": [
-      "컴퓨터가 뜨거워서",
-      "데이터셋에 잘못된 정보가 포함되어 있거나, 모델이 데이터를 암기하기 시작해서 (Overfitting)",
-      "영어로만 학습해서",
-      "파일이 너무 커서",
-      "인터넷이 끊겨서"
-    ],
-    "answer": "데이터셋에 잘못된 정보가 포함되어 있거나, 모델이 데이터를 암기하기 시작해서 (Overfitting)",
-    "why": "나쁜 데이터를 배우면 지능 자체가 오염되는 GIGO 법칙의 결과입니다.",
-    "hint": "학습 데이터의 품질이 곧 출력의 품질입니다.",
-    "trap_points": [
-      "데이터 양보다 정제가 훨씬 중요함"
-    ],
-    "difficulty": "easy",
-    "id": "0696"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "모델의 지능 전수 기법인 'Distillation'에서 교사 모델과 학생 모델의 관계는?",
-    "options": [
-      "둘은 쌍둥이다.",
-      "거대하고 똑똑한 모델(Teacher)의 확률 분포를 작고 가벼운 모델(Student)이 모방하도록 학습한다.",
-      "학생이 더 크다.",
-      "둘은 싸우는 관계다.",
-      "관계가 없다."
-    ],
-    "answer": "거대하고 똑똑한 모델(Teacher)의 확률 분포를 작고 가벼운 모델(Student)이 모방하도록 학습한다.",
-    "why": "효율을 위해 큰 모델의 능력을 작은 모델로 압축하는 강력한 산업적 기술입니다.",
-    "hint": "증류(Distillation)의 과정을 생각하세요.",
-    "trap_points": [
-      "최신 sLLM들이 성능을 비약적으로 올린 비결임"
-    ],
-    "difficulty": "medium",
-    "id": "0697"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "파인튜닝 데이터를 만들 때, 사람이 직접 적는 대신 AI가 AI용 데이터를 자동으로 생성해 주는 기술은?",
-    "answer": "Synthetic Data Generation (합성 데이터 생성)",
-    "why": "고품질 데이터를 무한히 생성하여 학습 비용을 줄이고 다양성을 확보합니다.",
-    "hint": "인공적으로 합성(Synthetic)한 데이터입니다.",
-    "trap_points": [
-      "최근에는 사람보다 AI가 만든 데이터로 학습한 성능이 더 높기도 함"
-    ],
-    "difficulty": "medium",
-    "id": "0698",
-    "options": [
-      "Synthetic Data Generation (합성 데이터 생성)",
-      "Scraping",
-      "Transcription",
-      "Augmentation",
-      "Labeling"
-    ]
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "파인튜닝된 모델 공유 시 필수적으로 첨부해야 할 'Model Card'에 포함되지 않아도 되는 것은?",
-    "options": [
-      "모델의 용도와 제한 사항",
-      "학습 데이터셋 정보",
-      "평가 벤치마크 결과",
-      "개발자의 어제 점심 메뉴",
-      "저작권 및 라이선스 정보"
-    ],
-    "answer": "개발자의 어제 점심 메뉴",
-    "why": "모델 카드는 기술적/윤리적 명세서이므로 사적인 정보는 필요 없습니다.",
-    "hint": "모델의 '명세서'입니다.",
-    "trap_points": [
-      "투명한 AI 생태계를 위한 표준 약속임"
-    ],
-    "difficulty": "easy",
-    "id": "0699"
-  },
-  {
-    "chapter_name": "Fine Tuning",
-    "type": "객관식",
-    "question": "파인튜닝의 대표적인 방법인 LoRA에서 학습 대상이 되는 가중치는?",
-    "options": [
-      "모델의 전체 가중치",
-      "모델에 추가된 두 개의 저차원 행렬 가중치 (A, B)",
-      "바이어스 값만",
-      "임베딩 레이어 가중치",
-      "마지막 층의 가중치만"
-    ],
-    "answer": "모델에 추가된 두 개의 저차원 행렬 가중치 (A, B)",
-    "why": "원본 파라미터는 동결하고, 옆에 붙인 가벼운 행렬만 업데이트하여 효율을 극대화합니다.",
-    "hint": "옆에 덧붙인(Adapter) 작은 행렬들을 생각하세요.",
-    "trap_points": [
-      "이를 통해 수백 배 적은 메모리로 파인튜닝이 가능해짐"
-    ],
-    "difficulty": "hard",
-    "id": "0700"
-  },
-  {
-    "chapter_name": "Fine Tuning",
     "type": "코드 완성형",
     "question": "모든 파라미터를 학습시키는 대신, 저차원의 어댑터(Adapter) 행렬만 추가하여 학습시키는 기법의 약칭은?\n\n```python\n# Low-Rank Adaptation\n# 이 기법은 ____ 라고 불립니다.\n```",
     "options": [],
@@ -13195,5 +12875,305 @@
     "why": "add_generation_prompt=True는 모델이 바로 답변을 시작할 수 있도록 적절한 특수 토큰을 삽입합니다.",
     "difficulty": "hard",
     "id": "0720"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "LoRA(Low-Rank Adaptation)에서 'Alpha' 파라미터가 32이고 'Rank(r)'가 32일 때, 스케일링 팩터(Alpha/r)의 값은?",
+    "options": [
+      "0.5",
+      "1.0",
+      "2.0",
+      "32",
+      "0"
+    ],
+    "answer": "1.0",
+    "why": "스케일링 팩터는 Alpha / Rank로 계산됩니다. 32/32 = 1이므로 어댑터의 가중치가 그대로 반영됩니다.",
+    "hint": "Alpha 나누기 Rank입니다.",
+    "trap_points": [
+      "Alpha와 Rank가 같으면 보정이 없다는 뜻임"
+    ],
+    "difficulty": "medium",
+    "id": "0801"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "파인튜닝 시 전체 모델 파라미터를 고정(Freeze)하고, 특정 레이어에만 학습 가능한 파라미터를 주입하는 방식의 총칭은?",
+    "options": [
+      "PEFT (Parameter-Efficient Fine-Tuning)",
+      "Full Fine-tuning",
+      "Pre-training",
+      "RLHF",
+      "DPO"
+    ],
+    "answer": "PEFT (Parameter-Efficient Fine-Tuning)",
+    "why": "PEFT는 거대 모델의 대부분을 얼리고 일부만 학습하여 자원 효율성을 극대화하는 기법들의 통칭입니다.",
+    "hint": "효율적(Efficient)인 파라미터 사용.",
+    "trap_points": [
+      "LoRA는 PEFT의 하위 종류 중 하나임"
+    ],
+    "difficulty": "easy",
+    "id": "0802"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "CAT(Catastrophic Forgetting) 현상을 막기 위해, 파인튜닝 시 기존 데이터셋의 일부를 섞어서 학습시키는 전략은?",
+    "options": [
+      "Replay Buffer (리플레이 버퍼)",
+      "Dropout",
+      "Early Stopping",
+      "Gradient Clipping",
+      "Batch Normalization"
+    ],
+    "answer": "Replay Buffer (리플레이 버퍼)",
+    "why": "과거의 데이터를 '다시 재생(Replay)'하여 모델이 이전 지식을 잊지 않도록 상기시켜 줍니다.",
+    "hint": "다시 플레이(Re-play)함.",
+    "trap_points": [
+      "강화학습에서도 사용되는 용어임"
+    ],
+    "difficulty": "hard",
+    "id": "0803"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "모델이 이미 학습한 지식과 상충되는 데이터로 무리하게 파인튜닝을 시도할 때 발생하는 '지식 충돌'의 결과는?",
+    "options": [
+      "모델이 더 똑똑해진다",
+      "할루시네이션이 증가하고 일관성이 떨어진다",
+      "학습 속도가 빨라진다",
+      "GPU 사용량이 줄어든다",
+      "새로운 언어를 창조한다"
+    ],
+    "answer": "할루시네이션이 증가하고 일관성이 떨어진다",
+    "why": "내재된 지식과 새로운 정보가 싸우면서 모델이 혼란을 겪고, 결국 거짓 정보를 지어내게 됩니다.",
+    "hint": "억지로 주입식 교육을 할 때의 부작용을 생각하세요.",
+    "trap_points": [
+      "지식 편집(Knowledge Editing)이 어려운 이유 중 하나"
+    ],
+    "difficulty": "medium",
+    "id": "0804"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "LLM의 성능 평가 벤치마크 중, 수학적 추론 능력을 집중적으로 평가하는 지표는?",
+    "options": [
+      "GSM8K",
+      "MMLU",
+      "HellaSwag",
+      "HumanEval",
+      "BLEU"
+    ],
+    "answer": "GSM8K",
+    "why": "초등학교 수준의 수학 문제를 단계적으로 풀게 하여 모델의 논리적 추론력을 측정합니다.",
+    "hint": "수학(Math) 관련 약자.",
+    "trap_points": [
+      "MMLU는 종합 지식 평가임"
+    ],
+    "difficulty": "hard",
+    "id": "0805"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "RLHF에서 사람의 선호도 데이터를 모을 때 'A 답변이 B 답변보다 낫다'고 판단하는 방식은?",
+    "options": [
+      "Pairwise Comparison (쌍대 비교)",
+      "Absolute Scoring",
+      "Binary Classification",
+      "Multi-class Labeling",
+      "Regression"
+    ],
+    "answer": "Pairwise Comparison (쌍대 비교)",
+    "why": "점수를 매기는 것보다 두 개를 두고 비교하는 것이 평가자의 일관성을 유지하기 훨씬 쉽습니다.",
+    "hint": "둘씩 짝(Pair)을 지어 비교함.",
+    "trap_points": [
+      "Elo Rating 시스템과 유사한 원리"
+    ],
+    "difficulty": "medium",
+    "id": "0806"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "QLoRA에서 사용하는 'Double Quantization' 기술의 핵심 목적은?",
+    "options": [
+      "추론 속도를 2배로 늘리기 위해",
+      "양자화 상수(Quantization Constant) 자체를 또 양자화하여 메모리를 추가로 절약하기 위해",
+      "정확도를 2배 올리기 위해",
+      "학습 시간을 줄이기 위해",
+      "GPU 온도를 낮추기 위해"
+    ],
+    "answer": "양자화 상수(Quantization Constant) 자체를 또 양자화하여 메모리를 추가로 절약하기 위해",
+    "why": "티끌 모아 태산이라고, 메타데이터인 상수값까지 압축하여 거대 모델을 소비자용 GPU에 구겨 넣습니다.",
+    "hint": "두 번(Double) 양자화함.",
+    "trap_points": [
+      "극도의 메모리 효율화를 위한 기법임"
+    ],
+    "difficulty": "hard",
+    "id": "0807"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "SFT(Supervised Fine-Tuning)용 데이터셋에서 가장 중요한 품질 요소는?",
+    "options": [
+      "데이터의 양 (Quantity)",
+      "데이터의 다양성과 정확성 (Quality & Diversity)",
+      "데이터의 파일 포맷",
+      "데이터의 생성 날짜",
+      "데이터의 언어"
+    ],
+    "answer": "데이터의 다양성과 정확성 (Quality & Diversity)",
+    "why": "적은 양이라도 고품질의 다양한 데이터를 학습하는 것이 수만 개의 저품질 데이터보다 훨씬 효과적입니다(LIMA 논문).",
+    "hint": "Less is More.",
+    "trap_points": [
+      "양이 많으면 오히려 독이 될 수도 있음"
+    ],
+    "difficulty": "easy",
+    "id": "0808"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "RAG 시스템을 위해 임베딩 모델을 파인튜닝할 때 사용하는 손실 함수(Loss Function)는?",
+    "options": [
+      "Contrastive Loss (대조 손실)",
+      "Cross Entropy Loss",
+      "Mean Squared Error",
+      "Hinge Loss",
+      "Log Loss"
+    ],
+    "answer": "Contrastive Loss (대조 손실)",
+    "why": "관련 있는 문서끼리는 가깝게, 없는 문서끼리는 멀게 벡터 공간을 조정해야 하기 때문입니다.",
+    "hint": "관련성 유무를 대조(Contrast)합니다.",
+    "trap_points": [
+      "InfoNCE Loss라고도 불림"
+    ],
+    "difficulty": "hard",
+    "id": "0809"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "파인튜닝된 모델이 특정 프롬프트 템플릿(<|user|>, <|assistant|>)을 지키지 않으면 발생하는 문제는?",
+    "options": [
+      "EOS 토큰을 생성하지 못하고 끝없이 횡설수설한다",
+      "모델이 침묵한다",
+      "기존 성능이 향상된다",
+      "토큰 비용이 줄어든다",
+      "아무 문제 없다"
+    ],
+    "answer": "EOS 토큰을 생성하지 못하고 끝없이 횡설수설한다",
+    "why": "학습된 종료 패턴을 찾지 못해 문장을 끝맺지 못하고 계속 이어 말하는 현상이 발생합니다.",
+    "hint": "말을 멈추는 법을 모르게 됩니다.",
+    "trap_points": [
+      "채팅 모델 튜닝 시 가장 흔한 실수임"
+    ],
+    "difficulty": "medium",
+    "id": "0810"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "파인튜닝 시 배치 크기(Batch Size)를 키우기 위해 여러 GPU에 데이터를 나누어 담는 기술은?",
+    "options": [
+      "Data Parallelism (데이터 병렬화)",
+      "Model Parallelism",
+      "Pipeline Parallelism",
+      "Tensor Parallelism",
+      "Serial Processing"
+    ],
+    "answer": "Data Parallelism (데이터 병렬화)",
+    "why": "같은 모델을 여러 GPU에 복사해두고, 서로 다른 데이터 조각을 먹여서 학습 속도를 배로 늘립니다.",
+    "hint": "데이터를 병렬(Parallel)로 처리.",
+    "trap_points": [
+      "DDP, FSDP 등이 여기에 해당함"
+    ],
+    "difficulty": "medium",
+    "id": "0811"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "의료나 법률 같은 특수 데이터로 파인튜닝할 때, 일반 상식 능력이 떨어지는 현상을 방지하기 위한 방법은?",
+    "options": [
+      "일반 데이터를 섞어서 학습 (General Instruction Mixing)",
+      "특수 데이터만 계속 학습",
+      "학습률을 높임",
+      "모델 크기를 줄임",
+      "영어 데이터 제거"
+    ],
+    "answer": "일반 데이터를 섞어서 학습 (General Instruction Mixing)",
+    "why": "편식하면 건강을 해치듯, 전문 지식만 배우면 일반 대화 능력을 잃기 때문에 균형 잡힌 식단(데이터)이 필요합니다.",
+    "hint": "골고루 섞어줍니다.",
+    "trap_points": [
+      "전문성만 추구하다 바보가 되는 것을 막음"
+    ],
+    "difficulty": "easy",
+    "id": "0812"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "최신 파인튜닝 트렌드인 'NEFTune' 기법이 임베딩 벡터에 노이즈를 섞는 이유는?",
+    "options": [
+      "모델의 과적합을 막고 일반화 성능을 높이기 위해",
+      "모델을 헷갈리게 하려고",
+      "보안을 강화하려고",
+      "학습을 방해하려고",
+      "데이터를 손상시키려고"
+    ],
+    "answer": "모델의 과적합을 막고 일반화 성능을 높이기 위해",
+    "why": "약간의 무작위 노이즈는 모델이 특정 데이터 패턴에만 집착하는 것을 방지하여 오히려 대화의 질을 높여줍니다.",
+    "hint": "적절한 소음(Noise)은 면역력을 키워줍니다.",
+    "trap_points": [
+      "알파카(Alpaca) 데이터셋 실험에서 효과가 입증됨"
+    ],
+    "difficulty": "hard",
+    "id": "0813"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "파인튜닝이 완료된 LoRA 어댑터를 원본 모델과 합쳐서 하나의 파일로 만드는 과정은?",
+    "options": [
+      "Merge & Unload",
+      "Zip",
+      "Compile",
+      "Quantize",
+      "Distill"
+    ],
+    "answer": "Merge & Unload",
+    "why": "추론 속도를 높이기 위해 별도로 계산되던 어댑터 가중치를 원본 가중치 행렬에 더해버리고 메모리에서 내립니다.",
+    "hint": "병합(Merge)하고 내보냄.",
+    "trap_points": [
+      "이후에는 어댑터를 분리할 수 없음 (비가역적)"
+    ],
+    "difficulty": "medium",
+    "id": "0814"
+  },
+  {
+    "chapter_name": "Fine Tuning",
+    "type": "객관식",
+    "question": "생성형 AI 모델을 평가할 때 'GPT-4'를 심판(Judge)으로 사용하여 점수를 매기는 방식을 무엇이라 하나요?",
+    "options": [
+      "LLM-as-a-Judge",
+      "Human Eval",
+      "Code Review",
+      "Self-Play",
+      "Peer Review"
+    ],
+    "answer": "LLM-as-a-Judge",
+    "why": "사람이 평가하기엔 너무 비싸고 느려서, 고성능 모델에게 채점을 맡기는 현대적인 평가 트렌드입니다.",
+    "hint": "LLM이 판사(Judge) 역할을 함.",
+    "trap_points": [
+      "MT-Bench 등이 이 방식을 사용함"
+    ],
+    "difficulty": "medium",
+    "id": "0815"
   }
 ]
