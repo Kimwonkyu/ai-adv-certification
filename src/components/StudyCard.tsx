@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Question, ConfidenceLevel } from '@/types';
 import { cn } from '@/lib/utils';
 import { ChevronDown, ChevronUp, Eye, Lightbulb, AlertTriangle, CheckCircle2 } from 'lucide-react';
@@ -16,6 +16,11 @@ export function StudyCard({ question, onFeedback }: StudyCardProps) {
     const [showAnswer, setShowAnswer] = useState(false);
     const [showReasoning, setShowReasoning] = useState(false);
     const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
+
+    // Auto-scroll to top when a new question is loaded
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [question.id]);
 
     // Helper to detect and render code blocks
     const renderContent = (text: string) => {
