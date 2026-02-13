@@ -8,7 +8,7 @@ export interface Textbook {
     color: string;
 }
 
-const TEXTBOOKS: Textbook[] = [
+export const TEXTBOOKS: Textbook[] = [
     { id: 1, title: 'Python 기초', description: '파이썬의 기초 문법과 핵심 개념을 학습합니다.', color: 'text-blue-500 bg-blue-500/10 border-blue-500/20' },
     { id: 2, title: '데이터 분석', description: 'Pandas와 NumPy를 활용한 데이터 분석 입문.', color: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20' },
     { id: 3, title: 'LLM 기본', description: '대거대 언어 모델의 원리와 기초 이론.', color: 'text-purple-500 bg-purple-500/10 border-purple-500/20' },

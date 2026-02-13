@@ -10,7 +10,7 @@ import { Timer } from '@/components/Timer';
 import { useProgress } from '@/hooks/useProgress';
 import { cn } from '@/lib/utils';
 import { Loader2, ArrowLeft, Trophy, Zap, Clock, TrendingUp } from 'lucide-react';
-import { TextbookList } from '@/components/TextbookList';
+import { TextbookList, TEXTBOOKS } from '@/components/TextbookList';
 import { TextbookViewer } from '@/components/TextbookViewer';
 import { HiddenQuestionList } from '@/components/HiddenQuestionList';
 
@@ -321,6 +321,7 @@ export default function Home() {
             selectedTextbookId ? (
               <TextbookViewer
                 chapterId={selectedTextbookId}
+                title={TEXTBOOKS.find(b => b.id === selectedTextbookId)?.title || ''}
                 onBack={() => setSelectedTextbookId(null)}
               />
             ) : (
