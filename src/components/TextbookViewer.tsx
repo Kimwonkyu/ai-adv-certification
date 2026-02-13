@@ -135,7 +135,7 @@ export function TextbookViewer({ chapterId, title, onBack }: TextbookViewerProps
 
             // Headers
             if (line.startsWith('# ')) {
-                elements.push(<h1 key={i} className="text-3xl font-black text-white mt-12 mb-8 pb-4 border-b-2 border-indigo-500/20">{renderInline(line.slice(2))}</h1>);
+                elements.push(<h1 key={i} className="text-2xl md:text-3xl font-black text-white mt-10 mb-6 pb-4 border-b-2 border-indigo-500/20">{renderInline(line.slice(2))}</h1>);
                 continue;
             }
             if (line.startsWith('## ')) {
@@ -144,7 +144,7 @@ export function TextbookViewer({ chapterId, title, onBack }: TextbookViewerProps
                     <h2
                         id={headerText.replace(/\s+/g, '-').toLowerCase()}
                         key={i}
-                        className="text-2xl font-bold text-white mt-16 mb-6 flex items-center gap-3 scroll-mt-24"
+                        className="text-xl md:text-2xl font-bold text-white mt-12 mb-5 flex items-center gap-3 scroll-mt-24"
                     >
                         <span className="w-1.5 h-6 bg-indigo-500 rounded-full" />
                         {renderInline(headerText)}
@@ -158,7 +158,7 @@ export function TextbookViewer({ chapterId, title, onBack }: TextbookViewerProps
                     <h3
                         id={headerText.replace(/\s+/g, '-').toLowerCase()}
                         key={i}
-                        className="text-xl font-bold text-indigo-400 mt-10 mb-4 scroll-mt-24"
+                        className="text-lg md:text-xl font-bold text-indigo-400 mt-8 mb-4 scroll-mt-24"
                     >
                         {renderInline(headerText)}
                     </h3>
@@ -289,7 +289,7 @@ export function TextbookViewer({ chapterId, title, onBack }: TextbookViewerProps
                         className="absolute inset-0 bg-black/40 backdrop-blur-sm"
                         onClick={() => setShowToc(false)}
                     />
-                    <div className="absolute right-4 top-20 w-72 max-h-[70vh] overflow-y-auto bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 animate-in slide-in-from-right-4">
+                    <div className="absolute right-4 top-20 w-[calc(100%-2rem)] max-w-72 max-h-[70vh] overflow-y-auto bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-5 md:p-6 animate-in slide-in-from-right-4">
                         <div className="flex items-center gap-2 mb-6">
                             <List className="w-5 h-5 text-indigo-500" />
                             <h3 className="text-lg font-bold text-white">학습 목차</h3>
@@ -314,11 +314,11 @@ export function TextbookViewer({ chapterId, title, onBack }: TextbookViewerProps
                 </div>
             )}
 
-            <div className="h-24" /> {/* Header spacer */}
+            <div className="h-20 md:h-24" /> {/* Header spacer */}
 
-            <div className="max-w-4xl mx-auto px-6">
-                <div className="glass-card bg-[#0a0a0a] border-zinc-800 p-8 md:p-12 shadow-2xl rounded-3xl">
-                    <div className="prose prose-invert max-w-none">
+            <div className="max-w-4xl mx-auto px-2 md:px-6">
+                <div className="glass-card bg-[#0a0a0a] border-zinc-800 p-5 md:p-12 shadow-2xl rounded-2xl md:rounded-3xl">
+                    <div className="prose prose-invert max-w-none text-sm md:text-base">
                         {parseContent(content)}
                     </div>
                 </div>
