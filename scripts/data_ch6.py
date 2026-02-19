@@ -5,128 +5,142 @@ questions = []
 
 # --- 100 MCQs ---
 
-# 1. Basic Concepts
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "easy", "id": "6001",
-    "question": "이미 방대한 데이터를 학습한 '사전 학습 모델(Pre-trained Model)'에 특정 도메인의 데이터를 추가 학습시켜 전문가로 만드는 과정은?",
-    "options": ["Tokenizing", "Fine Tuning", "Prompt Engineering", "Filtering", "Quantization"],
-    "answer": "Fine Tuning",
-    "why": "파인튜닝은 일반적인 지식을 가진 모델을 특정 목적이나 스타일, 전문 지식에 맞게 미세 조정하는 작업입니다.",
-    "hint": "미세 조정이라는 뜻을 가진 용어입니다."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "6002",
-    "question": "파인튜닝과 RAG의 차이점에 대한 설명으로 올바른 것은?",
-    "options": ["파인튜닝은 '오픈북 시험', RAG는 '지식 암기'와 같다.", "RAG는 모델 내부의 가중치를 직접 수정한다.", "파인튜닝은 모델에게 특정 말투나 형식을 학습시키는 데 유리하다.", "RAG는 지연 시간(Latency)이 파인튜닝보다 항상 짧다.", "파인튜닝을 하면 실시간 최신 뉴스 정보를 바로 반영하기 쉽다."],
-    "answer": "파인튜닝은 모델에게 특정 말투나 형식을 학습시키는 데 유리하다.",
-    "why": "파인튜닝은 모델의 내부 가중치를 변경하여 근본적인 답변 스타일이나 도메인 특화 지식을 내재화하는 데 적합합니다.",
-    "hint": "머릿속에 암기하는 것과 책을 찾아보는 것의 차이를 생각해보세요."
-})
-
-# 2. Learning Types
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "6003",
-    "question": "'질문-답변' 쌍으로 이루어진 데이터셋을 사용하여 모델에게 직접적인 정답을 가르치는 학습 방식은?",
-    "options": ["SFT (Supervised Fine-Tuning)", "RLHF", "Self-Supervised Learning", "Pre-training", "Transfer Learning"],
-    "answer": "SFT (Supervised Fine-Tuning)",
-    "why": "SFT는 지도 학습(Supervised Learning)의 일종으로, 인간이 정해준 모범 답안을 모델이 따라 하도록 학습시키는 단계입니다.",
-    "hint": "지도 학습을 뜻하는 영어 약자가 포함됩니다."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "hard", "id": "6004",
-    "question": "모델의 답변에 대해 사람이 선호도 점수를 매기고, 이를 바탕으로 더 좋은 답변을 하도록 유도하는 강화 학습 기반 기법은?",
-    "options": ["SFT", "LoRA", "RLHF (Reinforcement Learning from Human Feedback)", "Prompt Tuning", "Data Augmentation"],
-    "answer": "RLHF (Reinforcement Learning from Human Feedback)",
-    "why": "RLHF는 인간의 피드백을 보상 모델(Reward Model)로 변환하여 LLM을 인간의 가치관이나 선호도에 정렬(Alignment)시키는 기법입니다.",
-    "hint": "인간의 피드백으로부터 배우는 강화 학습입니다."
-})
-
-# 3. PEFT & LoRA
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "6005",
-    "question": "거대 언어 모델의 전체 파라미터를 다 학습시키지 않고, 일부만 효율적으로 학습시키는 기술을 통칭하는 용어는?",
-    "options": ["Full Fine-Tuning", "PEFT (Parameter-Efficient Fine-Tuning)", "Weight Decay", "Hyperparameter Tuning", "Batch Normalization"],
-    "answer": "PEFT (Parameter-Efficient Fine-Tuning)",
-    "why": "PEFT는 수십억 개의 파라미터를 가진 모델을 적은 자원으로도 충분히 미세 조정할 수 있게 해주는 효율적 학습 기법들의 집합입니다.",
-    "hint": "파라미터 효율적 미세 조정의 약자입니다."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "hard", "id": "6006",
-    "question": "PEFT의 대표적인 기법으로, 본래 모델의 가중치는 고정하고 작은 크기의 행렬(Adapter)만 학습시켜 메모리 사용량을 획기적으로 줄이는 방식은?",
-    "options": ["BERT", "LoRA (Low-Rank Adaptation)", "GPT", "ResNet", "Attention"],
-    "answer": "LoRA (Low-Rank Adaptation)",
-    "why": "LoRA는 저차원 행렬 분해 원리를 이용하여 아주 적은 수의 추가 파라미터만 학습시켜도 전체 모델 학습과 유사한 효과를 냅니다.",
-    "hint": "어댑터(Adapter)를 사용하는 효율적 기법의 이름입니다."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "6007",
-    "question": "LoRA 학습의 주요 장점으로 보기 어려운 것은?",
-    "options": ["전체 모델 학습에 비해 GPU 메모리 사용량이 매우 적다.", "학습 속도가 빠르다.", "기존 모델의 가중치를 완전히 덮어쓰므로 원본 모델이 파괴된다.", "학습된 가중치(Adapter)만 따로 저장하면 파일 크기가 작다.", "일반 소비자용 그래픽카드로도 대형 모델 학습이 가능하다."],
-    "answer": "기존 모델의 가중치를 완전히 덮어쓰므로 원본 모델이 파괴된다.",
-    "why": "LoRA는 원본 가중치를 고정(Freeze)하고 별도의 작은 행렬을 더해주거나 합치는 방식이므로 원본 모델을 유지할 수 있습니다.",
-    "hint": "원본은 그대로 두고 옆에 작은 조각(어댑터)을 붙이는 방식입니다."
-})
-
-# 4. Training Process
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "6008",
-    "question": "파인튜닝 데이터셋 준비 시 주로 사용되는 파일 형식은?",
-    "options": ["MP3", "CSV", "JSON (또는 JSONL)", "EXE", "PPTX"],
-    "answer": "JSON (또는 JSONL)",
-    "why": "구조화된 텍스트 데이터를 처리하기 위해 '질문'과 '응답' 쌍을 담기 용이한 JSON 형식이 가장 널리 쓰입니다.",
-    "hint": "키와 값의 쌍으로 이루어진 텍스트 포맷입니다."
-})
-
-# Systematically Adding more unique questions to reach 100 MCQs
-topics_ft = [
-    ("데이터 준비", ["Instruction 데이터셋은 무엇을 할지 명령한다.", "Output 데이터셋은 모델이 내놓을 모범 답안이다.", "데이터 품질이 낮으면 모델 성능이 오히려 떨어진다.", "중복된 데이터는 학습 편향을 일으킬 수 있다.", "데이터 크기가 작아도 고품질이면 효과가 크다."]),
-    ("Full Fine-Tuning", ["모든 가중치를 업데이트하는 가장 원시적인 방식이다.", "계산 비용이 매우 높다.", "파라미터가 적은 소형 모델에 유리하다.", "PEFT보다 더 정밀한 튜닝이 가능할 때가 있다.", "Catastrophic Forgetting(망각)이 발생할 위험이 높다."]),
-    ("PEFT 종류", ["LoRA 외에도 Prefix Tuning이 있다.", "Prompt Tuning은 입력 앞에 가상 토큰을 붙인다.", "Adapter Tuning은 레이어 사이에 작은 층을 끼워넣는다.", "QLoRA는 양자화된 LoRA로 메모리를 더 아낀다.", "본래 모델 가중치를 얼리는(Freeze) 것이 공통점이다."]),
-    ("RLHF 3단계", ["1단계는 SFT를 통해 기본기를 쌓는다.", "2단계는 답변간 순위를 매겨 리워드 모델을 만든다.", "3단계는 강화학습(PPO 등)으로 최적화한다.", "윤리적 지침을 따르도록 정렬하는 데 필수적이다.", "GPT-3.5와 GPT-4의 성능 차이의 핵심 기법이다."]),
-    ("학습 환경", ["HuggingFace Accelerate 라이브러리를 사용한다.", "DeepSpeed 등으로 다중 GPU 학습을 가속한다.", "Learning Rate 스케줄러가 안정적 학습을 돕는다.", "WandB 등을 통해 학습 로그를 모니터링한다.", "체크포인트(Checkpoint)를 수시로 저장해두어야 한다."]),
-    ("검증과 평가", ["Perplexity는 다음 단어 예측의 불확실성을 측정한다.", "BLEU/ROUGE 스코어는 텍스트 유사도를 점수화한다.", "인간에 의한 평가(Human Evals)가 여전히 가장 정확하다.", "벤치마크 데이터셋(MMLU 등)을 통해 객관적으로 평가한다.", "Overfitting(과적합) 여부를 검증 세트로 확인한다."]),
-    ("도메인 특화", ["의료, 법률 등 전문 지식 주입이 주 목적이다.", "기업 내부 보고서 작성 스타일을 익히게 한다.", "특정 프로그래밍 언어의 코딩 규칙을 학습시킨다.", "고객 상담 챗봇의 친절한 말투를 내재화한다.", "사내 용어와 시스템 구조를 이해하도록 만든다."]),
-    ("망각 현상", ["기존 지식을 잊어버리는 현상을 Catastrophic Forgetting이라 한다.", "파인튜닝 시 일반 상식이 손실될 수 있다.", "이를 막기 위해 원본 데이터를 일부 섞어서 학습하기도 한다.", "LoRA는 이 현상을 억제하는 데 도움을 준다.", "모든 모델 학습에서 주의해야 할 부작용이다."]),
-    ("양자화(Quantization)", ["가중치를 낮은 비트(예: 4비트)로 줄여 저장한다.", "저장 공간과 연산 메모리를 아낄 수 있다.", "성능은 약간 하락하지만 효율은 극대화된다.", "QLoRA는 이 기법을 파인튜닝에 접목한 것이다.", "GPU의 성능 한계를 극복하기 위한 필수 기술이다."]),
-    ("실전 팁", ["배치 사이즈(Batch Size)는 GPU 메모리 사정에 맞춘다.", "에포크(Epoch)가 너무 많으면 과적합된다.", "검증 손실(Validation Loss)이 튀면 학습을 중단한다.", "시드(Seed)를 고정하여 결과 재현성을 확보한다.", "가장 작은 모델로 먼저 실험해보는 것을 권장한다."])
+# [1-15] Core Fine-Tuning Concepts
+q1_15 = [
+    ("이미 방대한 데이터를 학습한 '사전 학습 모델(Pre-trained Model)'에 특정 도메인의 데이터를 추가 학습시켜 전문가로 만드는 과정은?", ["Tokenizing", "Fine-Tuning", "Prompt Engineering", "Filtering", "Quantization"], "Fine-Tuning", "파인튜닝은 일반 지식을 가진 모델을 특정 목적이나 스타일에 맞게 미세 조정하는 작업입니다.", "미세 조정", "6001"),
+    ("파인튜닝과 RAG의 차이점에 대한 설명으로 올바른 것은?", ["파인튜닝은 '오픈북 시험', RAG는 '지식 암기'와 같다.", "RAG는 모델 내부의 가중치를 직접 수정한다.", "파인튜닝은 모델에게 특정 말투나 형식을 내재화시키는 데 유리하다.", "RAG는 지연 시간(Latency)이 파인튜닝보다 항상 짧다.", "파인튜닝을 하면 실시간 최신 뉴스 정보를 바로 반영하기 쉽다."], "파인튜닝은 모델에게 특정 말투나 형식을 내재화시키는 데 유리하다.", "파인튜닝은 지식을 모델의 신경망 가중치에 직접 새겨넣어 말투와 도메인 지식을 체화합니다.", "지식 내재화 vs 외부 검색", "6002"),
+    ("'질문-답변' 쌍으로 이루어진 데이터셋을 사용하여 모델에게 직접적인 정답을 가르치는 학습 방식은?", ["SFT (Supervised Fine-Tuning)", "RLHF", "Self-Supervised Learning", "Pre-training", "Transfer Learning"], "SFT (Supervised Fine-Tuning)", "SFT는 지도 학습(Supervised Learning)의 일종으로, 인간이 정해준 모범 답안을 따라 하도록 학습시키는 기초 단계입니다.", "지도 학습 튜닝", "6003"),
+    ("모델의 답변에 대해 사람이 선호도 점수를 매기고, 이를 바탕으로 더 좋은 답변을 하도록 유도하는 강화 학습 기법은?", ["SFT", "LoRA", "RLHF (Reinforcement Learning from Human Feedback)", "Prompt Tuning", "Data Augmentation"], "RLHF (Reinforcement Learning from Human Feedback)", "인간의 가치관이나 선호도에 모델의 출력 성향을 정렬(Alignment)시키는 고급 기법입니다.", "인간 피드백 강화학습", "6004"),
+    ("거대 언어 모델의 전체 파라미터를 다 학습시키지 않고, 일부만 효율적으로 학습시키는 기술을 통칭하는 용어는?", ["Full Fine-Tuning", "PEFT (Parameter-Efficient Fine-Tuning)", "Weight Decay", "Hyperparameter Tuning", "Batch Normalization"], "PEFT (Parameter-Efficient Fine-Tuning)", "수십억 개의 파라미터를 가진 모델을 적은 자원으로도 충분히 미세 조정하기 위한 효율적 학습 기법군입니다.", "파라미터 효율적 튜닝", "6005"),
+    ("PEFT의 대표적인 기법으로, 본래 모델의 가중치는 고정하고 작은 크기의 행렬(Adapter)만 학습시켜 메모리 사용량을 획기적으로 줄이는 방식은?", ["BERT", "LoRA (Low-Rank Adaptation)", "GPT", "ResNet", "Attention"], "LoRA (Low-Rank Adaptation)", "저차원 행렬 분해 원리를 이용해 원본 가중치 옆에 작은 학습 가능 행렬을 덧붙이는 방식입니다.", "어댑터 기법", "6006"),
+    ("LoRA 학습의 주요 장점으로 보기 어려운 것은?", ["전체 모델 학습에 비해 GPU 메모리 사용량이 매우 적다.", "학습 속도가 빠르다.", "기존 모델의 가중치를 완전히 덮어쓰므로 원본 모델이 파괴된다.", "학습된 가중치(Adapter)만 따로 저장하면 파일 크기가 작다.", "일반 소비자용 그래픽카드로도 대형 모델 학습이 가능하다."], "기존 모델의 가중치를 완전히 덮어쓰므로 원본 모델이 파괴된다.", "LoRA는 원본 가중치를 얼리고(Freeze) 별도의 행렬만 학습하므로 원본을 온전하게 보존할 수 있습니다.", "원본 보존", "6007"),
+    ("파인튜닝 데이터셋 준비 시 주로 사용되는 파일 형식은?", ["MP3", "CSV", "JSON (또는 JSONL)", "EXE", "PPTX"], "JSON (또는 JSONL)", "구조화된 텍스트 데이터를 처리하기 위해 '지시-응답' 쌍을 담기에 최적인 포맷입니다.", "데이터셋 형식", "6008"),
+    ("파인튜닝 데이터 조각 중, 모델에게 어떤 작업을 할지 알려주는 핵심 키는?", ["instruction", "output", "input", "system", "context"], "instruction", "사용자의 의도를 모델에게 정의해주는 명령어 부문입니다.", "지시문 키", "6009"),
+    ("모델 학습 시 모든 파라미터를 처음부터 끝까지 다 수정하는 전통적인 방식은?", ["PEFT", "Full Fine-Tuning", "Adapter Tuning", "Prompt Tuning", "Soft Tuning"], "Full Fine-Tuning", "성능은 최대화될 수 있으나 엄청난 컴퓨팅 자원과 시간이 들어갑니다.", "전체 튜닝", "6010"),
+    ("학습 과정에서 모델이 이전 지식을 잊어버리고 새로운 데이터에만 매몰되는 현상을 무엇이라 하는가?", ["Hallucination", "Catastrophic Forgetting (파괴적 망각)", "Overfitting", "Gradient Vanishing", "Underfitting"], "Catastrophic Forgetting (파괴적 망각)", "새로운 지식을 배우면서 기존에 알고 있던 일반 상식 등을 잃어버리는 현상입니다.", "망각 현상", "6011"),
+    ("RLHF 과정에서 사람의 선호도를 학습하여 점수를 주는 역할을 하는 모델은?", ["Policy Model", "Reward Model (보상 모델)", "Critic Model", "Reference Model", "Draft Model"], "Reward Model (보상 모델)", "어떤 답변이 더 좋은지 점수(Scalar)를 매겨 주 모델의 학습 방향을 결정합니다.", "보상 시스템", "6012"),
+    ("데이터셋의 양은 적지만 품질이 매우 높을 때, 이를 학습시켜 얻는 성능 향상 효과를 무엇이라 하는가?", ["LIMA effect", "Scaling Law", "Attention effect", "Batch effect", "Transfer effect"], "LIMA effect", "고품질 데이터 1,000개만으로도 훌륭한 모델을 만들 수 있다는 연구(LIMA)에서 유래했습니다.", "적은 데이터의 기적", "6013"),
+    ("학습 도중 모델의 상태(가중치)를 특정 시점마다 파일로 저장한 것을 무엇이라 하는가?", ["Checkpoint", "Backup", "Log", "Snapshot", "Savefile"], "Checkpoint", "학습 중단 시 재개하거나, 성능이 가장 좋았던 시점을 골라내기 위해 사용합니다.", "중간 저장", "6014"),
+    ("파인튜닝을 위해 모델을 불러올 때 메모리를 아끼기 위해 4비트나 8비트로 불러오는 기술은?", ["Quantization (양자화)", "Pruning", "Normalizing", "Embedding", "Flattening"], "Quantization (양자화)", "수치 정밀도를 낮추어 GPU 메모리 점유율을 줄이는 핵심 기술입니다.", "메모리 절약", "6015")
 ]
 
-id_counter = 6009
-for topic, facts in topics_ft:
-    for fact in facts:
-        questions.append({
-            "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": str(id_counter),
-            "question": f"{topic}의 핵심 지식으로 올바른 지문은? (튜닝-{id_counter-6008})",
-            "options": [fact, "파인튜닝의 정의를 완전히 거꾸로 설명한 보기", "학습 데이터를 컴퓨터 바이러스라고 주장하는 억지", "지구 평면설과 같은 엉뚱한 과학 상식 섞기", "클래스 이름이 잘못된 파이썬 코드 오류", "다른 챕터(Pandas 등) 내용과 뒤섞인 중복 오답"],
-            "answer": fact,
-            "why": f"LLM 엔지니어로서 {topic}의 '{fact}' 개념을 이해하는 것은 모델 성능 최적화의 필수 역량입니다.",
-            "hint": topic
-        })
-        id_counter += 1
+for q, o, a, w, h, i in q1_15:
+    questions.append({"chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": i, "question": q, "options": o, "answer": a, "why": w, "hint": h})
 
-# 6059 ~ 6100 (Remaining 42 MCQs)
-for i in range(6059, 6101):
+# [16-60] Fine-Tuning Details (45 items)
+ft_topics = [
+    ("Batch Size", "한 번의 학습 스텝에서 동시에 처리하는 데이터의 개수입니다.", "6016"),
+    ("Learning Rate", "가중치를 한 번에 얼마나 세게 업데이트할지 결정하는 비율입니다.", "6017"),
+    ("Epochs", "전체 데이터셋을 모델이 몇 번 반복해서 훑을지를 나타냅니다.", "6018"),
+    ("Step", "가중치가 한 번 업데이트되는 단위(Batch 하나 처리 완료)입니다.", "6019"),
+    ("Optimizer (AdamW)", "LLM 파인튜닝 시 가중치를 가장 효율적으로 업데이트하는 알고리즘입니다.", "6020"),
+    ("Loss Function", "모델의 예측값과 실제 정답 사이의 차이를 계산하는 함수입니다.", "6021"),
+    ("Gradient Accumulation", "충분한 메모리가 없을 때 여러 번의 작은 배치를 모아 한 번에 업데이트하는 기법입니다.", "6022"),
+    ("Weight Decay", "가중치가 너무 커지지 않도록 패널티를 주어 과적합을 방지합니다.", "6023"),
+    ("Warmup Steps", "학습 초기에는 러닝 레이트를 아주 낮게 시작하여 점차 높이는 구간입니다.", "6024"),
+    ("LoRA r (Rank)", "LoRA 행렬의 너비를 나타내며 높을수록 성능이 좋으나 메모리를 더 씁니다.", "6025"),
+    ("LoRA alpha", "LoRA 가중치가 모델에 얼마나 강하게 반영될지 결정하는 스케일링 값입니다.", "6026"),
+    ("Target Modules", "LoRA를 적용할 레이어(예: q_proj, v_proj)를 지정하는 것입니다.", "6027"),
+    ("Dropout (LoRA)", "학습 시 일부 어댑터 파라미터를 무작위로 꺼서 과적합을 막습니다.", "6028"),
+    ("PPO (Proximal Policy Optimization)", "RLHF 강화학습 단계에서 흔히 사용되는 최적화 알고리즘입니다.", "6029"),
+    ("DPO (Direct Preference Optimization)", "복잡한 보상 모델 없이 직접 선호 데이터를 학습하는 최신 기법입니다.", "6030"),
+    ("Instruction Dataset", "AI에게 명령을 내리고 답변을 받는 구조의 데이터셋입니다.", "6031"),
+    ("Conversational Dataset", "멀티 턴(Multi-turn) 대화 기록을 포함하는 데이터셋입니다.", "6032"),
+    ("Token Padding", "배치 처리를 위해 문장의 길이를 똑같이 맞추는 작업입니다.", "6033"),
+    ("Attention Mask", "패딩된 부분 등 무시해야 할 단어를 모델에게 알려주는 마스크입니다.", "6034"),
+    ("Data Augmentation", "학습 데이터를 인위적으로 변형하거나 늘려 다양성을 확보합니다.", "6035"),
+    ("Validation Loss", "학습 중 검증 데이터를 통해 모델이 잘 배우고 있는지 확인하는 지표입니다.", "6036"),
+    ("Overfitting", "학습 데이터는 완벽히 외웠지만 새로운 질문에는 답하지 못하는 상태입니다.", "6037"),
+    ("Underfitting", "학습량이 부족하여 데이터의 패턴조차 제대로 익히지 못한 상태입니다.", "6038"),
+    ("HuggingFace TRL", "Transformer Reinforcement Learning의 약자로 RLHF용 라이브러리입니다.", "6039"),
+    ("DeepSpeed", "Microsoft가 만든 모델 학습 가속화 및 분산 처리 라이브러리입니다.", "6040"),
+    ("Bitsandbytes", "양자화(8-bit, 4-bit)를 쉽게 구현할 수 있게 돕는 라이브러리입니다.", "6041"),
+    ("PEFT Library", "허깅페이스에서 제공하는 효율적 미세조정 통합 라이브러리 이름입니다.", "6042"),
+    ("Adapter Layers", "기존 모델의 레이어 사이에 삽입되는 작은 학습용 층입니다.", "6043"),
+    ("Soft Prompt", "검색 가능한 프롬프트가 아닌, 수치 벡터 형태로 학습되는 프롬프트입니다.", "6044"),
+    ("Prefix Tuning", "레이어의 키(Key), 값(Value) 앞에 학습 가능한 프리픽스를 붙이는 기법입니다.", "6045"),
+    ("QLoRA", "4비트 양자화와 LoRA를 결합하여 극강의 메모리 효율을 내는 기법입니다.", "6046"),
+    ("NF4 (Normal Float 4)", "QLoRA에서 사용하는 데이터 분포에 최적화된 4비트 데이터 타입입니다.", "6047"),
+    ("Model Merging", "LoRA 어댑터 값을 원본 가중치에 물리적으로 합치는 과정입니다.", "6048"),
+    ("Inference Speed (LoRA)", "머징을 완료하면 원본 모델과 동일한 속도로 추론이 가능해집니다.", "6049"),
+    ("Weight Pre-training", "특정 언어(예: 한국어)를 더 잘하게 하려고 텍스트만 들이부어 학습하는 단계입니다.", "6050"),
+    ("Alignment", "AI를 인간의 의도와 도덕적 가이드라인에 맞추는 정렬 작업입니다.", "6051"),
+    ("Hallucination Reduction", "파인튜닝을 통해 특정 사실 관계에 대한 거짓 답변을 줄일 수 있습니다.", "6052"),
+    ("Tone & Style", "딱딱한 말투의 모델을 부드러운 말투로 바꾸는 것은 파인튜닝의 주 용도입니다.", "6053"),
+    ("Domain Expertise", "의학, 법률 등 전문 용어를 자연스럽게 구사하게 만드는 과정입니다.", "6054"),
+    ("Evaluation Benchmark", "학습 후 모델의 지능이 떨어지지 않았는지 테스트하는 기준점입니다.", "6055"),
+    ("Catastrophic Forgetting 방지", "원본 데이터를 학습 시 일부 섞어주는(Mix) 전략을 사용합니다.", "6056"),
+    ("Compute Budget", "학습에 쓸 수 있는 전체 GPU 자원과 비용 한도를 뜻합니다.", "6057"),
+    ("Multi-GPU Training", "모델이 너무 커서 여러 개의 GPU로 나누어 학습을 진행하는 것입니다.", "6058"),
+    ("Parameter Scaling", "모델 크기가 커질수록 파인튜닝의 난이도와 효과가 달라지는 현상입니다.", "6059"),
+    ("Continuous Learning", "학습이 끝난 모델에 나중에 추가 데이터를 또 학습시키는 방식입니다.", "6060")
+]
+
+for title, fact, i in ft_topics:
     questions.append({
-        "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": str(i),
-        "question": f"실무 파인튜닝 의사결정 시나리오 {i-6058}: 올바른 기술적 선택을 하세요.",
-        "options": [
-            f"선택 {i}: 학습 효율과 모델 성능을 모두 고려한 최적 필승 답변 (엔지니어-{i})",
-            "비용이 너무 많이 들어 실무상 불가능한 제안",
-            "모델의 지능을 오히려 낮추는 최악의 학습 설정",
-            "보안 라이선스를 위반하는 무분별한 모델 사용",
-            "데이터 형식이 맞지 않아 에러가 발생하는 프로세스"
-        ],
-        "answer": f"선택 {i}: 학습 효율과 모델 성능을 모두 고려한 최적 필승 답변 (엔지니어-{i})",
-        "why": f"다양한 실무 요구사항에 대응하기 위해 {i}번째 전략적 판단 능력을 검증합니다.",
-        "hint": "파인튜닝 최적화 전략",
+        "chapter_name": chapter_name, "type": "객관식", "difficulty": "hard", "id": i,
+        "question": f"LLM 파인튜닝의 {title} 요소에 대한 정확한 설명은?",
+        "options": [fact, "성능을 급격히 떨어뜨리는 잘못된 설정", "하드웨어 고장을 유발하는 위험한 지문", "파인튜닝이 아닌 생성 관련 용어 설명", "데이터를 삭제하는 수동 작업 내용"],
+        "answer": fact,
+        "why": f"{title} 지식: {fact}",
+        "hint": title
+    })
+
+# [61-100] Practical Scenarios & Training Workflow (40 items)
+scenarios = [
+    ("고객 상담 챗봇 스타일 가이드", "기업의 친절함 규정을 데이터셋의 output에 반영하여 학습시킵니다.", "6061"),
+    ("사내 전문 용어 학습", "약어가 많은 사내 위키 데이터를 지시문 형태로 변환하여 주입합니다.", "6062"),
+    ("코드 생성 최적화", "개발팀의 코딩 컨벤션(Style Guide)이 적용된 모범 코드로 학습합니다.", "6063"),
+    ("저예산 하드웨어 학습", "RTX 3090/4090 같은 소비자용 GPU에서는 QLoRA가 가장 현실적인 선택입니다.", "6064"),
+    ("개인정보 보호 정렬", "민감한 질문에는 답변을 거부하도록 하는 RLHF 데이터를 보강합니다.", "6065"),
+    ("학습 데이터 오여 감지", "유사한 데이터가 너무 많으면 특정 답변만 반복(Overfitting)될 수 있으니 정제합니다.", "6066"),
+    ("모델 버전 관리", "SFT 완료 모델과 RLHF 완료 모델을 각각 구분하여 저장 및 배포합니다.", "6067"),
+    ("러닝 레이트 탐색", "처음에는 작은 범위에서 여러 번 실험하여 최적의 학습률을 찾아냅니다.", "6068"),
+    ("학습 로그 모니터링", "WandB나 Tensorboard를 통해 손실값(Loss)이 줄어드는지 실시간 확인합니다.", "6069"),
+    ("조기 종료 (Early Stopping)", "검증 손실이 더 이상 줄어들지 않으면 학습을 중단하여 자원을 아낍니다.", "6070"),
+    ("모델 업로드 (HuggingFace)", "학습된 가중치와 구성 파일(README 등)을 허깅페이스 허브에 공유합니다.", "6071"),
+    ("추론 서빙 최적화", "VLLM이나 TGI와 같은 엔진을 써서 파인튜닝 모델의 응답 속도를 높입니다.", "6072"),
+    ("데이터 밸런스", "각 카테고리별 데이터의 양이 비슷하도록 조정하여 편향을 방지합니다.", "6073"),
+    ("모델 성능 역전", "파인튜닝 후 일반 상식 벤치마크 점수가 너무 떨어진다면 학습량을 줄여야 합니다.", "6074"),
+    ("양자화 모델 학습", "QLoRA를 쓰더라도 연산 자체는 높은 정밀도를 유지하도록 설정합니다.", "6075"),
+    ("합성 데이터 활용", "데이터가 부족할 때 GPT-4로 만든 고품질 데이터를 학습에 섞어 사용합니다.", "6076"),
+    ("데이터 포맷 변환", "Raw 텍스트를 Alpaca나 ShareGPT 형식의 JSON으로 전처리합니다.", "6077"),
+    ("다국어 모델 튜닝", "한국어 전용 데이터로 튜닝하면 영어 능력이 일부 감소할 수 있음을 인지합니다.", "6078"),
+    ("배치 사이즈와 VRAM", "메모리 부족(OOM) 에러가 나면 배치 사이즈를 줄이거나 Accumulation을 씁니다.", "6079"),
+    ("하드웨어 사양 체크", "A100이나 H100 같은 전문 GPU가 필요한 규모인지 사전에 계산합니다.", "6080"),
+    ("파라미터 고정 (Freezing)", "원본 가중치를 얼리는 것이 임베딩 레이어까지 포함하는지 확인합니다.", "6081"),
+    ("모델 라이선스 확인", "상업적 이용이 가능한 베이스 모델(예: Llama-3-Apache-2.0)을 선택합니다.", "6082"),
+    ("토크나이저 확장", "필요하다면 새로운 사내 용어를 토크나이저에 추가하고 임베딩을 다시 맞춥니다.", "6083"),
+    ("모델 검증 루프", "학습이 끝날 때마다 정해진 10개의 테스트 질문을 던져 답변을 검수합니다.", "6084"),
+    ("데이터 증강 (Back-translation)", "영어 데이터를 한국어로 번역했다 다시 영어로 바꾸어 문장수를 늘립니다.", "6085"),
+    ("모델 서빙 인프라", "추론 시 어댑터만 동적으로 갈아 끼우며 여러 사용자에게 맞춤 지원을 합니다.", "6086"),
+    ("데이터 익명화", "학습 데이터에서 이름, 연락처 등을 [MASK]로 변환하여 개인정보를 보호합니다.", "6087"),
+    ("지식 그래프 연동 튜닝", "정해진 지식 체계 안에서만 답하도록 구조화된 텍스트로 학습시킵니다.", "6088"),
+    ("모델 정량 평가", "학습 전후의 Perplexity 변화를 측정하여 학습 효과를 수치화합니다.", "6089"),
+    ("모델 정성 평가", "실제 업무 담당자가 답변을 읽어보고 실무 사용 가능성을 판단합니다.", "6090"),
+    ("학습 시간 예측", "데이터셋 크기와 하드웨어 속도를 곱해 전체 소요 시간을 미리 뽑아봅니다.", "6091"),
+    ("모델 보안 테스트", "파인튜닝된 모델이 유해한 질문에 필터링을 유지하는지 레드팀 테스트를 수행합니다.", "6092"),
+    ("전처리 라이브러리 (Datasets)", "HuggingFace Datasets 라이브러리로 대용량 텍스트를 효율적으로 로드합니다.", "6093"),
+    ("모델 체크포인트 관리", "VRAM 부족 시 체크포인트 저장을 외부 SSD로 경로를 지정합니다.", "6094"),
+    ("러닝 레이트 스케줄러", "Cosine Annealing 등을 써서 학습이 진행됨에 따라 속도를 미세하게 조정합니다.", "6095"),
+    ("멀티 태스크 튜닝", "요약, 분류, 번역을 한 모델이 다 잘하도록 데이터를 섞어서 학습합니다.", "6096"),
+    ("사용자 기반 정렬", "특정 연령대나 직업군의 선호 데이터로 모델을 튜닝합니다.", "6097"),
+    ("도메인 적응 학습", "일반 모델을 금융 분야에 특화시키기 위해 금융 보고서를 대량 주입합니다.", "6098"),
+    ("지침 준수 강화", "반드시 특정 포맷(예: XML)으로만 답하도록 데이터를 강제합니다.", "6099"),
+    ("최종 모델 패키징", "서빙하기 좋게 SafeTensors 포맷으로 가중치를 저장하여 마무리합니다.", "6100")
+]
+
+for title, fact, i in scenarios:
+    questions.append({
+        "chapter_name": chapter_name, "type": "객관식", "difficulty": "hard", "id": i,
+        "question": f"실문 파인튜닝 워크플로우 중 {title} 단계에 대한 가장 올바른 지식은?",
+        "options": [fact, "무의미한 시간 낭비인 작업", "데이터를 모두 삭제하는 위험한 행동", "성능과 무관한 하드웨어 조작", "다른 도메인(이미지 인식)의 기술"],
+        "answer": fact,
+        "why": f"{title} 핵심: {fact}",
+        "hint": title
     })
 
 # --- 20 Code Completion Questions ---
-# 6101 ~ 6120
 cc_data_ch6 = [
     ("효율적 튜닝", "____: 전체가 아닌 일부 파라미터만 학습함.", "PEFT", "Parameter-Efficient Fine-Tuning의 약자입니다."),
     ("LoRA 기법", "____: 저차원 행렬 어댑터를 사용하는 PEFT의 대표 기법.", "LoRA", "Low-Rank Adaptation의 약자입니다."),

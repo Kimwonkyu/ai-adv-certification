@@ -5,162 +5,169 @@ questions = []
 
 # --- 100 MCQs ---
 
-# 1. RAG Concepts
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "easy", "id": "5001",
-    "question": "LLM이 학습 데이터에 없는 최신 정보나 내부 문서를 바탕으로 답변하게 하여 '환각(Hallucination)' 현상을 줄이는 기술은?",
-    "options": ["Fine-tuning", "RAG (Retrieval-Augmented Generation)", "Reinforcement Learning", "Zero-shot Learning", "Quantization"],
-    "answer": "RAG (Retrieval-Augmented Generation)",
-    "why": "RAG는 외부 지식 베이스에서 관련 정보를 검색(Retrieval)하여 프롬프트에 추가(Augmented)한 후 답변을 생성(Generation)하는 기술입니다.",
-    "hint": "검색 증강 생성의 약자입니다."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "5002",
-    "question": "RAG 파이프라인의 일반적인 순차적 단계로 올바른 것은?",
-    "options": ["수집 → 생성 → 분할 → 검새 → 임베딩", "수집 → 분할 → 임베딩 → 검색 → 생성", "검색 → 수집 → 분할 → 생성 → 임베딩", "임베딩 → 분할 → 수집 → 생성 → 검색", "분할 → 생성 → 임베딩 → 수집 → 검색"],
-    "answer": "수집 → 분할 → 임베딩 → 검색 → 생성",
-    "why": "먼저 데이터를 가져오고(Ingestion), 작은 조각으로 나누어(Splitting), 벡터화한 뒤(Embedding), 관련 내용을 찾아(Retrieval), 최종 답변을 만듭니다(Generation).",
-    "hint": "데이터를 준비하는 과정부터 답변을 내놓는 순서를 생각해보세요."
-})
-
-# 2. Chunking & Vector DB
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "5003",
-    "question": "문서를 작은 조각(Chunk)으로 자를 때, 문맥의 끊김을 방지하기 위해 권장되는 설정은?",
-    "options": ["최대한 크게 자르기", "중복(Overlap) 구간 설정", "모든 공백 제거", "그림만 따로 저장", "무작위로 자르기"],
-    "answer": "중복(Overlap) 구간 설정",
-    "why": "청크 사이에 일부 겹치는 부분(Overlap)을 두면, 특정 단어가 잘려서 의미가 훼손되는 것을 막고 문맥을 보존할 수 있습니다.",
-    "hint": "앞 조각의 끝부분과 뒷 조각의 시작부분을 겹치게 합니다."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "5004",
-    "question": "텍스트를 벡터로 변환하여 저장하고, 유사도 기반의 고속 검색을 지원하는 데이터베이스는?",
-    "options": ["관계형 DB (MySQL)", "그래프 DB (Neo4j)", "Vector DB (Chroma, FAISS)", "시계열 DB (InfluxDB)", "문서 DB (MongoDB)"],
-    "answer": "Vector DB (Chroma, FAISS)",
-    "why": "벡터 데이터베이스는 고차원 벡터 간의 거리(유사도)를 계산하여 가장 관련 있는 데이터를 빠르게 찾아주는 데 특화되어 있습니다.",
-    "hint": "임베딩된 숫자 리스트를 저장하는 곳입니다."
-})
-
-# 3. LangChain & LCEL
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "5005",
-    "question": "LangChain에서 여러 구성 요소를 체인(Chain)으로 묶어 실행할 때 사용하는 파이프(|) 연산자 기반의 문법 이름은?",
-    "options": ["LAMA", "LCEL (LangChain Expression Language)", "LCL", "L-Pipeline", "Chain-Logic"],
-    "answer": "LCEL (LangChain Expression Language)",
-    "why": "LCEL은 각 모듈을 파이프 연산자로 연결하여 가독성 높고 선언적인 코딩을 가능하게 하는 랭체인 전용 언어입니다.",
-    "hint": "교재의 3. LCEL 파트를 확인하세요."
-})
-
-# 4. Agent & ReAct
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "hard", "id": "5006",
-    "question": "LLM이 스스로 추론(Reasoning)하고 적절한 도구를 선택하여 행동(Acting)하는 자기 개선형 작업 처리 방식은?",
-    "options": ["Self-Attention", "ReAct 패턴", "Fine-Tuning", "Simple Prompting", "Model Merging"],
-    "answer": "ReAct 패턴",
-    "why": "ReAct는 모델이 사고 과정을 명시하고 그에 맞는 행동(도구 사용)을 반복하며 문제를 해결해 나가는 에이전트 설계 핵심 패턴입니다.",
-    "hint": "Reasoning + Acting의 합성어입니다."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "5007",
-    "question": "LLM 에이전트가 외부 세계와 소통하거나 부족한 능력을 보완하기 위해 사용하는 수단(웹 검색, 계산기 등)을 일컫는 말은?",
-    "options": ["Engine", "Tool", "Module", "Extension", "Driver"],
-    "answer": "Tool",
-    "why": "에이전트는 정의된 다양한 도구(Tool) 리스트 중에서 현재 상황에 필요한 것을 골라 호출합니다.",
-    "hint": "도구를 뜻하는 영어 단어입니다."
-})
-
-# 5. Embedding
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "5008",
-    "question": "텍스트의 '의미적 유사성'을 컴퓨터가 이해할 수 있는 고차원 숫자 리스트(벡터)로 변환하는 과정을 무엇이라 하는가?",
-    "options": ["Tokenizing", "Embedding", "Chunking", "Generating", "Compiling"],
-    "answer": "Embedding",
-    "why": "임베딩은 텍스트를 벡터 공간의 한 점으로 표현하여 유사한 의미를 가진 문장들이 서로 가깝게 위치하도록 만듭니다.",
-    "hint": "단어나 문장을 '심는다'는 의미의 영어입니다."
-})
-
-# Systematically Adding more unique questions to reach 100 MCQs
-topics_rag = [
-    ("청킹 전략", ["RecursiveCharacterTextSplitter는 문맥을 고려해 자른다.", "CharacterTextSplitter는 특정 글자 수로만 자른다.", "청크 사이즈가 너무 작으면 핵심 의미가 유실된다.", "청크 사이즈가 너무 크면 LLM의 토큰 제한에 걸린다.", "마크다운이나 코드 구조를 인식해 자르는 기능도 있다."]),
-    ("벡터 DB 심화", ["Chroma는 로컬 환경에서 간편하게 쓰기 좋다.", "FAISS는 메타에서 만든 고성능 벡터 라이브러리이다.", "Pinecone은 클라우드 기반의 완전 자동화 벡터 DB이다.", "유사도 계산에는 코사인 유사도와 유클리드 거리가 쓰인다.", "인덱싱(Indexing)을 통해 대량 데이터 검색 속도를 높인다."]),
-    ("RAG 성능 개선", ["멀티 쿼리(Multi-Query)는 질문을 여러 개로 변형해 검색한다.", "앙상블 리트리버는 여러 검색기의 결과를 합친다.", "하이브리드 검색은 키워드 검색과 벡터 검색을 병용한다.", "리랭킹(Re-ranking)은 결과 후보군을 다시 정밀하게 정렬한다.", "컨텍스트 압축으로 관련 없는 내용을 걷어낸다."]),
-    ("임베딩 모델", ["text-embedding-3-small은 OpenAI의 효율적인 모델이다.", "허깅페이스의 오픈 임베딩 모델들도 널리 쓰인다.", "임베딩 모델의 차원이 클수록 정보량이 많지만 느리다.", "문장뿐 아니라 이미지 임베딩도 가능하다 (CLIP).", "도메인 특화 데이터로 임베딩 모델을 학습시키기도 한다."]),
-    ("LangChain 컴포넌트", ["Document Loader는 다양한 파일 포맷을 읽어들인다.", "Text Splitter는 로드된 문서를 분할한다.", "VectorStore는 벡터 DB 인터페이스를 제공한다.", "ChatModel은 대화형 인터페이스를 담당한다.", "Output Parser는 응답을 정제된 형식으로 바꾼다."]),
-    ("LCEL 문법", ["invoke() 메서드로 체인을 실행한다.", "stream()으로 답변을 실시간 전달(Streaming) 받는다.", "batch()는 여러 입력을 한꺼번에 처리한다.", "Runnable 객체라는 추상 클래스를 기반으로 한다.", "설정이 선언적이라 디버깅과 확장이 쉽다."]),
-    ("에이전트 실무", ["AgentExecutor가 전체 에이전트 실행 루프를 관리한다.", "에이전트는 답변의 무한 루프에 빠질 위험이 있다.", "최대 실행 횟수(Max Iterations)를 지정해 안전을 확보한다.", "중간 사고 과정(Thought)을 로그로 남겨 추적한다.", "사용자 피드백을 루프 중간에 받을 수도 있다."]),
-    ("Hallucination 극복", ["출처(Source)를 반드시 명시하게 유도한다.", "참고 문서에 없는 내용은 모른다고 답하게 한다.", "Self-RAG는 생성된 답변의 정확성을 스스로 체크한다.", "신뢰성 높은 데이터 소스(검증된 문서)를 우선한다.", "프롬프트 내에 엄격한 제약 사항을 둔다."]),
-    ("RAG 아키텍처", ["Naive RAG는 가장 기본적인 Retrieval+Generation 구조이다.", "Advanced RAG는 전처리 및 후처리가 추가된 구조이다.", "Modular RAG는 각 모듈을 자유롭게 조합하는 구조이다.", "쿼리 확장(Query Expansion) 기법이 연구되고 있다.", "시각 정보를 포함한 Multimodal RAG로 발전 중이다."]),
-    ("에이전트 도구 설계", ["추론이 필요한 도구와 연산이 필요한 도구를 구분한다.", "도구 설명(Description)을 잘 적어야 모델이 올바르게 선택한다.", "API 인증키 등 보안 정보를 안전하게 관리해야 한다.", "도구 실행 결과의 형식을 미리 정해둔다.", "사용 빈도가 높은 도구 위주로 구성한다."])
+# [1-15] Core RAG & Agent Concepts
+q1_15 = [
+    ("RAG(Retrieval-Augmented Generation)의 가장 큰 도입 목적은?", ["모델의 파라미터를 실시간으로 업데이트하기 위해", "LLM의 할루시네이션을 줄이고 최신/외부 정보를 참조하기 위해", "문장 생성 속도를 10배 이상 빠르게 하기 위해", "모델의 용량을 줄여서 모바일에서 돌리기 위해", "인터넷 연결 없이 로컬에서만 동작하게 하기 위해"], "LLM의 할루시네이션을 줄이고 최신/외부 정보를 참조하기 위해", "RAG는 신뢰할 수 있는 외부 데이터를 검색하여 답변의 근거로 활용함으로써 오답을 최소화합니다.", "외부 데이터 검색", "5001"),
+    ("RAG 파이프라인 중, 데이터를 벡터 공간에 저장하기 위해 잘게 쪼개는 과정을 무엇이라 하는가?", ["Embedding", "Chunking (청킹)", "Retrieving", "Generating", "Indexing"], "Chunking (청킹)", "모델이 한 번에 읽을 수 있는 적절한 크기로 문서를 나누는 작업입니다.", "나누기", "5002"),
+    ("나눠진 텍스트 조각들(Chunks)을 수치 형태의 벡터로 변환하는 모델을 무엇이라 하는가?", ["LLM", "Embedding Model (임베딩 모델)", "Tokenizer", "Quantizer", "Encoder"], "Embedding Model (임베딩 모델)", "텍스트의 의미적 유사성을 계산할 수 있는 벡터로 변환합니다.", "수치 변환", "5003"),
+    ("변환된 벡터들을 저장하고, 유사도 기반의 고속 검색을 지원하는 데이터베이스는?", ["MySQL", "Redis", "Vector Database (벡터 DB)", "MongoDB", "Oracle"], "Vector Database (벡터 DB)", "고차원 데이터의 최근접 이웃(ANN) 검색에 특화되어 있습니다.", "벡터 저장소", "5004"),
+    ("사용자의 질문에 가장 유사한 문서 조각을 관련성 순서로 가져오는 단계를 무엇이라 하는가?", ["Ingestion", "Retrieval (검색)", "Augmentation", "Generation", "Filtering"], "Retrieval (검색)", "벡터 DB에서 질문과 가장 가까운 지식을 찾아내는 핵심 단계입니다.", "검색 단계", "5005"),
+    ("검색된 문서 조각들을 프롬프트에 포함시켜 답변을 생성하도록 유도하는 단계는?", ["Retrieval", "Augmentation (보강)", "Ingestion", "Pre-processing", "Evaluation"], "Augmentation (보강)", "검색 결과와 지시문을 합쳐 풍부한 문맥을 만드는 과정입니다.", "내용 더하기", "5006"),
+    ("LLM이 스스로 도구를 사용하거나 추론을 거쳐 문제를 해결하는 시스템을 무엇이라 하는가?", ["Vector DB", "Embedding", "Agent (에이전트)", "Chatbot", "Classifier"], "Agent (에이전트)", "주어진 목표를 달성하기 위해 자율적으로 행동 계획을 짜고 실행하는 주체입니다.", "자율 동작", "5007"),
+    ("에이전트가 생각하고 행동한 뒤 관찰하는 과정을 반복하는 대표적인 추론 패턴은?", ["RNN", "ReAct (Reasoning + Acting)", "CNN", "Transformer", "GAN"], "ReAct (Reasoning + Acting)", "사고(Thought), 행동(Action), 관찰(Observation)의 루프를 타며 문제를 풉니다.", "사고와 행동", "5008"),
+    ("에이전트가 외부 세계와 상호작용하기 위해 사용하는 기능(예: 검색, 계산기, API)들을 무엇이라 하는가?", ["Models", "Weights", "Tools (도구)", "Layers", "Datasets"], "Tools (도구)", "LangChain 등에서 에이전트가 호출 가능한 함수들을 정의한 것입니다.", "에이전트 도구", "5009"),
+    ("랭체인(LangChain)에서 선언적으로 체인을 연결하기 위해 사용하는 문법은?", ["LCEL (LangChain Expression Language)", "Python SDK", "API Gateway", "Rest API", "SQL"], "LCEL (LangChain Expression Language)", "파이프 연산자(|)를 사용하여 데이터의 흐름을 직관적으로 연결합니다.", "Chain 문법", "5010"),
+    ("RAG 시스템 성능 평가 시, 검색된 문서가 얼마나 질문과 관련이 있는지 측정하는 지표는?", ["Precision", "Recall", "Faithfulness", "Context Relevance", "Answer Relevance"], "Context Relevance", "검색 단계의 품질을 나타내며 질문과 문서의 부합도를 봅니다.", "검색 신뢰도", "5011"),
+    ("생성된 답변이 검색된 문서의 내용에만 근거하여 작성되었는지(할루시네이션 여부)를 평가하는 지표는?", ["Hit Rate", "Faithfulness (충실도)", "Latency", "Cost", "Efficiency"], "Faithfulness (충실도)", "모델이 지어내서 대답하지 않고 근거에 충실했는지를 검증합니다.", "근거 충실도", "5012"),
+    ("검색 성능을 높이기 위해 사용자 질문을 더 풍부하거나 명확하게 다시 쓰는 기술은?", ["Query Expansion (쿼리 확장)", "Stemming", "Stopword Removal", "Indexing", "Slicing"], "Query Expansion (쿼리 확장)", "비슷한 질문을 여러 개 만들거나 정보를 더해 검색 적중률을 높입니다.", "질문 다듬기", "5013"),
+    ("검색된 결과들 중 불필요한 것을 걸러내고 순위를 다시 매기는 과정을 무엇이라 하는가?", ["Embedding", "Re-ranking (리랭킹)", "Chunking", "Splitting", "Decoding"], "Re-ranking (리랭킹)", "단순 벡터 유사도 외의 정교한 모델로 결과의 순위(Top-K)를 최적화합니다.", "순위 조정", "5014"),
+    ("사용자의 의도(Intent)를 파악하여 RAG를 쓸지, 아니면 일반 대화를 할지 결정하는 에이전트는?", ["Retrieval Agent", "Router Agent (라우터 에이전트)", "Tool Agent", "Plan Agent", "Execute Agent"], "Router Agent (라우터 에이전트)", "입력값에 따라 적절한 파이프라인이나 경로로 배정하는 역할을 합니다.", "경로 배정", "5015")
 ]
 
-id_counter = 5009
-for topic, facts in topics_rag:
-    for fact in facts:
-        questions.append({
-            "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": str(id_counter),
-            "question": f"{topic}에 관한 설명으로 적절한 것은? (검색-{id_counter-5008})",
-            "options": [fact, "RAG의 기본 원칙을 기술적으로 부정하는 지문", "파이썬 문법 에러가 명백한 가상 코드", "지원되지 않는 유료 기능에 대한 거짓 광고", "데이터베이스 종류를 완전히 혼동한 설명", "다른 챕터(Prompt 등) 내용을 잘못 섞은 오답"],
-            "answer": fact,
-            "why": f"RAG 및 에이전트 시스템 구축에서 {topic}의 '{fact}' 지식은 설계 품질을 좌우합니다.",
-            "hint": topic
-        })
-        id_counter += 1
+for q, o, a, w, h, i in q1_15:
+    questions.append({"chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": i, "question": q, "options": o, "answer": a, "why": w, "hint": h})
 
-# 5059 ~ 5100 (Remaining 42 MCQs)
-for i in range(5059, 5101):
+# [16-60] RAG & Agent Details (45 items)
+rag_topics = [
+    ("CharacterTextSplitter", "글자 수 기반으로 텍스트를 나누는 가장 기초적인 방식입니다.", "5016"),
+    ("RecursiveCharacterTextSplitter", "의미적 단위를 최대한 보존하며 재귀적으로 쪼개는 권장 기법입니다.", "5017"),
+    ("Overlap", "청킹 시 조각들 사이에 겹치는 영역을 두어 문맥 단절을 방지합니다.", "5018"),
+    ("FAISS", "Meta에서 개발한 고성능 로컬 벡터 라이브러리입니다.", "5019"),
+    ("Cosine Similarity", "두 벡터 사이의 각도를 이용해서 유사도를 측정하는 방식입니다.", "5020"),
+    ("Pinecone", "클라우드 기반의 관리형 벡터 데이터베이스 서비스입니다.", "5021"),
+    ("ChromaDB", "파이썬 프로젝트에서 가볍게 쓸 수 있는 내장형 벡터 DB입니다.", "5022"),
+    ("Elasticsearch (HNSW)", "기존 검색 엔진에 벡터 검색 기능을 추가한 형태입니다.", "5023"),
+    ("Sparse Vector", "BM25와 같이 단어의 키워드 매칭을 점수화한 벡터입니다.", "5024"),
+    ("Dense Vector", "임베딩 모델이 만든 의미 깊은 수치 벡터입니다.", "5025"),
+    ("Hybrid Search", "키워드 기반 검색과 의미 기반 검색을 결합하여 성능을 높입니다.", "5026"),
+    ("Prompt Templates", "외부 지식을 끼워 넣기 위한 {context} 자리가 마련된 지침입니다.", "5027"),
+    ("RetrievalChain", "검색기와 생성 모델을 하나로 묶어 동작시키는 흐름입니다.", "5028"),
+    ("Document Loader", "PDF, HTML, Notion 등 다양한 소스에서 데이터를 가져옵니다.", "5029"),
+    ("Metadata Filtering", "벡터 유사도뿐만 아니라 날짜나 작성자 같은 속성으로 검색 범위를 좁힙니다.", "5030"),
+    ("Multi-vector Retrieval", "원본 문서와 요약본, 질문 후보 등을 각각 임베딩하여 연관성을 높입니다.", "5031"),
+    ("Parent Document Retrieval", "작은 조각으로 검색하고, 실제 답변은 큰 부모 문서를 사용합니다.", "5032"),
+    ("Context Compression", "검색된 결과에서 질문과 무관한 문장을 쳐내고 핵심만 모델에 전달합니다.", "5033"),
+    ("LangServe", "랭체인으로 만든 체인을 즉시 REST API 서버로 구축하는 도구입니다.", "5034"),
+    ("LangSmith", "RAG 파이프라인의 각 단계 로그를 추적하고 성능을 모니터링합니다.", "5035"),
+    ("Agent Memory", "에이전트가 이전의 대화 내용이나 실행 결과를 기억하게 하는 저장소입니다.", "5036"),
+    ("Plan-and-Execute", "목표를 먼저 세부 단계로 쪼개는 계획과 실제 실행을 분리한 패턴입니다.", "5037"),
+    ("Self-RAG", "모델이 스스로 검색 결과가 유용한지 비판적으로 판단하여 답변을 개선합니다.", "5038"),
+    ("GraphRAG", "지식들을 그래프(Node/Edge) 구조로 연결하여 복잡한 관계를 검색합니다.", "5039"),
+    ("Semantic Chunking", "의미가 변하는 지점을 모델이나 통계로 파악하여 유연하게 청킹합니다.", "5040"),
+    ("Index Construction", "데이터를 벡터 DB에 밀어 넣어 검색 가능한 상태로 만드는 전처리 과정입니다.", "5041"),
+    ("Query Translation", "전문 용어 등을 AI가 모델이 더 잘 검색할 만한 용어로 변환합니다.", "5042"),
+    ("Streaming Retrieval", "검색이 완료될 때까지 기다리지 않고 첫 조각부터 처리하는 방식입니다.", "5043"),
+    ("Offline Ingestion", "데이터셋을 미리 처리하여 벡터화해두는 배치 작업입니다.", "5044"),
+    ("Real-time Update", "새로운 정보가 생길 때마다 즉시 벡터 DB에 반영하는 동적 업데이트입니다.", "5045"),
+    ("Knowledge Base", "기업의 비정형 문서 데이터를 총칭하는 지식 기반입니다.", "5046"),
+    ("Validation Set", "RAG 시스템 성능 측정을 위해 '질문-정답-근거' 셋을 구성합니다.", "5047"),
+    ("Hit Rate (K@1)", "가장 상위 1개 검색 결과에 정답이 포함되어 있는 비율입니다.", "5048"),
+    ("MRR", "정답이 포함된 문서의 순위를 역수로 계산한 평균값입니다.", "5049"),
+    ("RAGAS Framework", "LLM을 평가자로 활용하여 RAG 성능 지표를 자동 산출하는 라이브러리입니다.", "5050"),
+    ("Thought (in ReAct)", "에이전트가 현 상황을 분석하고 다음에 무엇을 할지 스스로 내린 판단입니다.", "5051"),
+    ("Observation (in ReAct)", "도구를 실행한 후 나온 실제 결과물입니다.", "5052"),
+    ("Final Answer", "에이전트가 문제 해결을 완료하고 사용자에게 내놓는 최종 결과입니다.", "5053"),
+    ("Tool Definition", "에이전트가 도구의 이름, 설명, 인자 형식을 알 수 있게 작성한 코드입니다.", "5054"),
+    ("Human-in-the-loop", "에이전트의 판단 도중 사람의 승인을 받는 과정을 추가하는 설계입니다.", "5055"),
+    ("State Management", "LangGraph 등을 사용하여 에이전트의 복잡한 상태 천이를 관리합니다.", "5056"),
+    ("Function Calling", "모델이 어떤 함수를 불러야 할지 JSON 형태로 리턴해주는 기능입니다.", "5057"),
+    ("System Prompt (Agent)", "에이전트의 행동 지침과 도구 사용법을 정의한 핵심 프롬프트입니다.", "5058"),
+    ("Cost Monitor", "에이전트의 반복 루프가 비정상적으로 많이 돌지 않도록 모니터링합니다.", "5059"),
+    ("Context Overflow", "RAG로 너무 많은 문서를 넣어 모델의 입력 한도를 넘기는 에러입니다.", "5060")
+]
+
+for title, fact, i in rag_topics:
     questions.append({
-        "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": str(i),
-        "question": f"RAG 및 에이전트 설계 시나리오 문항 {i-5058}: 최적의 구현 방식을 선택하세요.",
-        "options": [
-            f"구현 {i}: 최신 프레임워크 베스트 프랙티스 (아키텍처-{i})",
-            "보안 취약점이 있는 에이전트 설계",
-            "벡터 검색 효율이 매우 낮은 데이터 구조",
-            "청킹을 아예 수행하지 않아 발생하는 토큰 오류",
-            "잘못된 파이프라인 연결로 인한 데이터 누락"
-        ],
-        "answer": f"구현 {i}: 최신 프레임워크 베스트 프랙티스 (아키텍처-{i})",
-        "why": f"실무 역량을 위해 {i}번째 케이스에 대한 RAG/Agent 최적화 지식을 검증합니다.",
-        "hint": "RAG 솔루션 설계",
+        "chapter_name": chapter_name, "type": "객관식", "difficulty": "hard", "id": i,
+        "question": f"RAG 및 에이전트 시스템에서 {title}의 역할로 가장 적절한 것은?",
+        "options": [fact, "성능을 저하시키는 원인", "다른 단원(데이터 분석)의 용어", "현업에서 절대 쓰지 않는 구식 기법", "실행 불가능한 가상 코드 설명"],
+        "answer": fact,
+        "why": f"{title} 설명: {fact}",
+        "hint": title
+    })
+
+# [61-100] Case Studies & Professional Scenarios (40 items)
+scenarios = [
+    ("사내 문서 검색 시스템", "보안을 위해 온프레미스 LLM과 사내 벡터 DB를 연동하여 구축합니다.", "5061"),
+    ("법률 RAG 서비스", "할루시네이션 방지를 위해 답변마다 출처(Source) 페이지를 명시하도록 합니다.", "5062"),
+    ("의료 지식 비서", "전문 용어가 많으므로 관련 도메인 특화 임베딩 모델을 사용하는 것이 유리합니다.", "5063"),
+    ("실시간 뉴스 큐레이션", "News API 에이전트를 써서 매 시각 최신 기사를 수집하고 요약합니다.", "5064"),
+    ("고객 지원 자동화", "자주 묻는 질문(FAQ)은 미리 벡터화해두고, 복잡한 건 전문가 상담으로 넘깁니다.", "5065"),
+    ("상품 추천 에이전트", "사용자의 구매 이력 DB를 직접 조회할 수 있는 SQL 실행 도구를 부여합니다.", "5066"),
+    ("복잡한 일정 조정", "캘린더 API 에이전트가 빈 시간을 찾고 예약을 완료하는 ReAct 루프를 설계합니다.", "5067"),
+    ("논문 검색 도구", "arXiv 데이터를 연동하여 특정 주제의 최신 논문 초록을 검색하고 비교합니다.", "5068"),
+    ("코딩 보조 에이전트", "작성한 코드가 정상인지 실제로 실행해볼 수 있는 REPL 도구를 제공합니다.", "5069"),
+    ("다국어 번역 RAG", "한국어 질문을 영어로 번역해 영어 위키피디아를 검색한 뒤 다시 한국어로 답합니다.", "5070"),
+    ("금융 리포트 분석", "도표와 테이블 데이터가 많으므로 표 형식을 잘 인식하는 청킹 전략을 씁니다.", "5071"),
+    ("이미지 검색 시스템", "이미지를 벡터로 바꾸는 멀티모달 임베딩 모델을 활용합니다.", "5072"),
+    ("학습 데이터 오염 방지", "검색 결과에 정답이 그대로 포함되어 평가가 왜곡되지 않는지 검증합니다.", "5073"),
+    ("개인정보 필터링", "RAG에 넣기 전 데이터에서 주민번호 등 민감 정보를 마스킹 처리합니다.", "5074"),
+    ("검색 속도 최적화", "벡터 DB의 인덱싱 방식을 HNSW로 설정하여 밀리초 단위 검색을 구현합니다.", "5075"),
+    ("토큰 비용 절감", "불필요하게 긴 검색 결과는 핵심 문장만 추출해서 모델에 전달합니다.", "5076"),
+    ("시스템 평가 자동화", "Ragas의 Faithfulness 점수를 정기적으로 체크하여 품질을 관리합니다.", "5077"),
+    ("질문 의도 오분류", "라우터 에이전트의 프롬프트를 다듬어 질문의 성격을 더 정확히 구분하게 합니다.", "5078"),
+    ("도구 실행 에러", "에이전트가 도구 사용법을 틀렸을 때 에러 메시지를 보고 스스로 고치게 합니다.", "5079"),
+    ("대화 맥락 유지", "이전 검색 결과나 대화 요약을 메모리에 저장하여 일관성을 지킵니다.", "5080"),
+    ("데이터 동기화", "원본 문서가 수정되면 즉시 해당 벡터 값도 갱신하는 파이프라인을 둡니다.", "5081"),
+    ("하이브리드 검색 도입", "의미 기반 검색과 키워드 검색 점수를 Reciprocal Rank Fusion으로 합칩니다.", "5082"),
+    ("사용자 피드백 수집", "사용자가 '도움 안 됨' 버튼을 누르면 해당 검색 결과를 분석해 개선합니다.", "5083"),
+    ("중복 문서 관리", "똑같은 내용의 조각들이 검색 결과 상단을 차지하지 않도록 다양성을 확보합니다.", "5084"),
+    ("에이전트 탈옥 방지", "에이전트가 허용되지 않은 시스템 명령을 수행하지 못하도록 도구 범위를 제한합니다.", "5085"),
+    ("쿼리 재작성 연쇄", "검색 결과가 부실하면 더 나은 검색어로 3번까지 다시 시도하는 로직을 짭니다.", "5086"),
+    ("문서 구조 분석", "헤더나 섹션 단위 정보를 추출하여 청킹 시 메타데이터로 활용합니다.", "5087"),
+    ("멀티 인덱스 검색", "기술 지원 문서와 사용자 커뮤니티 글을 각각 다른 인덱스로 관리합니다.", "5088"),
+    ("에이전트 워크플로우", "LangGraph로 에이전트가 단계를 건너뛰지 않고 절차를 지키게 강제합니다.", "5089"),
+    ("성능 벤치마킹", "다양한 임베딩 모델(OpenAI vs Local)을 써보고 검색 정확도를 비교합니다.", "5090"),
+    ("도구 설명 최적화", "모델이 어떤 상황에 이 도구를 써야 할지 이해하기 쉽게 설명을 써줍니다.", "5091"),
+    ("에이전트 권한 관리", "읽기 전용 도구와 쓰기 가능 도구를 분리하여 안전성을 확보합니다.", "5092"),
+    ("지식 그래프 연동", "벡터 검색으로 찾기 힘든 상위 개념 관계를 그래프 DB에서 조회합니다.", "5093"),
+    ("결과 텍스트 정제", "검색 결과에 섞인 HTML 태그나 광고 문구를 제거하여 노이즈를 줄입니다.", "5094"),
+    ("쿼리 인텐트 보정", "줄임말이나 오타가 섞인 검색어를 표준어로 교정하여 검색 효율을 높입니다.", "5095"),
+    ("에이전트 비정상 종료", "API 할당량 초과 시 사용자에게 정중히 안내하고 학습 로그를 남깁니다.", "5096"),
+    ("멀티모달 응답", "텍스트 답변과 함께 관련 이미지나 도표의 경로를 같이 리턴합니다.", "5097"),
+    ("검색 임계값 설정", "유사도 점수가 너무 낮은 문서는 아예 참조하지 않도록 컷오프를 설정합니다.", "5098"),
+    ("사용자 인증 연동", "로그인한 사용자의 권한이 있는 문서만 검색되도록 필터를 적용합니다.", "5099"),
+    ("에이전트 자기 평가", "최종 답변을 내기 전 '이게 정말 질문에 대한 답이 맞나?'라고 한 번 더 생각하게 합니다.", "5100")
+]
+
+for title, fact, i in scenarios:
+    questions.append({
+        "chapter_name": chapter_name, "type": "객관식", "difficulty": "hard", "id": i,
+        "question": f"RAG/에이전트 실무 중 {title} 문제를 해결하는 가장 좋은 방법은?",
+        "options": [fact, "사용자에게 책임을 전가하는 방식", "기술적으로 구현이 불가능한 수준의 답변", "데이터를 무차별적으로 섞는 비효율", "에러를 무시하고 진행하는 위험한 설계"],
+        "answer": fact,
+        "why": f"{title} 해법: {fact}",
+        "hint": title
     })
 
 # --- 20 Code Completion Questions ---
-# 5101 ~ 5120
-cc_data_ch5 = [
-    ("LCEL 파이프", "chain = prompt ____ model ____ output_parser", "|", "랭체인에서 구성 요소를 연결하는 파이프 연산자입니다. (| 기호 하나만 답변)"),
-    ("체인 실행", "result = chain.____({'input': 'hi'})", "invoke", "체인을 직접 실행하는 가장 기본적인 메서드입니다."),
-    ("청킹 오버랩", "splitter = RecursiveCharacterTextSplitter(chunk_overlap=____)", "100", "청크 사이의 중복 구간을 의미하는 설정값 예시(숫자)입니다."),
-    ("벡터 저장소", "vector_db = ____.from_documents(docs, embeddings)", "Chroma", "오픈소스 벡터 데이터베이스의 대표적인 이름입니다."),
-    ("유사도 검색", "docs = vector_db.____(\"질문\")", "similarity_search", "벡터 정보를 기반으로 관련 문서를 찾는 메서드입니다."),
-    ("에이전트 패턴", "Reasoning + Acting = ____ 패턴", "ReAct", "에이전트 사고 방식의 주요 패턴 이름입니다."),
-    ("임베딩 생성", "vector = embeddings.____(\"안녕하세요\")", "embed_query", "단일 텍스트를 벡터로 바꾸는 메서드입니다."),
-    ("랭체인 프레임워크", "import ____\nfrom langchain_openai import ChatOpenAI", "langchain", "LLM 앱 개발을 위한 프레임워크의 이름입니다."),
-    ("문서 로더", "loader = ____Loader('data.pdf')", "PyPDF", "PDF를 읽어오기 위한 전용 라이브러리/로더 접두어입니다."),
-    ("스트리밍", "for chunk in chain.____(input):\n    print(chunk)", "stream", "결과를 실시간으로 끊어서 받아보는 메서드입니다."),
-    ("일괄 처리", "results = chain.____([inputs])", "batch", "여러 입력을 동시에 처리하는 메서드입니다."),
-    ("에이전트 실행기", "agent_executor = ____(agent=agent, tools=tools)", "AgentExecutor", "에이전트와 도구를 실행 관리하는 클래스입니다."),
-    ("입력 데이터", "RAG 구성 4요소 중 원천 데이터는 ____ Data.", "Input", "처리해야 할 대상 데이터를 의미합니다."),
-    ("검색기", "retriever = vector_db.as_____()", "retriever", "벡터 스토리지를 검색 인터페이스로 변환하는 메서드입니다."),
-    ("임베딩 모델 지정", "embeddings = ____Embeddings()", "OpenAI", "가장 널리 쓰이는 임베딩 API 제공사의 이름입니다."),
-    ("Chunking 도구", "____CharacterTextSplitter", "Recursive", "문맥을 유지하며 똑똑하게 문서를 자르는 스플리터 전면 수식어입니다."),
-    ("벡터 저장소 관리", "db = FAISS.____(\"index_name\")", "load_local", "로컬에 저장된 벡터 인덱스를 불러올 때 씁니다."),
-    ("에이전트 도구", "@____\ndef search(query):\n    return \"result\"", "tool", "일반 함수를 에이전트 도구로 등록할 때 쓰는 데코레이터입니다."),
-    ("추론 완료", "에이전트는 최종 답변 시 Final ____: 를 씁니다.", "Answer", "ReAct 로그의 마지막 단계 이름입니다."),
-    ("RAG 목적", "LLM의 ____ 현상을 줄이기 위해 RAG를 씁니다.", "환각", "사실이 아닌 정보를 지어내는 현상을 가리키는 용어입니다.")
+cc_data = [
+    ("시스템 약자", "____: 검색 증강 생성 기술.", "RAG", "Retrieval-Augmented Generation의 약자입니다."),
+    ("자율 주체", "____: 판단하고 행동하는 AI 시스템.", "Agent", "에이전트라고 부릅니다."),
+    ("청킹 기법", "____: 문서를 작은 조각으로 나누기.", "Chunking", "청킹이라고 합니다."),
+    ("수치 변환", "____: 텍스트를 벡터로 바꾸기.", "Embedding", "임베딩이라고 합니다."),
+    ("데이터베이스", "____ DB: 벡터를 저장하는 DB.", "Vector", "벡터 저장소를 뜻합니다."),
+    ("검색 기법", "____ similarity: 코사인 유사도.", "Cosine", "벡터 사이의 각도 기반 유사도입니다."),
+    ("랭체인 문법", "____ (LangChain Expression Language)", "LCEL", "랭체인 표현 언어의 약자입니다."),
+    ("에이전트 루프", "____ (Reasoning + Acting)", "ReAct", "사고와 행동 패턴 이름입니다."),
+    ("에이전트 도구", "____: AI가 사용하는 계산기 등 함수.", "Tools", "도구들의 집합입니다."),
+    ("프레임워크", "____: LLM 앱 구축 라이브러리.", "LangChain", "가장 유명한 파이썬 프레임워크입니다."),
+    ("데이터 불러오기", "PyPDF____: PDF 파일 로드 클래스.", "Loader", "로더라고 부르는 파일 읽기 도구입니다."),
+    ("유사도 검색", "db.similarity_____(query)", "search", "유사도 검색 메서드 이름입니다."),
+    ("문서 합치기", "Context ____: 프롬프트에 지식 배치.", "Augmentation", "보강 단계를 뜻합니다."),
+    ("평가 도구", "____: RAG 성능 측정용 LLM-as-a-judge.", "Ragas", "평가 라이브러리 이름입니다."),
+    ("환각 지표", "____: 근거 기반 답변 여부 지표.", "Faithfulness", "충실도 지표입니다."),
+    ("파이프 연결", "chain = prompt ____ model", "|", "LCEL에서 체이닝을 뜻하는 기호입니다."),
+    ("로컬 벡터 DB", "from langchain_community.vectorstores import ____", "Chroma", "크로마DB의 약칭입니다."),
+    ("지능형 검색", "____: 질문 의도에 따른 경로 탐색.", "Routing", "라우팅이라고 합니다."),
+    ("추론 과정", "에이전트의 ____: 다음 단계를 정하는 생각.", "Thought", "사고 단계를 뜻합니다."),
+    ("결과 관찰", "에이전트의 ____: 도구 실행 후 데이터 확인.", "Observation", "관찰 단계를 뜻합니다.")
 ]
 
-for i, (title, code, ans, explain) in enumerate(cc_data_ch5):
-    # Adjusting for special case "|"
-    if ans == "|":
-        question_text = f"{title} 코드를 완성하세요.\n```python\n{code}\n```"
-    else:
-        question_text = f"{title} 코드를 완성하세요.\n```python\n{code}\n```"
-
+for i, (title, code, ans, explain) in enumerate(cc_data):
     questions.append({
         "chapter_name": chapter_name, "type": "코드 완성형", "difficulty": "medium", "id": str(5101 + i),
-        "question": question_text,
+        "question": f"{title} 개념을 완성하세요.\n```text\n{code}\n```",
         "answer": ans,
         "why": explain,
         "hint": title,

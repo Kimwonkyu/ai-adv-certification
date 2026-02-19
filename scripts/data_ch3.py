@@ -5,174 +5,169 @@ questions = []
 
 # --- 100 MCQs ---
 
-# 1. Transformer and Attention
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "easy", "id": "3001",
-    "question": "2017년 구글이 발표한 논문 'Attention is All You Need'를 통해 처음 등장한 현대 LLM의 핵심 아키텍처는?",
-    "options": ["RNN", "LSTM", "CNN", "Transformer", "GAN"],
-    "answer": "Transformer",
-    "why": "트랜스포머는 어텐션 메커니즘을 기반으로 병렬 처리를 극대화하여 자연어 처리의 패러다임을 바꾼 모델입니다.",
-    "hint": "교재의 1. LLM과 트랜스포머 파트를 확인하세요."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "3002",
-    "question": "기존 RNN 계열 모델의 한계를 극복하기 위해 트랜스포머가 도입한 핵심 기술은?",
-    "options": ["순차적 처리(Sequential Processing)", "어텐션 메커니즘(Attention Mechanism)", "오차 역전파(Backpropagation)", "손실 함수(Loss Function)", "활성화 함수(Activation Function)"],
-    "answer": "어텐션 메커니즘(Attention Mechanism)",
-    "why": "어텐션은 문장 내 단어들 간의 관계를 가중치로 계산하여 먼 거리의 단어도 한 번에 참조할 수 있게 합니다.",
-    "hint": "중요한 단어에 '집중'한다는 뜻입니다."
-})
-
-# 2. Encoder vs Decoder
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "3003",
-    "question": "트랜스포머 구조 중 '다음에 올 단어를 하나씩 예측하며 문장을 생성'하는 데 특화되어 현대 GPT 계열의 기반이 된 구조는?",
-    "options": ["인코더(Encoder)", "디코더(Decoder)", "임베더(Embedder)", "토크나이저(Tokenizer)", "풀러(Pooler)"],
-    "answer": "디코더(Decoder)",
-    "why": "디코더는 이전 단어들을 바탕으로 다음 토큰을 생성하는 생성 작업(Generative Task)에 최적화되어 있습니다.",
-    "hint": "정보를 '해석하고 풀어낸다'는 의미입니다."
-})
-
-# 3. Tokenization
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "3004",
-    "question": "LLM이 텍스트를 처리하는 기본 단위인 '토큰(Token)'에 대한 설명으로 옳은 것은?",
-    "options": ["항상 단어 한 개와 1:1로 매칭된다.", "공백 문자는 토큰에 포함되지 않는다.", "단어, 또는 단어의 일부 조각이 토큰이 될 수 있다.", "컴퓨터는 토큰을 숫자가 아닌 텍스트 그대로 인식한다.", "언어에 상관없이 토큰 소모량은 일정하다."],
-    "answer": "단어, 또는 단어의 일부 조각이 토큰이 될 수 있다.",
-    "why": "토크나이저는 효율성을 위해 자주 쓰이는 글자 뭉치를 토큰으로 정의하며, 한 단어가 여러 토큰으로 쪼개질 수도 있습니다.",
-    "hint": "단어보다 작은 단위인 '서브워드(Subword)' 개념을 생각해보세요."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "3005",
-    "question": "영어와 한국어의 토큰 소모량 비교에 대한 설명으로 옳은 것은?",
-    "options": ["한국어가 구조상 영어보다 토큰을 훨씬 적게 쓴다.", "영어는 1단어당 보통 5~6개의 토큰이 필요하다.", "한국어는 교착어 특성상 동일 의미의 영어 문장보다 토큰 소모가 더 많은 편이다.", "두 언어의 토큰 비용은 전 세계적으로 동일하게 고정되어 있다.", "토큰 소모량은 인공지능 성능과 아무 관련이 없다."],
-    "answer": "한국어는 교착어 특성상 동일 의미의 영어 문장보다 토큰 소모가 더 많은 편이다.",
-    "why": "한국어는 조사나 어미 변형이 많아 토크나이징 시 더 많은 토큰으로 분리되는 경향이 있어 비용 효율 면에서 불리할 수 있습니다.",
-    "hint": "교재의 2. 토큰화 파트를 확인하세요."
-})
-
-# 4. GPT & LLaMA Lineage
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "easy", "id": "3006",
-    "question": "거대 모델의 시대를 열었으며, 별도의 학습 없이 프롬프트만으로 작업을 수행하는 'In-Context Learning' 가능성을 증명한 모델은?",
-    "options": ["GPT-1", "GPT-2", "GPT-3", "ALBERT", "RoBERTa"],
-    "answer": "GPT-3",
-    "why": "GPT-3는 1750억 개의 파라미터를 갖춘 거대 모델로, 프롬프트 입력만으로 예시를 읽고 따라하는 능력을 보였습니다.",
-    "hint": "175B 파라미터로 유명한 모델입니다."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "easy", "id": "3007",
-    "question": "메타(Meta)에서 공개하여 LLM 생태계의 민주화를 이끌었으며, 누구나 다운로드 가능한 '오픈 웨이트' 모델의 대표주자는?",
-    "options": ["GPT-4", "Claude", "Gemini", "LLaMA", "PaLM"],
-    "answer": "LLaMA",
-    "why": "LLaMA는 강력한 성능의 가중치를 공개하여 미세 조율 연구와 오픈소스 LLM 발전에 큰 기여를 했습니다.",
-    "hint": "라마(Alpaca, Vicuna의 기반이 된 동물 이름)를 기억하세요."
-})
-
-# 5. Parameters
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "3008",
-    "question": "LLM 답변의 '창의성' 혹은 '무작위성'을 조절하는 파라미터는?",
-    "options": ["Learning Rate", "Batch Size", "Temperature", "Epochs", "Momentum"],
-    "answer": "Temperature",
-    "why": "온도(Temperature) 값이 높으면 답변이 다양하고 창의적으로 변하며, 낮으면 정확하고 보수적으로 변합니다.",
-    "hint": "아이디어를 낼 때는 높게, 요약할 때는 낮게 설정합니다."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "easy", "id": "3009",
-    "question": "요약이나 코딩 작업처럼 정확하고 일정한 답변이 필요할 때 권장되는 Temperature 설정값은?",
-    "options": ["0.0 ~ 0.2", "0.8 ~ 1.0", "1.5 ~ 2.0", "10.0 이상", "-1.0 미만"],
-    "answer": "0.0 ~ 0.2",
-    "why": "온도를 0에 가깝게 설정하면 모델은 가장 확률이 높은 단어 위주로 선택하여 일관성을 유지합니다.",
-    "hint": "정확도를 위해서는 '차분한(낮은)' 온도가 필요합니다."
-})
-
-questions.append({
-    "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": "3010",
-    "question": "LLM이 문장을 생성할 때, 다음에 올 토큰의 최대 길이를 제한하여 비용이나 응답 시간을 관리하는 파라미터는?",
-    "options": ["Temperature", "Max Tokens", "Stop Sequence", "Presence Penalty", "Top-K"],
-    "answer": "Max Tokens",
-    "why": "Max Tokens는 모델이 생성할 수 있는 최대 토큰 수를 강제로 제한하는 설정입니다.",
-    "hint": "최대 토큰 길이를 의미합니다."
-})
-
-# Systematically Adding more unique questions to reach 100 MCQs
-topics_llm = [
-    ("트랜스포머 상세", ["Self-Attention은 단어 간의 가중치를 스스로 계산한다.", "Positional Encoding은 단어의 순서 정보를 알려준다.", "Multi-Head Attention은 여러 관점에서 문맥을 본다.", "Feed Forward Network가 각 레이어 끝에 존재한다.", "Layer Normalization으로 학습 안정을 돕는다."]),
-    ("인코더 모델", ["BERT는 대표적인 인코더 전용 모델이다.", "문장의 전체 맥락(양방향)을 읽는 데 능숙하다.", "분류와 개체명 인식에 자주 쓰인다.", "마스크 언어 모델(MLM) 방식으로 학습한다.", "주로 NLU(Natural Language Understanding) 작업에 쓰인다."]),
-    ("디코더 모델", ["GPT는 대표적인 디코더 전용 모델이다.", "단방향(Auto-regressive)으로 텍스트를 생성한다.", "이전까지의 단어만 참고하여 다음 단어를 맞춘다.", "텍스트 생성(Generation)에 최적화되어 있다.", "현대 챗봇 모델의 주류를 이룬다."]),
-    ("토큰화 실무", ["HuggingFace의 AutoTokenizer는 라이브러리 필수 도구이다.", "encode()는 문장을 숫자 리스트로 바꾼다.", "decode()는 숫자를 다시 사람이 읽는 글로 바꾼다.", "vocab_size는 지원하는 총 토큰의 개수이다.", "BPE(Byte Pair Encoding)는 주요 알고리즘 중 하나다."]),
-    ("GPT 발전사", ["GPT-1은 사전 학습 후 미세 조정을 강조했다.", "GPT-2는 파라미터를 키우면 지식이 늘어남을 보였다.", "GPT-4는 텍스트와 이미지를 동시에 다룰 수 있다.", "OpenAI는 GPT를 통해 LLM 혁명을 주도했다.", "In-Context Learning은 모델 수정 없이 성과를 낸다."]),
-    ("오픈 모델 생태계", ["HuggingFace는 모델을 공유하는 허브 역할을 한다.", "Mistral은 유럽의 대표적인 오픈 모델이다.", "Falcon은 UAE에서 개발된 대형 오픈 모델이다.", "오픈 모델은 기업 내부 데이터 보안에 유리하다.", "파인튜닝을 통해 특정 작업 전문 모델을 만든다."]),
-    ("API 활용", ["OpenAI API는 사용량만큼 비용(Token 단위)을 지불한다.", "시스템 프롬프트(System Message)로 페르소나를 정한다.", "User Message는 사용자의 실질적 요청이다.", "Assistant Message는 AI의 이전 답변 기록이다.", "JSON Mode를 쓰면 형식이 정돈된 결과를 얻는다."]),
-    ("지표와 한계", ["Hallucination은 그럴듯하지만 틀린 답변을 하는 현상이다.", "컨텍스트 윈도우(Context Window)는 한 번에 읽는 최대량이다.", "파라미터 수는 모델의 지능과 상관관계가 높다.", "추론 속도는 토큰 생성 속도(TPS)로 측정한다.", "지연 시간(Latency)은 첫 토큰이 나오기까지의 시간이다."]),
-    ("생성 제어", ["Max Tokens를 넘으면 답변이 도중에 잘린다.", "Stop Sequence는 생성을 멈출 특정 문자를 정한다.", "Top-P(Nucleus Sampling)도 다양성 조절에 쓰인다.", "Presence Penalty는 같은 단어 반복을 억제한다.", "Frequency Penalty는 자주 나오는 단어를 억제한다."]),
-    ("HuggingFace 실습", ["transformers 라이브러리를 설치해야 한다.", "Pipeline API로 쉽게 감정 분석을 해볼 수 있다.", "모델 ID를 통해 온라인에서 바로 내려받는다.", "Cache 디렉토리에 모델이 자동 저장된다.", "GitHub와 유사하게 모델 버전을 관리한다."])
+# [1-15] Core LLM Concepts
+q1_15 = [
+    ("트랜스포머(Transformer) 아키텍처의 핵심 메커니즘은?", ["CNN (Convolutional Neural Network)", "RNN (Recurrent Neural Network)", "Self-Attention", "Backpropagation", "Gradient Descent"], "Self-Attention", "Self-Attention을 통해 문장 내 단어 간의 관계를 병렬적으로 파악합니다.", "Attention", "3001"),
+    ("트랜스포머 아키텍처에서 인코더(Encoder)의 주요 역할은?", ["문장을 생성한다.", "입력 문장을 이해하여 수치화(임베딩)한다.", "이미지 데이터를 처리한다.", "강화 학습을 수행한다.", "출력 토큰을 예측한다."], "입력 문장을 이해하여 수치화(임베딩)한다.", "인코더는 입력 텍스트의 문맥을 파악하는 데 특화되어 있습니다.", "BERT의 기반", "3002"),
+    ("GPT 시리즈와 같이 문장 생성에 특화된 모델이 주로 사용하는 구조는?", ["디코더 전용(Decoder-only)", "인코더 전용(Encoder-only)", "인코더-디코더 결합", "순환 신경망(RNN)", "합성곱 신경망(CNN)"], "디코더 전용(Decoder-only)", "GPT는 다음 단어를 예측하며 문장을 생성하는 디코더 구조를 따릅니다.", "GPT 아키텍처", "3003"),
+    ("텍스트를 모델이 이해할 수 있는 최소 단위로 쪼개는 과정을 무엇이라 하는가?", ["Encoding", "Decoding", "Tokenizing", "Chunking", "Embedding"], "Tokenizing", "텍스트를 토큰(Token)으로 나누어 숫자 시퀀스로 변환하는 과정입니다.", "단어 쪼개기", "3004"),
+    ("LLM이 사실이 아닌 내용을 그럴듯하게 답변하는 현상을 무엇이라 하는가?", ["Overfitting", "Bias", "Hallucination (환각)", "Drift", "Decay"], "Hallucination (환각)", "학습 데이터 부족이나 확률적 생성 모델의 특성으로 발생하는 오답 현상입니다.", "거짓 대답", "3005"),
+    ("문장 생성 시 동일한 단어의 반복을 피하기 위해 다음 단어의 등장 확률을 제어하는 파라미터는?", ["Temperature", "Max Tokens", "Top-P (Nucleus Sampling)", "Repetition Penalty", "Top-K"], "Repetition Penalty", "반복되는 토큰에 패널티를 주어 다양성을 높입니다.", "반복 방지", "3006"),
+    ("단어의 뜻뿐만 아니라 위치 정보까지 모델에게 알려주기 위해 더해지는 값은?", ["Attention Value", "Positional Encoding", "Bias Vector", "Scale Factor", "Query Matrix"], "Positional Encoding", "트랜스포머는 병렬 처리를 하므로 단어의 순서 정보를 명시해야 합니다.", "순서 정보", "3007"),
+    ("BPE(Byte Pair Encoding)는 어떤 방식의 토크나이징 기법인가?", ["자소 단위", "어절 단위", "서브워드(Subword) 단위", "음절 단위", "문장 단위"], "서브워드(Subword) 단위", "자주 등장하는 글자 조합을 하나의 토큰으로 묶어 효율성을 높입니다.", "BPE", "3008"),
+    ("생성 결과의 무작위성(창의성)을 조절하는 파라미터로, 값이 높을수록 다양한 답변이 나오는 것은?", ["Frequency Penalty", "Temperature", "Presence Penalty", "Token Limit", "Batch Size"], "Temperature", "온도가 높을수록 낮은 확률의 단어도 선택될 가능성이 커집니다.", "온도", "3009"),
+    ("모델이 생성할 수 있는 최대 답변 길이를 제한하는 파라미터는?", ["Stop Sequence", "Presence Penalty", "Max Tokens", "Temperature", "Top-K"], "Max Tokens", "비용과 응답 시간을 관리하기 위해 토큰 수를 제한합니다.", "길이 제한", "3010"),
+    ("라마(LLaMA) 모델 시리즈의 가장 큰 특징 중 하나는?", ["구글이 만든 비공개 모델이다.", "매개변수 효율성이 높아 오픈소스 생태계의 핵심이 되었다.", "텍스트가 아닌 이미지만 생성한다.", "인터넷 연결 없이 학습되지 않는다.", "GPT보다 100배 더 크다."], "매개변수 효율성이 높아 오픈소스 생태계의 핵심이 되었다.", "Meta가 배포한 효율적인 오픈 가중치 모델입니다.", "Meta의 모델", "3011"),
+    ("단어의 의미를 고차원 벡터 공간의 좌표로 나타내는 방식을 무엇이라 하는가?", ["One-hot Encoding", "Scaling", "Embedding (임베딩)", "Normalization", "Pruning"], "Embedding (임베딩)", "의미가 유사한 단어끼리 가까운 거리에 위치하게 합니다.", "의미 수치화", "3012"),
+    ("트랜스포머 레이어 끝에서 데이터의 범위를 일정하게 조절하여 학습을 돕는 기법은?", ["Dropout", "Layer Normalization", "Weight Decay", "Residual Connection", "Activation Function"], "Layer Normalization", "값의 분포를 안정화시켜 깊은 망의 학습을 돕습니다.", "Normalization", "3013"),
+    ("지불한 만큼 쓰는 방식 대신 기업 내부 서버에 모델을 직접 설치하여 사용하는 방식을 무엇이라 하는가?", ["SaaS", "On-premise (온프레미스)", "Cloud-native", "Serverless", "PaaS"], "On-premise (온프레미스)", "보안과 제어가 중요한 기업들이 사용하는 방식입니다.", "자체 설치", "3014"),
+    ("한국어 LLM 초거대 모델의 시초격인 네이버의 모델 모델 이름은?", ["HyparCLOVA", "HyperCLOVA", "HighCLOVA", "SuperCLOVA", "K-GPT"], "HyperCLOVA", "네이버가 개발한 한국어 특화 초거대 언어 모델입니다.", "Naver LLM", "3015")
 ]
 
-id_counter = 3011
-for topic, facts in topics_llm:
-    for fact in facts:
-        questions.append({
-            "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": str(id_counter),
-            "question": f"{topic}의 중요한 포인트 중 하나는? (심화-{id_counter-3010})",
-            "options": [fact, "트랜스포머의 구조와 정반대되는 오답", "현행 기술이 아닌 10년 전 낡은 기법", "토큰 비용을 100배 부풀린 거짓 정보", "지원하지 않는 파라미터 이름 나열", "모델 이름이 뒤섞인 혼란스러운 보기"],
-            "answer": fact,
-            "why": f"LLM의 핵심 기반 기술인 {topic}에 대해 정확히 알고 있는 것이 응용에 필수적입니다.",
-            "hint": topic
-        })
-        id_counter += 1
+for q, o, a, w, h, i in q1_15:
+    questions.append({"chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": i, "question": q, "options": o, "answer": a, "why": w, "hint": h})
 
-# 3061 ~ 3100 (Remaining 40 MCQs)
-for i in range(3061, 3101):
+# [16-60] LLM Details (45 items)
+llm_topics = [
+    ("Attention Matrix", "입력 단어들 사이의 상호 관련성(점수)을 표 형태로 나타낸 것입니다.", "3016"),
+    ("Multi-Head Attention", "여러 개의 Attention을 병렬로 돌려 다양한 관점에서 문맥을 봅니다.", "3017"),
+    ("Feed Forward Network", "Attention 레이어 다음에 오며 데이터를 비선형적으로 변환합니다.", "3018"),
+    ("Residual Connection", "입력값을 출력값에 직접 더해주어 기울기 소실 문제를 방지합니다.", "3019"),
+    ("Masked Self-Attention", "디코더에서 현재 위치보다 뒤에 있는 단어를 보지 못하게 가립니다.", "3020"),
+    ("Cross-Attention", "디코더가 인코더가 만든 정보를 참조할 때 사용하는 메커니즘입니다.", "3021"),
+    ("Zero-shot", "추가 예시 없이 명령만으로 작업을 수행하는 것입니다.", "3022"),
+    ("Few-shot", "프롬프트에 몇 개의 예시를 포함하여 작업을 유도하는 것입니다.", "3023"),
+    ("Scaling Law", "데이터와 모델 크기, 연산량이 늘어날수록 성능이 비례하여 향상된다는 법칙입니다.", "3024"),
+    ("Emergent Ability", "특정 규모 이상의 모델에서 갑자기 고차원적 능력이 나타나는 현상입니다.", "3025"),
+    ("In-context Learning", "모델의 가중치를 수정하지 않고 프롬프트만으로 학습 효과를 내는 것입니다.", "3026"),
+    ("Instruction Tuning", "사람의 지시사항을 잘 따르도록 추가 학습을 시킨 모델입니다.", "3027"),
+    ("Perplexity", "생성 모델의 확률적 불확실성을 측정하는 지표입니다. 낮을수록 좋습니다.", "3028"),
+    ("BLEU Score", "번역 결과가 모범 답안과 얼마나 유사한지 단어 수준에서 비교합니다.", "3029"),
+    ("Context Window", "모델이 한 번에 처리(기억)할 수 있는 최대 토큰 범위입니다.", "3030"),
+    ("KV Caching", "이전 토큰의 연산 결과를 저장해두어 생성 속도를 높이는 최적화 기술입니다.", "3031"),
+    ("Quantization", "모델 가중치를 16비트에서 4비트 등으로 압축하여 메모리를 아끼는 기법입니다.", "3032"),
+    ("Distillation", "큰 모델(교사)의 지식을 작은 모델(학생)에게 전수하는 기법입니다.", "3033"),
+    ("Mixture of Experts", "일부 파라미터(전문가)만 실행하여 효율을 높이는 방식입니다.", "3034"),
+    ("RLHF", "인간의 피드백을 통해 모델을 윤리적이고 유용하게 정렬(Alignment)합니다.", "3035"),
+    ("Reward Model", "사람이 선호하는 답변에 더 높은 점수를 주도록 학습된 모델입니다.", "3036"),
+    ("Model Lineage", "GPT2-GPT3-GPT4 로 이어지는 모델의 진화 계보를 뜻합니다.", "3037"),
+    ("Claude", "Anthropic이 개발한 헌법 기반 AI(Constitutional AI) 모델입니다.", "3038"),
+    ("PaLM", "구글이 개발한 거대 언어 모델 체계 중 하나입니다.", "3039"),
+    ("T5", "모든 텍스트 작업을 텍스트-투-텍스트 형태로 통일한 모델입니다.", "3040"),
+    ("Softmax", "연산 결과값을 0~1 사이의 확률값으로 변환해주는 함수입니다.", "3041"),
+    ("Stop Sequence", "특정 구문(예: <END>)이 나오면 생성을 즉시 멈추도록 설정합니다.", "3042"),
+    ("Top-K Sampling", "확률이 높은 상위 K개의 단어 중에서만 다음 단어를 선택합니다.", "3043"),
+    ("Logits", "Softmax 함수를 통과하기 전 모델의 날것의 출력값입니다.", "3044"),
+    ("Greedy Decoding", "매 순간 가장 확률이 높은 단어만 100% 선택하는 방식입니다.", "3045"),
+    ("Beam Search", "여러 개의 후보 경로를 동시에 탐색하여 최적의 문장을 만듭니다.", "3046"),
+    ("Chat Templates", "사용자 메시지와 AI 응답을 구분하기 위한 약속된 포맷입니다.", "3047"),
+    ("ChatML", "OpenAI의 역할(System, User, Assistant) 구분용 마크업 언어입니다.", "3048"),
+    ("Model Soups", "여러 개의 미세 조정된 모델 가중치를 섞어 성능을 높이는 기법입니다.", "3049"),
+    ("Open Weights", "가중치는 공개되어 누구나 설치 가능하지만 학습 데이터는 비공개인 경우입니다.", "3050"),
+    ("Inference", "학습이 완료된 모델을 사용하여 답을 내놓는 추론 단계입니다.", "3051"),
+    ("Floating Point", "FP16, BF16 등 수치를 표현하는 정밀도 규격입니다.", "3052"),
+    ("Batch Size", "한 번에 동시에 처리하는 프롬프트의 개수입니다.", "3053"),
+    ("Latency", "명령을 내린 후 첫 번째 토큰이 나올 때까지 걸리는 지연 시간입니다.", "3054"),
+    ("Throughput", "단위 시간당 모델이 생성해내는 총 토큰의 양입니다.", "3055"),
+    ("Token Bias", "특정 토큰의 생성 확률을 강제로 높이거나 낮출 수 있습니다.", "3056"),
+    ("Privacy Leak", "학습 데이터에 포함된 개인정보가 생성 과정에서 노출되는 위험입니다.", "3057"),
+    ("Data Contamination", "평가용 시험 데이터가 학습 과정에 포함되어 점수가 왜곡되는 현상입니다.", "3058"),
+    ("Model Safety", "유해한 요청에 대해 답변을 거부하도록 가드레일을 설치하는 것입니다.", "3059"),
+    ("Constitutional AI", "모델 스스로 지켜야 할 헌법(지침)을 주고 이를 따르게 학습시키는 기법입니다.", "3060")
+]
+
+for title, fact, i in llm_topics:
     questions.append({
-        "chapter_name": chapter_name, "type": "객관식", "difficulty": "medium", "id": str(i),
-        "question": f"LLM 작동 원리와 생태계 시나리오 {i-3060}: 올바른 기술적 판단을 고르세요.",
-        "options": [
-            f"판단 {i}: 최신 LLM 트렌드에 부합하는 정답 (AI기술-{i})",
-            "모델 학습 없이 해결 불가능하다는 회의적 오답",
-            "토큰 개념을 무시한 데이터 단위 설명",
-            "보안상 매우 위험한 실무 권장 사항",
-            "이미 단종된 구형 모델의 특징 설명"
-        ],
-        "answer": f"판단 {i}: 최신 LLM 트렌드에 부합하는 정답 (AI기술-{i})",
-        "why": f"인공지능 시장의 흐름과 {i}번째 기술적 원리를 이해하는지 테스트합니다.",
-        "hint": "LLM 아키텍처 및 활용",
+        "chapter_name": chapter_name, "type": "객관식", "difficulty": "hard", "id": i,
+        "question": f"LLM의 {title} 관련 설명 중 가장 올바른 것은?",
+        "options": [fact, "기술적으로 불가능한 허위 사실", "과거 통계 모델의 낡은 지식", "다른 구조(CNN)의 특징", "단순 오타가 섞인 오답"],
+        "answer": fact,
+        "why": f"{title} 지식: {fact}",
+        "hint": title
+    })
+
+# [61-100] Advanced & Scenarios (40 items)
+scenarios = [
+    ("최신 트렌드", "멀티모달(Multimodal) 모델은 텍스트와 이미지를 동시에 이해합니다.", "3061"),
+    ("비용 최적화", "프롬프트 캐싱을 통해 중복된 지시문의 비용을 아낄 수 있습니다.", "3062"),
+    ("토큰 뱅킹", "남은 토큰을 나중에 활용할 수 있게 하는 서비스 모델입니다.", "3063"),
+    ("긴 문맥 처리", "Rope(Rotary Positional Embedding) 등을 통해 긴 문맥을 다룹니다.", "3064"),
+    ("모델 평가", "MMLU, GSM8K 등 표준 벤치마크를 통해 모델 능력을 측정합니다.", "3065"),
+    ("데이터 품질", "거대 언어 모델에게는 양보다 질 좋은 데이터가 더 중요해지고 있습니다.", "3066"),
+    ("합성 데이터", "부족한 데이터를 보충하기 위해 AI가 만든 데이터를 학습에 활용합니다.", "3067"),
+    ("모델 거버넌스", "조직 내 모델 사용 권한과 보안 규정을 관리하는 체계입니다.", "3068"),
+    ("에코시스템", "HuggingFace는 전 세계 모델과 데이터셋이 공유되는 플랫폼입니다.", "3069"),
+    ("로컬 실행", "LM Studio 등을 사용하여 개인 PC에서 모델을 돌려볼 수 있습니다.", "3070"),
+    ("API 통합", "OpenAI 라이브러리를 통해 파이썬 코드에서 GPT 기능을 호출합니다.", "3071"),
+    ("토큰 단가", "입력 토큰과 출력 토큰의 가격이 보통 다르게 책정됩니다.", "3072"),
+    ("모델 편향성", "학습 데이터의 편견이 모델 답변에 그대로 드러날 위험이 있습니다.", "3073"),
+    ("필터링", "학습 전 데이터셋에서 혐오 표현이나 음란물을 제거하는 작업입니다.", "3074"),
+    ("중복 제거", "학습 데이터의 중복을 없애 효율을 높이고 편향을 줄입니다.", "3075"),
+    ("언어 장벽", "토크나이저 효율 차이로 한국어가 영어보다 토큰을 더 많이 소모할 수 있습니다.", "3076"),
+    ("버전 관리", "gpt-4o-2024-05-13 처럼 날짜별로 고정된 모델 버전을 사용합니다.", "3077"),
+    ("서비스 중단", "구형 모델은 특정 시점 이후 서비스가 종료(Deprecation)될 수 있습니다.", "3078"),
+    ("Fine-tuning API", "클라우드 제공업체가 제공하는 기능을 써서 쉽게 미세조정을 합니다.", "3079"),
+    ("시스템 프롬프트", "모델의 기본 정체성과 제약 사항을 설정하는 가장 높은 권한의 명령입니다.", "3080"),
+    ("사용자 메시지", "실제 질문자가 모델에게 전달하는 구체적인 요청입니다.", "3081"),
+    ("어시스턴트 메시지", "이전 대화에서 모델이 답변했던 내용입니다.", "3082"),
+    ("퓨샷 예시", "사용자-어시스턴트 쌍의 대화를 미리 넣어 패턴을 학습시킵니다.", "3083"),
+    ("구현체 라이브러리", "PyTorch나 TensorFlow가 딥러닝 모델 구현의 표준입니다.", "3084"),
+    ("GPU 메모리", "모델 크기가 커질수록 더 많은 비디오 램(VRAM)이 필요합니다.", "3085"),
+    ("병렬화 기법", "Data Parallel, Pipeline Parallel 등으로 모델을 여러 GPU로 나눕니다.", "3086"),
+    ("최적화기", "AdamW 등이 LLM 학습에 주로 쓰이는 최적화 알고리즘입니다.", "3087"),
+    ("러닝 레이트", "모델의 학습 속도를 결정하며 너무 높으면 학습이 불안정해집니다.", "3088"),
+    ("체크포인트", "학습 도중 모델의 상태를 파일로 저장해두는 지점입니다.", "3089"),
+    ("에포크", "전체 데이터를 모델이 한 번 훑는 학습 단위입니다.", "3090"),
+    ("검증 세트", "학습에 직접 쓰지 않고 성능을 모니터링하기 위한 별도 데이터입니다.", "3091"),
+    ("서빙(Serving)", "학습된 모델을 API 형태로 사용자에게 제공하는 과정입니다.", "3092"),
+    ("스트리밍", "답변을 한 번에 내놓지 않고 생성되는 대로 실시간 전달하는 방식입니다.", "3093"),
+    ("JSON 모드", "모델의 답변 형식을 강제로 JSON으로 고정시키는 기능입니다.", "3094"),
+    ("함수 호출(Tool Use)", "모델이 스스로 특정 외부 함수를 호출하도록 유도하는 기술입니다.", "3095"),
+    ("시드 값", "결과의 재현성을 위해 난수 생성기의 시작점을 고정하는 값입니다.", "3096"),
+    ("프롬프트 누출", "공격자가 교묘한 질문으로 시스템 프롬프트를 알아내는 보안 사고입니다.", "3097"),
+    ("탈옥(Jailbreak)", "모델의 안전장치를 우회하여 유해한 답변을 받아내려는 시도입니다.", "3098"),
+    ("가스라이팅 공격", "모델에게 거짓 정보를 반복 주입하여 잘못된 판단을 내리게 하는 행위입니다.", "3099"),
+    ("미래 전망", "추론 전용 모델 등 특정 도메인에 수백 배 효율적인 소형 모델이 각광받고 있습니다.", "3100")
+]
+
+for title, fact, i in scenarios:
+    questions.append({
+        "chapter_name": chapter_name, "type": "객관식", "difficulty": "hard", "id": i,
+        "question": f"LLM 생태계의 {title} 시나리오에서 가장 적절한 기술적 지식은?",
+        "options": [fact, "현실적으로 불가능한 망상", "과거 기술의 한계점", "다른 산업(제조업)의 용어", "논리적 오류가 있는 문장"],
+        "answer": fact,
+        "why": f"{title} 관련: {fact}",
+        "hint": title
     })
 
 # --- 20 Code Completion Questions ---
-# 3101 ~ 3120
-cc_data_ch3 = [
-    ("토크나이저 불러오기", "from ____ import AutoTokenizer", "transformers", "Hugging Face의 핵심 라이브러리 이름입니다."),
-    ("모델 로드", "tokenizer = AutoTokenizer.____(\"gpt2\")", "from_pretrained", "사전 학습된 모델 설정을 가져오는 메서드입니다."),
-    ("텍스트 인코딩", "tokens = tokenizer.____(\"Hello\")", "encode", "텍스트를 숫자 리스트(ID)로 변환합니다."),
-    ("토큰 디코딩", "text = tokenizer.____(tokens)", "decode", "숫자를 다시 텍스트로 복원합니다."),
-    ("파라미터: 온도", "response = client.generate(____=0.7)", "temperature", "답변의 창의성을 조절하는 인자입니다."),
-    ("파라미터: 최대길이", "response = client.generate(____=50)", "max_tokens", "생성될 답변의 최대 길이를 제한합니다."),
-    ("트랜스포머 라이브러리", "import ____\npipe = transformers.pipeline(\"text-generation\")", "transformers", "LLM 개발의 표준 라이브러리입니다."),
-    ("기본 토크나이저 클래스", "tokenizer = ____.from_pretrained('bert-base-uncased')", "AutoTokenizer", "모델 타입에 맞는 토크나이저를 자동으로 찾아줍니다."),
-    ("토큰 확인", "ids = tokenizer.encode(\"AI\")\ncount = ____(ids)", "len", "문장이 몇 개의 토큰으로 구성됐는지 확인할 때 씁니다."),
-    ("GPT-4 제조사", "company = \"____\"", "OpenAI", "GPT 시리즈를 개발한 회사 이름입니다."),
-    ("LLaMA 제조사", "company = \"____\"", "Meta", "LLaMA 시리즈를 개발한 회사 이름입니다."),
-    ("API 페르소나 설정", "role: \"____\"", "system", "AI의 말투나 역할을 정하는 메시지 유형입니다."),
-    ("사용자 요청 메시지", "role: \"____\"", "user", "사용자가 실제로 묻는 질문을 담는 메시지 유형입니다."),
-    ("AI 답변 메시지", "role: \"____\"", "assistant", "대화 기록에서 AI의 답변을 나타내는 메시지 유형입니다."),
-    ("토큰 ID 리스트", "ids = [101, 203, 305]\ntype(ids) # ____", "list", "인코딩 결과물인 숫자 뭉치의 파이썬 자료형입니다."),
-    ("Temperature 낮은 값", "temp = ____ # 매우 일관된 답변", "0.0", "출력 확률이 가장 높은 단어만 뽑도록 하는 온도값입니다."),
-    ("Temperature 높은 값", "temp = ____ # 매우 창의적인 답변", "1.0", "다양한 표현을 시도하도록 하는 온도값입니다."),
-    ("라이브러리 버전 확인", "import transformers\nprint(transformers.____)", "__version__", "설치된 라이브러리의 버전을 체크할 때 씁니다."),
-    ("중단 문자열", "stop_seq = [\"\n\"] # 줄바꿈에서 ____", "stop", "생성을 멈추게 하는 설정 이름입니다."),
-    ("토큰 ID 0번", "pad_id = ____", "0", "패딩 토큰 등으로 흔히 쓰이는 가장 기초적인 숫자 ID입니다.")
+cc_data = [
+    ("토큰화 과정", "tokens = tokenizer.____(text)", "encode", "텍스트를 숫자로 바꾸는 매서드입니다."),
+    ("역토큰화", "text = tokenizer.____(tokens)", "decode", "숫자를 텍스트로 복원하는 메서드입니다."),
+    ("주의 집중", "____-Attention: 단어 간 관계를 계산함.", "Self", "자신에게 집중한다는 뜻입니다."),
+    ("언어 모델", "____ (Large Language Model)", "LLM", "대형 언어 모델의 약자입니다."),
+    ("프롬프트 기법", "____-shot: 예시 하나를 제공함.", "One", "하나의 예시입니다."),
+    ("기초 모델", "____-trained Model: 미리 학습된 모델.", "Pre", "사전 학습을 의미합니다."),
+    ("파라미터", "____: 모델의 사고를 결정하는 내부 수치들.", "Weight", "가중치를 뜻합니다."),
+    ("레이어", "Transformer ____: 여러 층을 쌓아 올림.", "Layer", "층을 의미합니다."),
+    ("입력 한도", "____ Window: 한 번에 수용 가능한 토큰 범위.", "Context", "문맥 창을 뜻합니다."),
+    ("생성 제어", "____: 다음 단어 분포를 깎아내는 '온도' 설정.", "Temperature", "창의성 조절 파라미터입니다."),
+    ("토큰 제한", "max_____: 생성할 최대 토큰 수.", "tokens", "길이 제한 변수명입니다."),
+    ("임베딩", "Word ____: 단어를 벡터로 변환.", "Embedding", "수치 벡터화를 뜻합니다."),
+    ("오픈소스 모델", "____-2, Llama-3 (Meta's model)", "Llama", "메타의 오픈소스 모델 이름입니다."),
+    ("추론", "____: 모델을 실행하여 답변을 얻는 것.", "Inference", "추론을 뜻하는 영어입니다."),
+    ("파이프라인", "HuggingFace ____: 간단히 모델을 돌리는 도구.", "pipeline", "모델 실행 간편 도구입니다."),
+    ("라이브러리", "import ____ # Facebook의 딥러닝 프레임워크", "torch", "PyTorch의 약칭입니다."),
+    ("트랜스포머", "from ____ import AutoModel", "transformers", "허깅페이스 라이브러리 이름입니다."),
+    ("정답 확률", "____: 생성 시 가장 확률이 높은 값 선택.", "Greedy", "탐욕적 선택 방식입니다."),
+    ("누적 확률", "Top-____ (Nucleus Sampling)", "P", "누적 확률 컷오프 방식입니다."),
+    ("최고 확률", "Top-____ (Sampling from top N values)", "K", "상위 N개 선택 방식입니다.")
 ]
 
-for i, (title, code, ans, explain) in enumerate(cc_data_ch3):
+for i, (title, code, ans, explain) in enumerate(cc_data):
     questions.append({
         "chapter_name": chapter_name, "type": "코드 완성형", "difficulty": "medium", "id": str(3101 + i),
-        "question": f"{title} 코드를 완성하세요.\n```python\n{code}\n```",
+        "question": f"{title} 개념을 완성하세요.\n```text\n{code}\n```",
         "answer": ans,
         "why": explain,
         "hint": title,
