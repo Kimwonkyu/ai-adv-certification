@@ -1,0 +1,1059 @@
+{
+    "questions": [
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬의 '동적 타이핑(Dynamic Typing)'에 대한 설명으로 옳은 것은?",
+            "options": [
+                "변수 선언 시 타입을 명시해야 한다.",
+                "실행 시점에 변수의 타입이 결정된다.",
+                "한 번 결정된 변수의 타입은 바꿀 수 없다.",
+                "컴파일 시점에 타입 체크를 수행한다.",
+                "숫자 타입과 문자열 타입을 섞어서 연산할 수 있다."
+            ],
+            "answer": "실행 시점에 변수의 타입이 결정된다.",
+            "why": "파이썬은 변수에 값을 할당할 때 타입이 결정되며, 실행 중에도 다른 타입의 값을 자유롭게 대입할 수 있는 동적 타이핑 언어입니다.",
+            "hint": "코드 실행(Runtime) 중에 타입이 결정된다는 의미입니다.",
+            "trap_points": [
+                "정적 타이핑 언어(Java, C++)와 혼동 주의"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬의 자료형 중 내부 요소를 변경할 수 없는(Immutable) 것은?",
+            "options": [
+                "List",
+                "Dictionary",
+                "Set",
+                "Tuple",
+                "ByteArray"
+            ],
+            "answer": "Tuple",
+            "why": "튜플은 한 번 생성되면 내부 요소를 수정, 추가, 삭제할 수 없는 불변 시퀀스 자료형입니다.",
+            "hint": "소괄호 ()를 사용하는 자료형입니다.",
+            "trap_points": [
+                "리스트(List)는 가변(Mutable) 자료형임"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬에서 여러 인자를 튜플 형태로 한꺼번에 전달받을 때 사용하는 가변 매개변수 표현은?",
+            "options": [
+                "*args",
+                "**kwargs",
+                "&args",
+                "$args",
+                "args[]"
+            ],
+            "answer": "*args",
+            "why": "*args는 정해지지 않은 수의 위치 인자들을 튜플로 묶어서 함수 내부로 전달합니다.",
+            "hint": "별표(Asterisk)가 하나 붙습니다.",
+            "trap_points": [
+                "**kwargs는 딕셔너리(키워드 인자) 형태임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파일을 열 때 사용 후 자동으로 닫아주는 안전한 문법 구조는?",
+            "options": [
+                "try-finally",
+                "open-close",
+                "with statement",
+                "using block",
+                "file-handle"
+            ],
+            "answer": "with statement",
+            "why": "with 문을 사용하면 context manager 기능에 의해 블록이 끝날 때 자동으로 close()가 호출됩니다.",
+            "hint": "~와 함께라는 뜻의 영어 단어로 시작합니다.",
+            "trap_points": [
+                "close()를 누락하면 자원 누수가 발생할 수 있음"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬 객체지향에서 클래스 변수에 대한 설명 중 맞는 것은?",
+            "options": [
+                "각 인스턴스마다 독립적인 값을 가진다.",
+                "인스턴스 생성 시점에 self로 정의한다.",
+                "모든 인스턴스가 공유하는 변수이다.",
+                "함수 내부에서만 전용으로 쓰인다.",
+                "변경이 절대 불가능한 상수이다."
+            ],
+            "answer": "모든 인스턴스가 공유하는 변수이다.",
+            "why": "클래스 변수는 클래스 정의 바로 아래에 위치하며, 해당 클래스로 생성된 모든 객체가 동일한 메모리 공간을 참조합니다.",
+            "hint": "개별(Instance)이 아닌 전체(Class)가 공유합니다.",
+            "trap_points": [
+                "self.변수로 정의하는 것은 인스턴스 변수임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "short_answer",
+            "question": "에러가 발생할 가능성이 있는 코드를 감싸고 예외를 처리할 때 사용하는 구문 세트는?",
+            "answer": "try, except",
+            "why": "try 블록에서 코드를 실행하고, 에러가 발생하면 except 블록에서 이를 잡아 처리합니다.",
+            "hint": "시도하다, 제외하다의 영어 단어입니다.",
+            "trap_points": [
+                "Java의 try-catch와 용어가 다름"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬 반복문에서 현재 루프를 중단하고 '다음 반복'으로 즉시 넘어가는 키워드는?",
+            "options": [
+                "break",
+                "continue",
+                "pass",
+                "exit",
+                "return"
+            ],
+            "answer": "continue",
+            "why": "continue는 아래 코드를 실행하지 않고 다음 이터레이션(루프의 다음 단계)으로 건너뜁니다.",
+            "hint": "계속하다라는 뜻입니다.",
+            "trap_points": [
+                "break는 루프 자체를 완전히 종료함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "PEP8 관례상 상수를 정의할 때 사용하는 명명 규칙은?",
+            "options": [
+                "camelCase",
+                "snake_case",
+                "PascalCase",
+                "ALL_CAPS (대문자+언더바)",
+                "lowercase"
+            ],
+            "answer": "ALL_CAPS (대문자+언더바)",
+            "why": "파이썬에서 상수는 관례적으로 모든 글자를 대문자로 쓰고 단어 사이를 언더바로 연결합니다.",
+            "hint": "MAX_VALUE와 같은 형태입니다.",
+            "trap_points": [
+                "파이썬은 문법적으로 상수를 강제하지 않으므로 규칙 준수가 중요함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "부모 클래스의 메서드를 자식 클래스에서 '재정의'하는 것을 무엇이라 하나요?",
+            "options": [
+                "Overloading",
+                "Overriding",
+                "Inheritance",
+                "Initialzing",
+                "Decorating"
+            ],
+            "answer": "Overriding",
+            "why": "오버라이딩은 상속받은 메서드를 자식 클래스의 용도에 맞게 다시 쓰는 것을 의미합니다.",
+            "hint": "위에 올라타서 덮어쓴다는 의미입니다.",
+            "trap_points": [
+                "Overloading은 같은 이름의 인자가 다른 함수들을 만드는 것(파이썬은 기본 미지원)"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "short_answer",
+            "question": "파이썬 패키지를 설치할 때 사용하는 표준 패키지 관리자 도구의 이름은?",
+            "answer": "pip",
+            "why": "pip는 Python Package Index(PyPI)로부터 패키지를 설치하고 관리하는 인터페이스입니다.",
+            "hint": "3글자 약어입니다.",
+            "trap_points": [
+                "conda와는 별개의 도구임"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Numpy에서 모든 요소가 0으로 채워진 3x3 행렬을 만드는 함수는?",
+            "options": [
+                "np.array(0)",
+                "np.ones((3,3))",
+                "np.zeros((3,3))",
+                "np.empty((3,3))",
+                "np.full(0)"
+            ],
+            "answer": "np.zeros((3,3))",
+            "why": "zeros 함수는 지정된 형상의 배열을 생성하고 모든 요소를 0으로 초기화합니다.",
+            "hint": "숫자 0을 영어로?",
+            "trap_points": [
+                "ones는 1로 채우는 함수임"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Pandas에서 데이터프레임의 상위 5개 행을 확인하는 메서드는?",
+            "options": [
+                "df.top()",
+                "df.first()",
+                "df.head()",
+                "df.tail()",
+                "df.show()"
+            ],
+            "answer": "df.head()",
+            "why": "head() 메서드는 데이터의 구조를 빠르게 파악하기 위해 앞부분의 데이터를 보여줍니다.",
+            "hint": "신체 부위 중 '머리'를 뜻합니다.",
+            "trap_points": [
+                "tail()은 뒷부분 5개를 보여줌"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "정규표현식에서 '한 글자 이상' 반복됨을 의미하는 메타 문자는?",
+            "options": [
+                "*",
+                "?",
+                "+",
+                ".",
+                "^"
+            ],
+            "answer": "+",
+            "why": "+ 기호는 앞에 오는 패턴이 1회 이상 연속될 때 매칭됩니다.",
+            "hint": "덧셈 기호를 생각하세요.",
+            "trap_points": [
+                "*는 0회 이상임에 주의"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "텍스트 전처리 단계 중 '의미 없는 단어(조사, 접속사 등)'를 제거하는 단계는?",
+            "options": [
+                "Cleaning",
+                "Tokenization",
+                "Normalization",
+                "Stopwords Removal",
+                "Stemming"
+            ],
+            "answer": "Stopwords Removal",
+            "why": "불용어(Stopwords) 제거는 분석에 큰 도움이 되지 않는 빈번한 단어들을 필터링하는 효율화 단계입니다.",
+            "hint": "멈춰야 할 단어들이라는 뜻입니다.",
+            "trap_points": [
+                "Normalization은 형태를 통일하는 과정임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "두 벡터 사이의 각도를 기반으로 유사도를 측정하는 방식은?",
+            "options": [
+                "Euclidean Distance",
+                "Manhattan Distance",
+                "Cosine Similarity",
+                "Jaccard Similarity",
+                "Hamming Distance"
+            ],
+            "answer": "Cosine Similarity",
+            "why": "코사인 유사도는 벡터의 크기가 아닌 '방향'의 일치 정도를 측정하여 텍스트 유사도 분석에 널리 쓰입니다.",
+            "hint": "삼각함수 이름 중 하나입니다.",
+            "trap_points": [
+                "유클리드 거리는 직선 거리를 측정함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "short_answer",
+            "question": "Pandas에서 두 개의 데이터프레임을 특정 키 값을 기준으로 합치는(SQL의 JOIN과 유사한) 함수는?",
+            "answer": "merge()",
+            "why": "merge() 함수는 공통된 열이나 인덱스를 기준으로 데이터를 병합합니다.",
+            "hint": "병합하다라는 뜻의 영어 단어입니다.",
+            "trap_points": [
+                "concat()은 단순 수직/수평 결합임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Pandas에서 결측치(NaN) 여부를 확인하여 True/False로 반환하는 메서드는?",
+            "options": [
+                "df.null()",
+                "df.empty()",
+                "df.isna()",
+                "df.missing()",
+                "df.check()"
+            ],
+            "answer": "df.isna()",
+            "why": "isna() (또는 isnull())는 각 요소가 결측치인지 검사하여 불리언 마스크를 생성합니다.",
+            "hint": "~인가요?(is) 결측치(na)",
+            "trap_points": [
+                "notna()는 반대로 결측치가 아닐 때 True임"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Numpy에서 행렬의 행과 열을 바꾸는(전치) 속성은?",
+            "options": [
+                ".reverse",
+                ".transpose()",
+                ".T",
+                ".switch",
+                ".flip"
+            ],
+            "answer": ".T",
+            "why": ".T 속성은 간단하게 행렬의 전치(Transpose) 행렬을 반환합니다.",
+            "hint": "Transpose의 대문자 약어입니다.",
+            "trap_points": [
+                "속성이라서 괄호()가 붙지 않음"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "데이터 분석 시 텍스트를 고정된 도메인의 숫자로 바꾸는 가장 단순한 방식은?",
+            "options": [
+                "Word2Vec",
+                "BERT",
+                "One-hot Encoding",
+                "TF-IDF",
+                "Glove"
+            ],
+            "answer": "One-hot Encoding",
+            "why": "원-핫 인코딩은 범주형 데이터를 0과 1로 이루어진 벡터로 바꾸는 가장 기본적인 수치화 기법입니다.",
+            "hint": "하나만 뜨겁다(1)는 뜻입니다.",
+            "trap_points": [
+                "단어 수가 많아지면 벡터가 너무 커지는(Sparse) 단점이 있음"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "short_answer",
+            "question": "Pandas에서 중복된 행을 제거할 때 사용하는 메서드는?",
+            "answer": "drop_duplicates()",
+            "why": "drop_duplicates()는 중복된 값을 가진 행을 찾아 하나만 남기고 삭제합니다.",
+            "hint": "중복(Duplicates)을 떨어뜨리다(Drop).",
+            "trap_points": [
+                "필요한 경우 특정 열만 기준으로 중복을 체크할 수 있음"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "LLM에서 'Context Window'가 의미하는 것은?",
+            "options": [
+                "모델이 학습한 전체 데이터 양",
+                "모델이 한꺼번에 처리할 수 있는 최대 토큰 수",
+                "컴퓨터의 메모리 용량",
+                "인터넷 연결 속도",
+                "답변을 생성하는 데 걸리는 시간"
+            ],
+            "answer": "모델이 한꺼번에 처리할 수 있는 최대 토큰 수",
+            "why": "컨텍스트 윈도우는 모델이 기억하고 참조할 수 있는 입력의 길이를 결정합니다.",
+            "hint": "맥락(Context)의 창문 크기입니다.",
+            "trap_points": [
+                "이 한도를 넘기면 앞부분의 내용을 잊어버리게 됨"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "트랜스포머 아키텍처에서 인코더 없이 디코더만 사용하여 생성에 특화된 모델 계열은?",
+            "options": [
+                "BERT",
+                "GPT",
+                "T5",
+                "ResNet",
+                "YOLO"
+            ],
+            "answer": "GPT",
+            "why": "GPT는 Generative Pre-trained Transformer의 약자로, 이전 토큰들을 기반으로 다음 토큰을 예측하는 디코더 구조입니다.",
+            "hint": "채팅 서비스로 유명한 그 모델입니다.",
+            "trap_points": [
+                "BERT는 인코더 기반의 양방향 모델임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "LLM의 파라미터가 7B라고 할 때, 7B는 구체적으로 무엇을 의미하나요?",
+            "options": [
+                "7기가바이트 용량",
+                "70억 개의 학습 가능한 변수",
+                "7억 번의 연산 속도",
+                "7단계의 인공신경망 층",
+                "7가지 종류의 데이터셋"
+            ],
+            "answer": "70억 개의 학습 가능한 변수",
+            "why": "B는 Billion(10억)의 약자로, 7B 모델은 약 70억 개의 가중치(Weights)를 가지고 있음을 뜻합니다.",
+            "hint": "Billion이라는 단위를 생각하세요.",
+            "trap_points": [
+                "용량이 7GB인 것과는 파일 형식에 따라 다를 수 있음"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "토큰(Token)과 단어(Word)의 관계에 대한 설명으로 옳은 것은?",
+            "options": [
+                "토큰은 반드시 단어 단위와 일치한다.",
+                "한 단어는 여러 개의 토큰으로 쪼개질 수 있다.",
+                "토큰은 항상 단어보다 큰 단위이다.",
+                "한글은 토큰화가 불필요하다.",
+                "토큰 수는 모델 성능과 무관하다."
+            ],
+            "answer": "한 단어는 여러 개의 토큰으로 쪼개질 수 있다.",
+            "why": "BPE(Byte Pair Encoding) 등 토크나이저는 희귀 단어를 의미 있는 하위 단위(Subword)로 나눠 효율성을 높입니다.",
+            "hint": "단위(Unit)의 미세함을 생각하세요.",
+            "trap_points": [
+                "토큰 수가 많아지면 비용이 올라가고 맥락 한도가 빨리 소진됨"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "모델의 가중치를 정밀도가 낮은 비트(예: float16 -> int4)로 변환하여 메모리를 절약하는 기술은?",
+            "options": [
+                "Quantization",
+                "Pruning",
+                "Distillation",
+                "Augmentation",
+                "Regularization"
+            ],
+            "answer": "Quantization",
+            "why": "양자화는 모델의 크기를 획기적으로 줄여 소비자용 GPU에서도 거대 모델을 돌릴 수 있게 합니다.",
+            "hint": "양(Quantity)을 자(ization)화 시킨다는 느낌의 용어입니다.",
+            "trap_points": [
+                "성능 저하를 최소화하면서 압축하는 것이 핵심임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "short_answer",
+            "question": "LLM이 그럴듯하게 들리지만 사실이 아닌 정보를 생성하는 현상을 무엇이라 하나요?",
+            "answer": "Hallucination (환각)",
+            "why": "모델은 확률적으로 다음 단어를 예측할 뿐, 실제 사실 여부를 외부 DB 없이 검증하지 않기 때문에 발생합니다.",
+            "hint": "헛것을 본다는 뜻의 단어입니다.",
+            "trap_points": [
+                "RAG를 통해 이 문제를 어느 정도 완화할 수 있음"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "여러 전문가 네트워크(Expert MLP) 중 필요한 일부만 활성화하여 연산 효율을 높이는 구조는?",
+            "options": [
+                "Dense Network",
+                "RNN",
+                "Mixture of Experts (MoE)",
+                "Convolutional Neural Network (CNN)",
+                "Autoencoder"
+            ],
+            "answer": "Mixture of Experts (MoE)",
+            "why": "MoE는 전체 파라미터는 크지만 실제 추론 시에는 선별된 일부 전문가 파라미터만 사용하여 속도와 성능을 모두 잡습니다.",
+            "hint": "전문가(Experts)들의 혼합(Mixture)입니다.",
+            "trap_points": [
+                "GPT-4나 Mixtral 모델이 이 구조를 사용함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "LLM의 'Temperature' 파라미터가 0에 가까울 때 나타나는 특징은?",
+            "options": [
+                "매우 창의적이고 무작위적인 답변을 한다.",
+                "항상 가장 확률이 높은 단어만 선택하여 일관적이고 결정론적인 답변을 한다.",
+                "답변의 속도가 매우 빨라진다.",
+                "영어로만 답변한다.",
+                "답변의 길이가 매우 길어진다."
+            ],
+            "answer": "항상 가장 확률이 높은 단어만 선택하여 일관적이고 결정론적인 답변을 한다.",
+            "why": "온오(Temperature)가 낮을수록 확률 분포가 뾰족해져서 변동성이 줄어듭니다.",
+            "hint": "열기가 낮아지면 입자들이 얌전해진다고 생각하세요.",
+            "trap_points": [
+                "창의적인 글쓰기에는 높은 온도가 적합함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "사전 학습된 베이스 모델에 특정 형태의 대화를 학습시켜 질의응답이 가능하게 만든 모델을 무엇이라 하나요?",
+            "options": [
+                "Base Model",
+                "Instruct Model",
+                "Logical Model",
+                "Raw Model",
+                "Compressed Model"
+            ],
+            "answer": "Instruct Model",
+            "why": "인스트럭트 모델은 지시 사항(Instruction)을 따르도록 튜닝된 모델로, 챗봇 서비스의 기본이 됩니다.",
+            "hint": "지시하다(Instruct)라는 단어를 생각하세요.",
+            "trap_points": [
+                "베이스 모델은 다음 문장을 이어 쓸 뿐 질문에 답을 잘 못함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "short_answer",
+            "question": "모델의 학습이 끝난 시점을 의미하며, 그 이후의 최신 정보를 모델이 알지 못하는 상태를 무엇이라 하나요?",
+            "answer": "Knowledge Cut-off (지식 컷오프)",
+            "why": "모델은 학습 데이터에 포함된 시간대까지만 세상을 기억하기 때문입니다.",
+            "hint": "지식이 잘려나간(Cut-off) 지점입니다.",
+            "trap_points": [
+                "RAG는 이를 실시간 검색으로 해결함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "좋은 프롬프트의 4요소 중 '결과물을 어떤 형태로 받을지(표, 리스트, JSON 등)'를 정하는 것은?",
+            "options": [
+                "Persona",
+                "Task",
+                "Context",
+                "Format"
+            ],
+            "answer": "Format",
+            "why": "포맷 설정은 후처리가 용이하도록 결과의 물리적 구조를 정의하는 것입니다.",
+            "hint": "형식을 뜻하는 단어입니다.",
+            "trap_points": [
+                "JSON 구조 요청 시 가장 중요한 요소임"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트 내에서 입력을 그대로 다음 단계로 전달할 때 사용하는 LangChain의 Runnable은?",
+            "options": [
+                "RunnableParallel",
+                "RunnablePassthrough",
+                "RunnableLambda",
+                "RunnableSequence",
+                "RunnableMap"
+            ],
+            "answer": "RunnablePassthrough",
+            "why": "Passthrough는 데이터를 변형 없이 다리(Bridge)처럼 넘겨주는 역할을 합니다.",
+            "hint": "통과시킨다(Pass through)는 뜻입니다.",
+            "trap_points": [
+                "RAG 체인에서 질문을 그대로 넘길 때 자주 쓰임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트 엔지니어링 기법 중 '어려운 답변을 하기 전, 스스로 한 걸음 물러나 목차나 구조를 먼저 잡게 하는' 기법은?",
+            "options": [
+                "Chain of Thought",
+                "Zero-shot",
+                "Step-back Prompting",
+                "Few-shot",
+                "Active Prompting"
+            ],
+            "answer": "Step-back Prompting",
+            "why": "바로 답을 쓰지 않고 전체적인 맥락이나 배경 원리를 먼저 정의하게 하여 논리적 완성도를 높입니다.",
+            "hint": "뒤로 한 걸음(Step back) 물러난다는 뜻입니다.",
+            "trap_points": [
+                "CoT가 세부 풀이 과정이라면, Step-back은 상위 구조 파악에 가깝음"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "예시(Few-shot)를 넣을 때 발생할 수 있는 부작용은?",
+            "options": [
+                "모델이 너무 말을 안 듣게 됨",
+                "모델이 예시의 톤이나 특정 주제에 과도하게 편향됨",
+                "토큰 비용이 줄어듦",
+                "답변 속도가 빨라짐",
+                "환각이 100% 사라짐"
+            ],
+            "answer": "모델이 예시의 톤이나 특정 주제에 과도하게 편향됨",
+            "why": "모델은 예시의 패턴을 매우 강력하게 따르려 하므로, 예시 자체가 편향되어 있으면 결과물도 오염될 수 있습니다.",
+            "hint": "예시에 너무 끌려가는 '편중' 현상을 생각하세요.",
+            "trap_points": [
+                "예시는 다양하고 균형 잡힌 것을 사용해야 함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "LangChain의 LCEL 문법에서 여러 작업을 동시에 병렬로 실행할 때 쓰는 것은?",
+            "options": [
+                "RunnableSequence",
+                "RunnableParallel",
+                "RunnablePassthrough",
+                "RunnableEvent",
+                "RunnableBatch"
+            ],
+            "answer": "RunnableParallel",
+            "why": "속도를 높이거나 여러 검색 결과를 합칠 때 병렬 실행(Parallel)이 필수적입니다.",
+            "hint": "나란히 실행한다는 뜻입니다.",
+            "trap_points": [
+                "딕셔너리 형태로 결과를 묶어서 반환하게 됨"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "short_answer",
+            "question": "프롬프트 안에 <Context> </Context> 처럼 태그를 사용하여 영역을 나누는 기법을 무엇이라 하나요?",
+            "answer": "프롬프트 구조화 (Structuring)",
+            "why": "구조화는 모델이 어디가 배경 지식이고 어디가 질문인지 명확히 구분하게 도와줍니다.",
+            "hint": "구조를 잡는다는 의미입니다.",
+            "trap_points": [
+                "XML 태그나 마크다운 기호를 활용하면 정확도가 올라감"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "모델에게 '모르는 내용은 모른다고 해'라고 지시하여 환각을 줄이는 것을 무엇이라 하나요?",
+            "options": [
+                "Instruction Tuning",
+                "Negative Constraint",
+                "Grounding",
+                "Reinforcement",
+                "Refinement"
+            ],
+            "answer": "Negative Constraint",
+            "why": "하지 말아야 할 행동을 명시하여 모델의 행동 반경을 통제하는 기법입니다.",
+            "hint": "부정적인(Negative) 제약(Constraint)입니다.",
+            "trap_points": [
+                "할루시네이션 방지의 가장 기본 지침임"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트 엔지니어링 시 영어로 지시를 내리는 것이 유리한 이유는?",
+            "options": [
+                "영어가 한글보다 아름다워서",
+                "대부분의 모델이 영어 데이터로 가장 많이 학습되어 문해력이 높기 때문에",
+                "한글은 토큰 비용이 0원이기 때문에",
+                "영어가 타이핑하기 편해서",
+                "모델이 한글을 아예 못 알아듣기 때문에"
+            ],
+            "answer": "대부분의 모델이 영어 데이터로 가장 많이 학습되어 문해력이 높기 때문에",
+            "why": "글로벌 LLM들은 영어 기반 지식 밀도가 훨씬 높으며, 지시 사항 이행 능력도 영어에서 더 정밀하게 나타납니다.",
+            "hint": "데이터의 학습량 차이를 생각하세요.",
+            "trap_points": [
+                "한국어 태스크를 하더라도 지시는 영어로 하는 '영-한 혼합 프롬프트'가 효율적일 수 있음"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "short_answer",
+            "question": "모델의 이전 대화 내용을 기억하게 하여 문맥이 이어지도록 관리하는 컴포넌트는?",
+            "answer": "Memory (메모리)",
+            "why": "단기 기억인 Conversation Buffer나 장기 기억인 DB 연동 등이 여기에 포함됩니다.",
+            "hint": "기억 장치를 뜻합니다.",
+            "trap_points": [
+                "스테이트리스(Stateless)한 API를 스테이트풀(Stateful)하게 만듦"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트 엔지니어링 직군이 전문 직종에서 '실무 스킬'로 이동하고 있다는 것은 무엇을 의미하나요?",
+            "options": [
+                "이제 아무도 프롬프트를 안 쓴다.",
+                "모델 성능이 좋아져서 대충 말해도 잘 알아들으므로 기본 상식이 된다.",
+                "프롬프트가 너무 어려워져서 박사들만 쓴다.",
+                "그래픽 카드 성능이 좋아졌다.",
+                "답변 속도가 느려졌다."
+            ],
+            "answer": "모델 성능이 좋아져서 대충 말해도 잘 알아들으므로 기본 상식이 된다.",
+            "why": "2025년 기준, 모델의 추론(Reasoning) 능력이 향상되어 복잡한 기법 없이도 목적 달성이 용이해졌습니다.",
+            "hint": "기술의 민주화, 보편화를 생각하세요.",
+            "trap_points": [
+                "하지만 여전히 정밀한 제어에는 고급 기법이 필요함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "RAG의 5단계 중, 원본 문서를 청킹하고 벡터화하여 DB에 넣는 준비 과정은?",
+            "options": [
+                "Indexing",
+                "Processing",
+                "Searching",
+                "Augmenting",
+                "Generating"
+            ],
+            "answer": "Indexing",
+            "why": "인덱싱은 데이터를 검색 가능한 상태로 '색인화'하여 저장소(Vector DB)에 구축하는 단계입니다.",
+            "hint": "색인을 뜻하는 단어입니다.",
+            "trap_points": [
+                "실제로 검색이 이루어지는 단계는 Searching임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "검색 결과가 너무 많을 때, 관련성이 가장 높은 소수만 골라내기 위해 유사도 점수를 다시 매기는 과정은?",
+            "options": [
+                "Filtering",
+                "Sorting",
+                "Re-ranking",
+                "Pruning",
+                "Summarizing"
+            ],
+            "answer": "Re-ranking",
+            "why": "리랭커(Re-ranker)는 속도는 느리지만 훨씬 정밀한 모델을 사용하여 최상위 답변 후보를 선별합니다.",
+            "hint": "순위(Ranking)를 다시(Re) 매깁니다.",
+            "trap_points": [
+                "Bi-Encoder로 검색하고 Cross-Encoder로 리랭킹하는 것이 정석임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "RAG 환경에서 질문과 문서 사이의 관련성을 평가할 때, '검색된 문서 내용에만 기반해서 답했는지'를 나타내는 지표는?",
+            "options": [
+                "Precision",
+                "Recall",
+                "Faithfulness (충실도)",
+                "F1-score",
+                "L2 Distance"
+            ],
+            "answer": "Faithfulness (충실도)",
+            "why": "충실도는 모델이 외부 지식을 섞지 않고 오직 '주어진 컨텍스트' 내에서만 충실히 답변했는지를 측정합니다.",
+            "hint": "믿음직함, 충실함을 뜻하는 단어입니다.",
+            "trap_points": [
+                "RAGAS 같은 평가 프레임워크의 핵심 지표임"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "벡터 DB에서 가장 가까운 이웃을 효율적으로 찾기 위해 그래프 구조를 활용하는 알고리즘은?",
+            "options": [
+                "ANN",
+                "HNSW",
+                "B-Tree",
+                "Hash Table",
+                "Binary Search"
+            ],
+            "answer": "HNSW",
+            "why": "Hierarchical Navigable Small World(HNSW)는 고차원 벡터 검색에서 속도와 정확도의 균형이 뛰어난 대표적 알고리즘입니다.",
+            "hint": "계층적 작은 세상 탐색의 약자입니다.",
+            "trap_points": [
+                "Chroma, Pinecone 등 대부분의 주요 벡터 DB가 지원함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "short_answer",
+            "question": "사용자의 모호한 질문을 명확하게 바꾸거나 검색이 잘 되도록 키워드를 확장하는 단계를 무엇이라 하나요?",
+            "answer": "Query Reformulation (또는 리프레이징)",
+            "why": "질문을 보정함으로써 검색 엔진이 더 정확한 문서를 찾을 확률을 높여줍니다.",
+            "hint": "질문을 다시(Re) 형성(formulation)한다는 뜻입니다.",
+            "trap_points": [
+                "Processing 단계에서 주로 수행됨"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "RAG에서 문서 조각(Chunk) 사이를 일부 겹치게 하는 'Overlap'의 주된 목적은?",
+            "options": [
+                "메모리 절약을 위해",
+                "청크가 잘리는 부분의 문맥 정보를 보존하기 위해",
+                "문서 전체를 중복 저장하기 위해",
+                "검색 속도를 빠르게 하기 위해",
+                "영어로만 된 문서를 찾기 위해"
+            ],
+            "answer": "청크가 잘리는 부분의 문맥 정보를 보존하기 위해",
+            "why": "겹침(Overlap)이 있으면 중요한 단어가 경계선에서 잘려 의미가 훼손되는 것을 방지할 수 있습니다.",
+            "hint": "경계선의 문맥(Context) 유지를 생각하세요.",
+            "trap_points": [
+                "보통 청크 사이즈의 10~20% 정도를 겹치도록 설정함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "질문을 받았을 때, 답을 바로 내지 않고 '검색 결과가 충분한가?'를 스스로 평가하여 부족하면 다시 검색하는 에이전트 구조는?",
+            "options": [
+                "Simple RAG",
+                "Adaptive RAG (또는 Self-RAG)",
+                "Static Agent",
+                "Keyword Matcher",
+                "Linear Pipeline"
+            ],
+            "answer": "Adaptive RAG (또는 Self-RAG)",
+            "why": "상황에 맞춰(Adaptive) 행동을 결정하는 구조로, 검색 결과가 주제와 무관하면 다시 쿼리를 짜는 능력이 있습니다.",
+            "hint": "적응형, 또는 스스로를 평가하는 방식입니다.",
+            "trap_points": [
+                "성능은 좋으나 API 호출 횟수가 늘어나 비용이 상승할 수 있음"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "의미 검색(Semantic)과 키워드 검색(Lexical)의 결과를 합치는 기술의 명칭은?",
+            "options": [
+                "Cross Search",
+                "Hybrid Search",
+                "Mixed Retrieval",
+                "Deep Search",
+                "Combined Fusion"
+            ],
+            "answer": "Hybrid Search",
+            "why": "두 방식의 장점을 모두 취하여(Hybrid), 정확한 고유 명사 검색과 모호한 의미 검색을 동시에 잡습니다.",
+            "hint": "두 가지를 섞었다는 뜻입니다.",
+            "trap_points": [
+                "Reranking 전에 두 결과를 Rank Fusion으로 합치는 게 일반적임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "short_answer",
+            "question": "PDF 문서의 이미지, 표, 텍스트 구조를 정확히 파싱하여 RAG용 데이터로 변환해 주는 IBM의 오픈소스 도구는?",
+            "answer": "Docling",
+            "why": "Docling은 PDF를 마크다운이나 JSON으로 깔끔하게 변환하여 LLM이 표의 의미까지 읽도록 도와줍니다.",
+            "hint": "문서(Doc)와 연관된 귀여운 이름입니다.",
+            "trap_points": [
+                "단순히 텍스트만 뽑는 도구보다 표 인식 능력이 뛰어남"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "에이전트 구현 시 '생각하고 행동하고 관찰하는' 과정을 반복하는 가장 대표적인 프레임워크는?",
+            "options": [
+                "CoT",
+                "ReAct",
+                "Reflection",
+                "Plan-and-Execute",
+                "BabyAGI"
+            ],
+            "answer": "ReAct",
+            "why": "Reasoning + Acting의 약자로, 매 단계마다 현재 상황을 추론하고 행동을 결정하는 에이전트의 기본 뼈대입니다.",
+            "hint": "반응하다라는 영어 단어와 철자가 같습니다.",
+            "trap_points": [
+                "Thought, Action, Observation의 루프를 기억하세요"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "사전 학습된 모델에 아무런 레이블 없는 도메인 문서들을 그대로 더 학습시켜 '지식의 토양'을 다지는 과정은?",
+            "options": [
+                "SFT",
+                "Continuous Pre-training (CPT)",
+                "RLHF",
+                "DPO",
+                "Distillation"
+            ],
+            "answer": "Continuous Pre-training (CPT)",
+            "why": "기존 지식 위에 새로운 분야의 텍스트 덩어리를 부어 넣어 모델 자체가 해당 도메인의 언어 패턴을 익히게 하는 것입니다.",
+            "hint": "학습을 '지속(Continuous)'한다는 뜻입니다.",
+            "trap_points": [
+                "가장 많은 데이터와 GPU 자원이 필요한 단계임"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "질문과 정답이 명시된 데이터셋으로 모델을 직접 지도 학습시키는 단계는?",
+            "options": [
+                "SFT (Supervised Fine-tuning)",
+                "Rewarding",
+                "Prompting",
+                "Sampling",
+                "Normalization"
+            ],
+            "answer": "SFT (Supervised Fine-tuning)",
+            "why": "지도 학습(Supervised)을 통해 모델이 특정 질문에 대답하는 방식을 배우게 합니다.",
+            "hint": "감독/지도하에 학습시킨다는 약자입니다.",
+            "trap_points": [
+                "Instruction Tuning은 SFT의 한 종류임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "LoRA 기법에서 'Rank(r)' 값이 커질 때 나타나는 일반적인 특징은?",
+            "options": [
+                "학습해야 할 파라미터가 줄어든다.",
+                "모델 성능이 무조건 나빠진다.",
+                "학습 가능한 변수가 늘어나 복잡한 패턴을 더 잘 학습할 수 있지만 메모리 사용량도 늘어난다.",
+                "속도가 훨씬 빨라진다.",
+                "양자화 비트 수가 늘어난다."
+            ],
+            "answer": "학습 가능한 변수가 늘어나 복잡한 패턴을 더 잘 학습할 수 있지만 메모리 사용량도 늘어난다.",
+            "why": "Rank는 어댑터 행렬의 크기를 결정하며, 클수록 표현력은 좋아지나 효율성은 감소합니다.",
+            "hint": "행렬의 크기, 차원(Rank)을 생각하세요.",
+            "trap_points": [
+                "보통 8, 16, 32 정도를 사용하며 너무 크면 Full FT와 차이가 없어짐"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "모델이 실패한 대화에서 '왜 실패했는지'를 분석하고 스스로 수정하여 다음 시도에 반영하는 기법은?",
+            "options": [
+                "SFT",
+                "Reflexion (또는 Self-Reflection)",
+                "DPO",
+                "LoRA",
+                "CPT"
+            ],
+            "answer": "Reflexion (또는 Self-Reflection)",
+            "why": "스스로 반성(Reflection)하는 과정을 통해 에이전트의 정답률을 지속적으로 개선하는 고성능 기법입니다.",
+            "hint": "반성, 성찰이라는 뜻입니다.",
+            "trap_points": [
+                "학습 시뿐만 아니라 추론(Inference) 시에도 에이전트가 사용할 수 있음"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "short_answer",
+            "question": "파인튜닝 시 이전의 중요한 정보를 잊어버리는 것을 방지하기 위해 사용하는 원본 모델과 파인튜닝 모델 사이의 통계적 거리 제한 기술은?",
+            "answer": "KL Divergence (KL 발산)",
+            "why": "PPO 등 강화학습에서 모델이 너무 크게 변해버려(붕괴) 원래의 언어 능력을 잃는 것을 막는 '안전 장치' 역할을 합니다.",
+            "hint": "통계에서 두 분포 간의 차이를 측정하는 용어입니다.",
+            "trap_points": [
+                "KL 거리가 너무 크면 모델이 헛소리를 할 확률이 올라감"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "인간의 피드백 없이도 코딩 문제의 '성공 여부'처럼 명확히 실현 가능한 보상을 통해 학습하는 방식은?",
+            "options": [
+                "RLHF",
+                "RLVR (Reinforcement Learning with Verifiable Reward)",
+                "DPO",
+                "SFT",
+                "Pre-training"
+            ],
+            "answer": "RLVR (Reinforcement Learning with Verifiable Reward)",
+            "why": "실행 결과가 0(실패) 아니면 1(성공)로 명확한 경우, 보상 모델 없이 직접 강화학습을 수행하여 추론 능력을 극대화합니다.",
+            "hint": "검증 가능한(Verifiable) 보상에 주목하세요.",
+            "trap_points": [
+                "DeepSeek-R1 등 최신 추론 모델의 핵심 비결 중 하나임"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "파인튜닝용 데이터셋을 만들기 위해 고성능 모델(예: GPT-4)을 사용하여 질문-답변 쌍을 대량으로 생성하는 것을 무엇이라 하나요?",
+            "options": [
+                "Data Scraping",
+                "Synthetic Data Generation (합성 데이터 생성)",
+                "Labeling",
+                "Cleaning",
+                "Scaling"
+            ],
+            "answer": "Synthetic Data Generation (합성 데이터 생성)",
+            "why": "사람이 일일이 만드는 비용을 줄이고 고성능 모델의 능력을 학습 모델에 전이(Knowledge Distillation)하기 위해 널리 쓰입니다.",
+            "hint": "진짜가 아닌 '합성된(Synthetic)' 데이터입니다.",
+            "trap_points": [
+                "모델이 만든 데이터만 쓰다 보면 성능이 열화될 수도 있으니 주의해야 함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "여러 도메인(수학, 번역, 법률 등)의 LoRA 어댑터를 하나의 모델에 필요에 따라 갈아 끼우며 사용하는 기술은?",
+            "options": [
+                "Single-LoRA",
+                "Multi-LoRA",
+                "Universal Tuning",
+                "Dynamic Model",
+                "Switching Model"
+            ],
+            "answer": "Multi-LoRA",
+            "why": "원본 모델(Base)은 하나로 유지하고 상황에 맞는 가벼운 어댑터만 교체하므로 저장 공간과 서빙 효율이 극대화됩니다.",
+            "hint": "여러 개(Multi)의 어댑터입니다.",
+            "trap_points": [
+                "Peft 라이브러리를 통해 쉽게 구현 가능함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "short_answer",
+            "question": "RLHF 방식에서 모델이 보상을 높게 받는 법만 터득하여, 보상 모델의 허점을 파고들어 엉뚱한 답을 내는 현상은?",
+            "answer": "Reward Hacking (보상 해킹)",
+            "why": "보상 모델이 완벽하지 않기 때문에, 모델이 실제 의도와는 무관하게 '점수만 잘 받는 꼼수'를 학습하는 부작용입니다.",
+            "hint": "보상을 해킹한다(Hacking)는 뜻입니다.",
+            "trap_points": [
+                "KL Divergence를 통해 이를 억제할 수 있음"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "RAG을 기반으로 답변하는 '방식' 자체를 모델에 학습시켜 할루시네이션을 줄이는 기법은?",
+            "options": [
+                "RAFT (Retrieval-Augmented Fine-Tuning)",
+                "CPT",
+                "DPO",
+                "GRPO",
+                "IT"
+            ],
+            "answer": "RAFT (Retrieval-Augmented Fine-Tuning)",
+            "why": "모델에게 '질문과 문서를 줄 테니 반드시 문서에 근거하여 CoT로 풀어라'라는 형식을 학습시키는 방식입니다.",
+            "hint": "뗏목(Raft)과 발음이 같으며 RAG가 섞인 약자입니다.",
+            "trap_points": [
+                "오픈 북 시험 공부법과 유사한 원리임"
+            ],
+            "difficulty": "hard"
+        }
+    ]
+}

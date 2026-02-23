@@ -1,0 +1,444 @@
+{
+    "questions": [
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬에서 `__getitem__` 메서드를 구현하면 어떤 기능을 사용할 수 있게 되나요?",
+            "options": [
+                "객체를 함수처럼 호출하기",
+                "객체를 리스트처럼 인덱싱(obj[0])하거나 슬라이싱하기",
+                "객체를 삭제하기",
+                "객체를 더하기",
+                "객체를 문자열로 바꾸기"
+            ],
+            "answer": "객체를 리스트처럼 인덱싱(obj[0])하거나 슬라이싱하기",
+            "why": "파이썬의 '덕 타이핑' 원리에 따라 특정 매직 메서드를 구현하면 내장 타입처럼 동작하게 됩니다.",
+            "hint": "아이템(Item)을 가져오는(Get) 방법입니다.",
+            "trap_points": [
+                "슬라이싱 객체도 인자로 들어올 수 있음에 주의"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬에서 두 개의 세트(Set) A, B에 대해 `A | B` 연산이 수행하는 것은?",
+            "options": [
+                "교집합",
+                "합집합",
+                "차집합",
+                "대칭 차집합",
+                "곱집합"
+            ],
+            "answer": "합집합",
+            "why": "| 기호는 유니온(Union)을 의미하며 두 세트의 모든 요소를 합칩니다.",
+            "hint": "전체를 합칩니다.",
+            "trap_points": [
+                "교집합은 & 기호를 사용함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬 `sys.argv` 리스트의 첫 번째 요소(index 0)에 담기는 값은?",
+            "options": [
+                "첫 번째 인자",
+                "실행된 파이썬 스크립트의 파일명",
+                "사용자 이름",
+                "현재 시간",
+                "파이썬 버전"
+            ],
+            "answer": "실행된 파이썬 스크립트의 파일명",
+            "why": "명령행 인자 중 0번은 항상 실행 주체인 스크립트 경로를 담고 있습니다.",
+            "hint": "파일 이름입니다.",
+            "trap_points": [
+                "실제 인자는 1번 인덱스부터 시작함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬에서 리스트를 정렬할 때 `key=len` 옵션을 주면 어떤 기준으로 정렬되나요?",
+            "options": [
+                "알파벳 순서",
+                "요소의 길이 순서",
+                "나중 추가된 순서",
+                "랜덤 순서",
+                "숫자 크기"
+            ],
+            "answer": "요소의 길이 순서",
+            "why": "key 인자에 함수를 전달하면 각 요소에 해당 함수를 적용한 결과를 기준으로 정렬합니다.",
+            "hint": "길이(Length)를 기준으로 합니다.",
+            "trap_points": [
+                "len은 내장 함수이므로 () 없이 이름만 전달함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "short_answer",
+            "question": "파이썬에서 이미 불러온 모듈을 소스 코드 변경 후 다시 불러오고 싶을 때 사용하는 `importlib`의 함수는?",
+            "answer": "reload()",
+            "why": "인터프리터를 끄지 않고도 변경된 모듈의 내용을 반영할 수 있게 해줍니다.",
+            "hint": "다시(Re) 부르다(Load).",
+            "trap_points": [
+                "대화형 셸(IPython 등) 환경에서 매우 자주 쓰임"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Pandas에서 데이터프레임의 인덱스를 일반 열(Column)로 변환하는 메서드는?",
+            "options": [
+                "reset_index()",
+                "set_index()",
+                "drop_index()",
+                "index_to_col()",
+                "move_index()"
+            ],
+            "answer": "reset_index()",
+            "why": "reset_index()는 기존 인덱스를 0, 1, 2... 로 초기화하며 기존 값은 새로운 열로 이동시킵니다.",
+            "hint": "인덱스를 재설정(Reset)합니다.",
+            "trap_points": [
+                "drop=True 옵션을 주면 기존 인덱스는 사라짐"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Numpy에서 행렬의 행과 열을 맞바꾸는 속성은?",
+            "options": [
+                "swap",
+                "T",
+                "reverse",
+                "flip",
+                "rotate"
+            ],
+            "answer": "T",
+            "why": "Transpose의 약자로, 행렬의 전치를 수행합니다.",
+            "hint": "대문자 T 하나입니다.",
+            "trap_points": [
+                "다차원 배열의 축을 직접 바꾸려면 transpose() 함수를 사용함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Scikit-learn에서 ‘훈련 데이터’로만 학습하고 ‘테스트 데이터’는 한 번도 보지 않게 분리하는 이유는?",
+            "options": [
+                "파일 용량을 줄이려고",
+                "모델의 실제 일반화 성능을 공정하게 평가하기 위해",
+                "속도가 빨라져서",
+                "영어로만 답하기 위해",
+                "데이터가 부족해서"
+            ],
+            "answer": "모델의 실제 일반화 성능을 공정하게 평가하기 위해",
+            "why": "훈련 데이터의 정답을 외워버리는 오버피팅을 감지하기 위한 필수적인 절차입니다.",
+            "hint": "공정한 시험(Test)를 위해서입니다.",
+            "trap_points": [
+                "테스트 데이터를 학습에 포함시키면 '데이터 누수(Data Leak)' 에 해당함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Matplotlib에서 선의 색상을 빨간색으로, 스타일을 점선으로 바꾸고 싶을 때 사용하는 약어는?",
+            "options": [
+                "'r--'",
+                "'b-'",
+                "'gs'",
+                "'k:'",
+                "'yo'"
+            ],
+            "answer": "'r--'",
+            "why": "r은 red, --는 dashed line을 의미하는 짧은 형식의 설정법입니다.",
+            "hint": "R과 대시 두 개입니다.",
+            "trap_points": [
+                "color='red', linestyle='dashed' 로도 상세하게 설정 가능함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "short_answer",
+            "question": "Pandas에서 결측치(NaN)가 하나라도 포함된 행을 통째로 지워버리는 메서드는?",
+            "answer": "dropna()",
+            "why": "불완전한 데이터를 분석에서 배제하는 가장 과격하지만 확실한 방법입니다.",
+            "hint": "떨어뜨리다(Drop) + NA.",
+            "trap_points": [
+                "axis=1 옵션을 주면 결측치가 있는 '열'을 지움"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "LLM에서 'Hallucination'이 발생하는 근본적인 이유는?",
+            "options": [
+                "인터넷 연결이 안 좋아서",
+                "모델이 사실을 기억하는 게 아니라 통계적 확률에 기반해 다음 단어를 '예측'하기 때문",
+                "컴퓨터 전력이 부족해서",
+                "데이터가 너무 많아서",
+                "사용자가 질문을 짧게 해서"
+            ],
+            "answer": "모델이 사실을 기억하는 게 아니라 통계적 확률에 기반해 다음 단어를 '예측'하기 때문",
+            "why": "언어 모델은 문맥상 그럴듯한(Likely) 답변을 찾는 것이 목표이지, 진리값을 검증하는 장치가 아니기 때문입니다.",
+            "hint": "확률적 생성 모델의 특성을 생각하세요.",
+            "trap_points": [
+                "따라서 RAG와 같은 외부 근거 시스템이 필수적임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "트랜스포머의 'Self-Attention' 연산 시 연산량은 문장 길이(N)의 몇 제곱에 비례하나요?",
+            "options": [
+                "N (선형)",
+                "N log N",
+                "N^2 (제곱)",
+                "N^3",
+                "Constant (상수)"
+            ],
+            "answer": "N^2 (제곱)",
+            "why": "모든 단어가 문장 내 다른 모든 단어와 한 번씩 비교되므로 행렬 크기가 N * N이 됩니다.",
+            "hint": "정사각형 넓이를 생각하세요.",
+            "trap_points": [
+                "이 방식 때문에 문장이 아주 길어지면 연산 에너지가 폭등함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "모델이 인간의 가치관에 맞게 '예의 바르고 안전하게' 말하도록 정규화하는 마지막 학습 단계는?",
+            "options": [
+                "Pre-training",
+                "SFT",
+                "RLHF (Reinforcement Learning from Human Feedback)",
+                "Quantization",
+                "Evaluation"
+            ],
+            "answer": "RLHF (Reinforcement Learning from Human Feedback)",
+            "why": "인간의 피드백을 강화학습의 보상으로 사용하여 모델을 인간 선호에 맞게 정렬(Alignment)합니다.",
+            "hint": "인간의 피드백(Human Feedback)이 들어갑니다.",
+            "trap_points": [
+                "최근에는 DPO와 같이 더 효율적인 알고리즘으로 대체되기도 함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "LLM에서 '1억 개의 파라미터'보다 '1000억 개의 파라미터' 모델이 일반적으로 더 뛰어난 이유는?",
+            "options": [
+                "메모리를 많이 먹어서",
+                "더 복잡한 논리 구조를 수용할 수 있는 고차원적인 지식 표현이 가능하기 때문",
+                "글자 수가 더 많아서",
+                "영어로만 답해서",
+                "이름이 길어서"
+            ],
+            "answer": "더 복잡한 논리 구조를 수용할 수 있는 고차원적인 지식 표현이 가능하기 때문",
+            "why": "더 많은 뉴런과 가중합이 가능해지면서 단순 암기를 넘어선 '추론' 능력이 발현(Emergence)됩니다.",
+            "hint": "두뇌의 용량을 생각하세요.",
+            "trap_points": [
+                "파라미터가 많을수록 추론 비용(GPU)도 급증함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "short_answer",
+            "question": "LLM 대화 시 이전 대화 내용을 모두 기억하지 못하고 일정 길이가 지나면 잊어버리는 이유는 (이것)의 한계 때문입니다. (이것)은?",
+            "answer": "Context Window (컨텍스트 윈도우/문맥 창)",
+            "why": "모델이 한 번에 처리할 수 있는 토큰 수의 상한선이 정해져 있기 때문입니다.",
+            "hint": "창문(Window)을 통해 보이는 영역을 생각하세요.",
+            "trap_points": [
+                "128k, 1M 등 모델마다 컨텍스트 한도가 다름"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트에 '너는 지금부터 훌륭한 시인이야'라고 입력하는 기술의 명칭은?",
+            "options": [
+                "Few-shot",
+                "Persona Adoption (페르소나 설정)",
+                "Context Retrieval",
+                "Negative Prompting",
+                "JSON Formatting"
+            ],
+            "answer": "Persona Adoption (페르소나 설정)",
+            "why": "가상의 인격(Persona)을 부여하여 말투와 지식 인출 경향을 제어합니다.",
+            "hint": "역할을 주는 가면을 생각하세요.",
+            "trap_points": [
+                "전문가 역할을 주면 성능이 미세하게 향상되기도 함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트 내에 예시를 몇 개 넣어주는 Few-shot 기법을 쓸 때, 예시의 '품질'이 중요한 이유는?",
+            "options": [
+                "모델이 심심해 하니까",
+                "모델이 예시의 정답뿐만 아니라 '형식'과 '논리 전개 방식'까지 그대로 학습하기 때문",
+                "토큰을 아끼려고",
+                "영어로만 답하려고",
+                "이미지를 만들려고"
+            ],
+            "answer": "모델이 예시의 정답뿐만 아니라 '형식'과 '논리 전개 방식'까지 그대로 학습하기 때문",
+            "why": "잘못된 예시는 모델을 혼란에 빠뜨려 전체 성능을 심각하게 저하시킵니다.",
+            "hint": "모델은 모방의 천재입니다.",
+            "trap_points": [
+                "예시는 일관된 형식을 유지해야 함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "모델에게 '반드시 JSON 형태로만 답해'라고 강요하는 것보다 '출력 형식은 다음과 같아야 해: { ... }'라고 구조를 보여주는 게 더 효과적인 이유는?",
+            "options": [
+                "모델은 시각적 예시를 텍스트 지침보다 명확하게 파악하기 때문",
+                "모델이 그림을 좋아해서",
+                "영단어 수를 줄이려고",
+                "답변이 짧아져서",
+                "비용이 절감되어서"
+            ],
+            "answer": "모델은 시각적 예시를 텍스트 지침보다 명확하게 파악하기 때문",
+            "why": "추상적인 단어보다 구체적인 패턴을 보여주는 것이 생성 확률 제어에 유리합니다.",
+            "hint": "백문이 불여일견입니다.",
+            "trap_points": [
+                "실제로 구현 시 중괄호 {} 의 위치를 명시하는 것이 꿀팁임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트 인젝션(Prompt Injection) 공격을 방해하기 위해 구분자(###)를 사용하는 주된 원리는?",
+            "options": [
+                "시스템 프롬프트와 사용자 입력 데이터 사이의 '논리적 경계'를 시각화하여 모델의 혼동을 막는다.",
+                "암호화를 수행한다.",
+                "인터넷을 차단한다.",
+                "영어로만 답하게 한다.",
+                "이미지를 만든다."
+            ],
+            "answer": "시스템 프롬프트와 사용자 입력 데이터 사이의 '논리적 경계'를 시각화하여 모델의 혼동을 막는다.",
+            "why": "사용자 입력 내용이 '지시 사항'으로 둔갑하는 것을 방지하는 가장 기초적인 보안책입니다.",
+            "hint": "벽을 세우는 것과 같습니다.",
+            "trap_points": [
+                "구분자를 써도 완벽한 방어는 불가능하므로 다각도 보안이 필요함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "short_answer",
+            "question": "모델의 답변 도중 '잠시 멈추고 네 답변을 다시 검토해봐 (Self-reflect)' 라고 시키는 고급 기법은?",
+            "answer": "Reflection (또는 성찰/반성 프롬프팅)",
+            "why": "오류를 스스로 인지하고 수정함으로써 정답 확률을 높이는 메타인지 기법입니다.",
+            "hint": "자신을 돌아본다는 뜻입니다.",
+            "trap_points": [
+                "비용과 소요 시간은 늘어나지만 정확도가 비약적으로 올라감"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "RAG 시스템에서 '검색 엔진'의 역할이 중요한 이유는?",
+            "options": [
+                "데이터를 삭제하려고",
+                "방대한 외부 문서 중 사용자의 질문과 가장 관련 있는 '맥락'을 족집게처럼 찾아내 모델에 전달하기 때문",
+                "영어로 번역하려고",
+                "이미지를 만들려고",
+                "파일 이름을 지으려고"
+            ],
+            "answer": "방대한 외부 문서 중 사용자의 질문과 가장 관련 있는 '맥락'을 족집게처럼 찾아내 모델에 전달하기 때문",
+            "why": "관련 없는 정보가 들어가면 모델이 혼란을 느껴 오답을 내기 때문입니다.",
+            "hint": "정보를 찾아오는(Retrieval) 과정이 첫 번째 단추입니다.",
+            "trap_points": [
+                "검색 성능이 RAG 시스템 전체 성능을 결정함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "에이전트가 목표를 달성하기 위해 '스스로 도구를 부르고 결과를 확인'하는 루프를 중단시켜야 하는 상황은?",
+            "options": [
+                "답을 찾았을 때",
+                "설정된 최대 반복 횟수(Max Iterations)에 도달했을 때",
+                "사용자가 중단했을 때",
+                "위 셋 모두 해당",
+                "단순히 지루할 때"
+            ],
+            "answer": "위 셋 모두 해당",
+            "why": "무한 루프에 빠져 비용이 폭주하는 것을 막기 위해 강력한 종료 조건이 필수적입니다.",
+            "hint": "안전하게 멈춰야(Stop) 합니다.",
+            "trap_points": [
+                "에이전트 개발 시 가장 먼저 구현해야 할 안전장치임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "벡터 DB에서 질문과 '의미적으로' 연결된 정보를 찾는 과정을 무엇이라 하나요?",
+            "options": [
+                "Semantic Search (시맨틱 검색)",
+                "Keyword Search",
+                "Exact Match",
+                "Sort Rank",
+                "List View"
+            ],
+            "answer": "Semantic Search (시맨틱 검색)",
+            "why": "단순 오타가 있어도 의미적 맥락(벡터 공간상의 거리)을 통해 정답을 찾아냅니다.",
+            "hint": "의미를 뜻하는 단어입니다.",
+            "trap_points": [
+                "철자가 정확해야 하는 검색과는 상반된 장점을 가짐"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "에이전트 시스템에서 '도구(Tool)'의 설명문을 매우 자세히 적어야 하는 기술적 이유는?",
+            "options": [
+                "모델이 예쁜 글을 좋아해서",
+                "모델은 도구의 코드가 아닌 '설명'만 읽고 해당 도구를 쓸지 말지 결정하기 때문",
+                "영어로만 답하려고",
+                "데이터를 압축하려고",
+                "비용을 늘리려고"
+            ],
+            "answer": "모델은 도구의 코드가 아닌 '설명'만 읽고 해당 도구를 쓸지 말지 결정하기 때문",
+            "why": "모델에게 설명문은 도구의 카탈로그이자 매뉴얼이므로, 설명이 모호하면 엉뚱한 도구를 부르게 됩니다.",
+            "hint": "모델의 유일한 판단 근거입니다.",
+            "trap_points": [
+                "설명문은 구체적인 예시(input/output)를 포함하는 것이 베스트임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "short_answer",
+            "question": "에이전트가 어떤 과제를 수행할 때, 자신의 '생각(Thought)', '행동(Action)', '결과 관찰(Observation)'을 기록하는 방식을 무엇이라 하나요?",
+            "answer": "ReAct (Reason + Act)",
+            "why": "생각과 행동을 유기적으로 연결하여 복잡한 과제를 해결하는 에이전트의 표준 행동 모델입니다.",
+            "hint": "R-e-A-c-t 입니다.",
+            "trap_points": [
+                "LangChain 에이전트들이 주로 사용하는 핵심 로직임"
+            ],
+            "difficulty": "medium"
+        }
+    ]
+}

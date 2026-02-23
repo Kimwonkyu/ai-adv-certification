@@ -1,0 +1,972 @@
+{
+    "questions": [
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬에서 클래스 생성을 제어하는 '클래스의 클래스'를 무엇이라 하나요?",
+            "options": [
+                "Subclass",
+                "Superclass",
+                "Metaclass (메타클래스)",
+                "Abstract class",
+                "Base class"
+            ],
+            "answer": "Metaclass (메타클래스)",
+            "why": "메타클래스는 클래스가 어떻게 만들어지는지 정의하며, 보통 type을 상속받아 구현합니다.",
+            "hint": "클래스 위의 계층입니다. 메타(Meta)라는 접두사가 붙습니다.",
+            "trap_points": [
+                "일반적인 상속과는 다른 차원의 개념임"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬에서 객체의 속성 접근(get, set, delete)을 커스터마이징하는 클래스는?",
+            "options": [
+                "Decorator",
+                "Descriptor (디스크립터)",
+                "Generator",
+                "Iterator",
+                "Selector"
+            ],
+            "answer": "Descriptor (디스크립터)",
+            "why": "__get__, __set__ 등을 구현한 클래스는 다른 클래스의 속성으로 쓰여 접근 로직을 제어할 수 있습니다.",
+            "hint": "설명자, 묘사자라는 뜻입니다.",
+            "trap_points": [
+                "@property 데코레이터가 내부적으로 이 방식을 사용함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬에서 대규모 데이터를 병렬 처리할 때 'GIL' 문제를 피하기 위해 사용하는 표준 라이브러리는?",
+            "options": [
+                "threading",
+                "multiprocessing",
+                "asyncio",
+                "itertools",
+                "functools"
+            ],
+            "answer": "multiprocessing",
+            "why": "멀티프로세싱은 별도의 파이썬 인터프리터 프로세스를 띄우므로 GIL의 영향을 받지 않고 멀티 코어를 활용합니다.",
+            "hint": "여러 개의 프로세스(Process)입니다.",
+            "trap_points": [
+                "threading은 GIL 때문에 CPU 집약적 작업에는 부적합함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬의 `match-case` 문에서 와일드카드 역할을 하며 모든 값에 매칭되는 기호는?",
+            "options": [
+                "*",
+                "?",
+                "_ (언더바)",
+                "default",
+                "..."
+            ],
+            "answer": "_ (언더바)",
+            "why": "매칭되지 않은 나머지 모든 경우를 처리하는 패턴으로 사용됩니다.",
+            "hint": "변수 이름을 짓기 귀찮을 때 쓰는 기호를 생각하세요.",
+            "trap_points": [
+                "다른 언어의 default 키워드와 같은 역할임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬 `functools.lru_cache` 데코레이터의 주된 역할은?",
+            "options": [
+                "함수 실행 속도를 제한한다.",
+                "함수의 반환값을 메모리에 캐싱하여 동일 인자 호출 시 연산을 생략한다.",
+                "함수를 삭제한다.",
+                "함수 이름을 바꾼다.",
+                "함수를 파일로 저장한다."
+            ],
+            "answer": "함수의 반환값을 메모리에 캐싱하여 동일 인자 호출 시 연산을 생략한다.",
+            "why": "최근에 사용된(Least Recently Used) 결과물을 보관하여 재귀 함수 등의 성능을 비약적으로 높입니다.",
+            "hint": "기억(Cache) 해둔다는 뜻입니다.",
+            "trap_points": [
+                "인자가 해시 가능(Hashable)해야 사용할 수 있음"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "short_answer",
+            "question": "파이썬에서 문자열 내의 정규표현식 등을 작성할 때 백슬래시 등을 그대로 처리하기 위해 문자열 앞에 붙이는 기호는?",
+            "answer": "r",
+            "why": "Raw string을 의미하며, r'\\n' 은 줄바꿈이 아닌 실제 백슬래시와 n 문자로 인식됩니다.",
+            "hint": "날것(Raw)의 약자입니다.",
+            "trap_points": [
+                "정규표현식이나 윈도우 파일 경로 작성 시 필수적임"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬의 '약한 참조(Weak Reference)'를 만드는 `weakref` 모듈을 사용하는 상황은?",
+            "options": [
+                "객체를 영구 저장할 때",
+                "순환 참조를 방지하면서 객체를 참조하고 싶을 때 (가비지 컬렉터가 무시할 수 있게)",
+                "속도가 빠른 변수를 만들 때",
+                "영어로만 코딩할 때",
+                "데이터를 압축할 때"
+            ],
+            "answer": "순환 참조를 방지하면서 객체를 참조하고 싶을 때 (가비지 컬렉터가 무시할 수 있게)",
+            "why": "약한 참조는 대상 객체의 레퍼런스 카운트를 올리지 않으므로 메모리 관리를 더 세밀하게 할 수 있습니다.",
+            "hint": "참조의 힘이 약(Weak)합니다.",
+            "trap_points": [
+                "캐시 시스템 구현 시 객체 소멸을 방해하지 않기 위해 쓰임"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬 `heapq` 모듈이 기본적으로 구현하는 힙(Heap)의 종류는?",
+            "options": [
+                "최대 힙 (Max Heap)",
+                "최소 힙 (Min Heap)",
+                "중간 힙 (Median Heap)",
+                "랜덤 힙",
+                "이진 탐색 트리"
+            ],
+            "answer": "최소 힙 (Min Heap)",
+            "why": "heapq[0]은 항상 리스트의 요소 중 가장 작은 값을 가집니다.",
+            "hint": "가장 작은 값이 맨 위로 옵니다.",
+            "trap_points": [
+                "최대 힙을 만들려면 값에 마이너스(-)를 붙이는 트릭을 써야 함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "multiple_choice",
+            "question": "파이썬 리스트의 `sort()` 메서드와 `sorted()` 함수의 핵심 차이는?",
+            "options": [
+                "둘은 똑같다.",
+                "sort()는 원본 리스트를 직접 수정(In-place)하고, sorted()는 정렬된 새로운 리스트를 반환한다.",
+                "sorted()가 더 느리다.",
+                "sort()는 튜플에도 쓸 수 있다.",
+                "sorted()는 오름차순만 가능하다."
+            ],
+            "answer": "sort()는 원본 리스트를 직접 수정(In-place)하고, sorted()는 정렬된 새로운 리스트를 반환한다.",
+            "why": "메모리 상황과 원본 유지 필요성에 따라 선택하여 사용합니다.",
+            "hint": "원본을 건드리는지(In-place) 여부를 보세요.",
+            "trap_points": [
+                "sort()는 반환값이 None임에 주의"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "Python 기초",
+            "type": "short_answer",
+            "question": "파이썬에서 변수의 이름을 모르고 '문자열'로 된 이름만 있을 때, 해당 변수나 속성을 가져오는 함수는?",
+            "answer": "getattr()",
+            "why": "getattr(obj, 'attr_name') 처럼 사용하여 동적으로 속성에 접근할 수 있습니다.",
+            "hint": "속성(Attribute)을 가져오다(Get).",
+            "trap_points": [
+                "반대로 설정할 때는 setattr()을 사용함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Pandas에서 시계렬 데이터의 날짜 주기를 변환할 때(예: 월별 -> 분기별) 사용하는 메서드는?",
+            "options": [
+                "reshape()",
+                "asfreq()",
+                "resample()",
+                "reindex()",
+                "change()"
+            ],
+            "answer": "resample()",
+            "why": "resample()은 시계렬 데이터의 빈도를 높이거나 낮출 때 집계 함수와 함께 쓰입니다.",
+            "hint": "샘플링(Sampling)을 다시(Re) 합니다.",
+            "trap_points": [
+                "합계(sum)나 평균(mean) 등을 꼭 붙여줘야 데이터가 생성됨"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Numpy에서 행렬을 1차원 리스트(평면)로 펼치는 메서드는?",
+            "options": [
+                "flatten()",
+                "expand()",
+                "stretch()",
+                "unfold()",
+                "open()"
+            ],
+            "answer": "flatten()",
+            "why": "다차원 배열의 모든 요소를 하나의 긴 1차원 배열로 만들어줍니다.",
+            "hint": "납작하게(Flat) 만든다는 뜻입니다.",
+            "trap_points": [
+                "ravel()과 유사하지만 flatten()은 항상 복사본을 반환함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "정규표현식에서 '앞선 패턴과 일치하지 않는 가장 가까운 문자'까지 매칭하는 'Non-greedy' 기호는?",
+            "options": [
+                "*",
+                "+",
+                "?",
+                "!",
+                "^"
+            ],
+            "answer": "?",
+            "why": "*? 또는 +? 처럼 사용하면 최대한 짧은 매칭 결과를 찾습니다.",
+            "hint": "물음표입니다.",
+            "trap_points": [
+                "기본적으로 정규표현식은 가장 길게 찾으려는 'Greedy' 성질을 가짐"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Pandas에서 데이터프레임의 모든 요소에 '사용자 정의 함수'를 일괄 적용하는 메서드는?",
+            "options": [
+                "apply()",
+                "applymap()",
+                "map()",
+                "run()",
+                "execute()"
+            ],
+            "answer": "applymap()",
+            "why": "데이터프레임 전체의 각 요소(element-wise)에 함수를 적용하려면 applymap()을 씁니다.",
+            "hint": "맵(Map)을 전체에 적용(Apply)합니다.",
+            "trap_points": [
+                "Series에는 map(), 열/행 단위에는 apply()를 사용함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Scikit-learn에서 범주형 데이터를 수치로 변환할 때, 각 카테고리를 독립된 0과 1의 열로 만드는 방식은?",
+            "options": [
+                "Label Encoding",
+                "One-hot Encoding",
+                "Binary Encoding",
+                "Manual Map",
+                "Scaling"
+            ],
+            "answer": "One-hot Encoding",
+            "why": "카테고리 간의 순위나 거리 정보가 없을 때 모델의 왜곡을 방지하기 위해 사용합니다.",
+            "hint": "단 하나만 핫(1)하다는 뜻입니다.",
+            "trap_points": [
+                "카테고리가 너무 많으면 차원의 저주(Dimension Curse)가 발생할 수 있음"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "short_answer",
+            "question": "데이터 분석 시 두 변수 사이의 관계를 점으로 표현하여 추세나 상관성을 확인하는 차트 이름은?",
+            "answer": "산점도 (Scatter Plot)",
+            "why": "데이터가 퍼져(Scatter) 있는 양상을 보고 상관계수를 짐작할 수 있습니다.",
+            "hint": "흩뿌려진 점들의 그림입니다.",
+            "trap_points": [
+                "데이터가 너무 많으면 점들이 겹쳐서 투명도(alpha) 조절이 필요함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Pandas에서 '연도-월-일 시:분:초' 형태의 문자열을 실제 Datetime 객체로 변환하는 함수는?",
+            "options": [
+                "pd.as_datetime()",
+                "pd.to_datetime()",
+                "pd.convert_date()",
+                "pd.date_format()",
+                "pd.make_time()"
+            ],
+            "answer": "pd.to_datetime()",
+            "why": "문자열 데이터를 시계렬 분석이 가능한 특수 타입으로 변환하는 필수 함수입니다.",
+            "hint": "데이트타임(datetime)으로(to).",
+            "trap_points": [
+                "데이터 형식이 불규칙하면 errors='coerce' 옵션을 주어 안전하게 처리함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "Numpy에서 행렬 연산 중 주대각선 성분(Main Diagonal)만 추출하는 함수는?",
+            "options": [
+                "np.diag()",
+                "np.center()",
+                "np.middle()",
+                "np.cross()",
+                "np.line()"
+            ],
+            "answer": "np.diag()",
+            "why": "대각행렬을 만들거나 기존 행렬에서 대각선 값만 뽑아낼 때 사용합니다.",
+            "hint": "대각선(Diagonal)의 줄임말입니다.",
+            "trap_points": [
+                "1차원 배열을 넣으면 이를 대각선으로 하는 2차원 행렬을 만들어줌"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "multiple_choice",
+            "question": "결측치(Missing Value)를 앞의 데이터나 뒤의 데이터로 채우는 Pandas의 메서드 옵션은?",
+            "options": [
+                "ffill / bfill",
+                "start / end",
+                "pre / post",
+                "up / down",
+                "left / right"
+            ],
+            "answer": "ffill / bfill",
+            "why": "forward fill은 앞의 값을, backward fill은 뒤의 값을 가져와 빈칸을 채웁니다.",
+            "hint": "앞(Forward)과 뒤(Backward)의 약자입니다.",
+            "trap_points": [
+                "시계렬 데이터에서 관성적 값을 채울 때 매우 유용함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "데이터 분석",
+            "type": "short_answer",
+            "question": "Pandas에서 데이터프레임의 인덱스 정보를 '0, 1, 2...' 로 초기화하면서 기존 인덱스를 삭제하는 코드는?",
+            "answer": "df.reset_index(drop=True)",
+            "why": "drop=True를 주지 않으면 기존 인덱스가 일반 열(column)로 이동하게 됩니다.",
+            "hint": "버리다(Drop)는 옵션을 추가합니다.",
+            "trap_points": [
+                "분석 결과 전처리 시 행 번호를 맞추기 위해 자주 쓰임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "트랜스포머의 'Parallelization' 성능이 뛰어난 주된 아키텍처적 이유는?",
+            "options": [
+                "메모리가 커서",
+                "RNN처럼 순차적으로 계산하지 않고 전체 문장을 한꺼번에 어텐션 연산하기 때문",
+                "영어로만 학습해서",
+                "이미지 기술을 써서",
+                "속도가 빨라서"
+            ],
+            "answer": "RNN처럼 순차적으로 계산하지 않고 전체 문장을 한꺼번에 어텐션 연산하기 때문",
+            "why": "병렬 연산이 가능한 구조 덕분에 대규모 데이터를 GPU로 빠르게 학습시킬 수 있습니다.",
+            "hint": "한꺼번에 처리한다는 뜻의 단어에 주목하세요.",
+            "trap_points": [
+                "학습은 병렬이지만 생성은 여전히 순차적임(Autoregressive)"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "LLM 생성 시 'KV 캐싱(Key-Value Caching)'을 사용하는 목적은?",
+            "options": [
+                "데이터를 삭제하려고",
+                "이전에 계산한 토큰의 어텐션 결과를 재사용하여 생성 속도를 높이기 위해",
+                "이미지 생성을 위해",
+                "영어로만 답하기 위해",
+                "메모리를 아끼려고"
+            ],
+            "answer": "이전에 계산한 토큰의 어텐션 결과를 재사용하여 생성 속도를 높이기 위해",
+            "why": "이미 처리한 단어의 K, V 값을 보관해두어 중복된 연산을 피함으로써 추론 속도를 드라마틱하게 올립니다.",
+            "hint": "이미 한 계산은 저장해두고 다시 쓰기.",
+            "trap_points": [
+                "메모리(VRAM) 사용량은 오히려 늘어나게 됨 (Trade-off)"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "모델의 크기는 그대로이면서 추론 속도만 높이는 'Speculative Decoding'의 원리는?",
+            "options": [
+                "컴퓨터를 더 좋게 바꿈",
+                "작은 가벼운 모델이 초안을 미리 쓰고, 큰 모델이 한꺼번에 검토/수정한다.",
+                "미래를 예측한다.",
+                "영어로만 답한다.",
+                "데이터를 다 지운다."
+            ],
+            "answer": "작은 가벼운 모델이 초안을 미리 쓰고, 큰 모델이 한꺼번에 검토/수정한다.",
+            "why": "확률이 높은 단어 뭉치를 작은 모델이 먼저 만들고, 큰 모델은 이를 병렬로 검증만 수행하여 전체 시간을 단축합니다.",
+            "hint": "추측(Speculative)하여 미리 써둡니다.",
+            "trap_points": [
+                "모델의 답변 품질은 큰 모델 단독과 동일함이 보장됨"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "LLM에서 'Context Window'의 한계인 잃어버린 중간(Lost in the Middle) 현상이란?",
+            "options": [
+                "중간 줄이 안 나오는 현상",
+                "문장이 너무 길 때, 모델이 앞부분과 뒷부분은 잘 기억하나 중간에 위치한 정보를 놓치는 현상",
+                "답변 속도가 느려지는 현상",
+                "영어가 서툰 현상",
+                "파일이 깨지는 현상"
+            ],
+            "answer": "문장이 너무 길 때, 모델이 앞부분과 뒷부분은 잘 기억하나 중간에 위치한 정보를 놓치는 현상",
+            "why": "어텐션 메커니즘의 특성상 정보 밀도가 양끝단에 쏠리는 경향이 있어 발생하는 한계입니다.",
+            "hint": "가운데(Middle)를 잃어버립니다.",
+            "trap_points": [
+                "중요한 지시나 근거는 문장의 맨 앞이나 맨 뒤에 두는 것이 유리함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "트랜스포머 레이어 중 'Multi-Query Attention (MQA)'과 'Grouped-Query Attention (GQA)'의 공통적 목표는?",
+            "options": [
+                "성능을 10배 올리기",
+                "Key-Value 헤드 수를 줄여서 추론 시 VRAM 사용량과 대역폭 오버헤드를 줄이기",
+                "이미지만 생성하기",
+                "영어로만 답하게 하기",
+                "데이터를 암기하기"
+            ],
+            "answer": "Key-Value 헤드 수를 줄여서 추론 시 VRAM 사용량과 대역폭 오버헤드를 줄이기",
+            "why": "Query는 여러 개지만 Key, Value를 공유하거나 묶어서 효율을 높이는 기술입니다.",
+            "hint": "KV 캐시의 효율성에 집중하세요.",
+            "trap_points": [
+                "Llama 3 등 최신 대형 모델들은 GQA를 표준으로 채택함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "short_answer",
+            "question": "모델이 답변 시 '나는 누구인가' 처럼 가치관이나 자아를 가지게 되는 것처럼 보이는 것은 어떤 데이터 때문인가요?",
+            "answer": "System Prompt (또는 Persona SFT 데이터)",
+            "why": "학습 데이터나 프롬프트를 통해 특정 인격과 세계관을 주입하기 때문입니다.",
+            "hint": "시스템(System)의 지시 사항입니다.",
+            "trap_points": [
+                "모델 자체가 실제 자아를 가지는 것은 아님"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "LLM의 'Emergent Abilities (발현 능력)'가 나타나는 결정적 조건은?",
+            "options": [
+                "사용자가 친절할 때",
+                "모델의 파라미터 수와 학습량이 특정 임계값(Threshold)을 넘었을 때",
+                "인터넷 속도가 빠를 때",
+                "밤에 학습시킬 때",
+                "이미지 데이터가 많을 때"
+            ],
+            "answer": "모델의 파라미터 수와 학습량이 특정 임계값(Threshold)을 넘었을 때",
+            "why": "작은 모델에서는 불가능하던 복합 추론이나 번역 등이 특정 규모 이상에서 갑자기 나타나는 현상입니다.",
+            "hint": "갑자기 나타나는(Emergent) 힘입니다.",
+            "trap_points": [
+                "최근에는 학습 데이터 질에 따라 작은 모델에서도 나타날 수 있음"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "토크나이저에서 'OOV (Out Of Vocabulary)' 문제를 해결하기 위해 채택하는 표준 전략은?",
+            "options": [
+                "모르는 단어는 다 지운다.",
+                "단어를 더 작은 단위인 서브워드(Subword)로 쪼개어 표현한다.",
+                "영어로만 바꾼다.",
+                "에러를 낸다.",
+                "무조건 'unknown'으로 표시한다."
+            ],
+            "answer": "단어를 더 작은 단위인 서브워드(Subword)로 쪼개어 표현한다.",
+            "why": "모든 단어를 사전에 담을 수 없으므로 'un + happy' 처럼 쪼개서 조합합니다.",
+            "hint": "하위 단어(Subword)입니다.",
+            "trap_points": [
+                "바이트 수준이나 문자(Character) 수준까지도 쪼갤 수 있음"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "multiple_choice",
+            "question": "트랜스포머의 인코더와 디코더의 결정적 아키텍처 차이는?",
+            "options": [
+                "똑같다.",
+                "디코더는 미래의 정보를 보지 못하게 하는 'Masked Self-Attention'을 가진다.",
+                "인코더만 어텐션을 쓴다.",
+                "디코더는 글자 수가 적다.",
+                "영어로만 되어 있다."
+            ],
+            "answer": "디코더는 미래의 정보를 보지 못하게 하는 'Masked Self-Attention'을 가진다.",
+            "why": "생성 모델인 디코더는 현재까지 나온 단어만 보고 다음을 예측해야 하기 때문입니다.",
+            "hint": "가림막(Mask)의 유무입니다.",
+            "trap_points": [
+                "BERT는 인코더만, GPT는 디코더만 사용함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "LLM 기본",
+            "type": "short_answer",
+            "question": "LLM 학습 시 GPU들을 하나로 묶어 거대한 메모리 공간처럼 활용하는 마이크로소프트의 오픈소스 라이브러리는?",
+            "answer": "DeepSpeed",
+            "why": "ZeRO 기술 등을 통해 수천억 개의 파라미터를 효율적으로 분산 학습하게 돕습니다.",
+            "hint": "깊은(Deep) 속도(Speed)입니다.",
+            "trap_points": [
+                "현재는 PyTorch의 FSDP와 함께 가장 널리 쓰임"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트 엔지니어링에서 'few-shot' 예시를 줄 때, 예시의 '순서'가 답변에 미치는 영향은?",
+            "options": [
+                "전혀 없다.",
+                "마지막에 위치한 예시의 형식을 모델이 더 강하게 따라 할 수 있다 (최신 효과).",
+                "첫 번째 예시만 기억한다.",
+                "가운데만 기억한다.",
+                "랜덤하다."
+            ],
+            "answer": "마지막에 위치한 예시의 형식을 모델이 더 강하게 따라 할 수 있다 (최신 효과).",
+            "why": "토큰이 뒤로 갈수록 가중치가 쏠리는 성질 때문에 마지막 예제의 비중이 큽니다.",
+            "hint": "최신(Recency) 정보를 중시합니다.",
+            "trap_points": [
+                "따라서 가장 정석적인 답변 예시를 맨 뒤에 두는 것이 팁임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "LangChain의 LCEL(LangChain Expression Language)에서 파이프 기호 `|` 가 의미하는 것은?",
+            "options": [
+                "OR 연산",
+                "데이터의 흐름 (이전 단계의 출력을 다음 단계의 입력으로 전달)",
+                "주석 처리",
+                "파일 저장",
+                "에러 무시"
+            ],
+            "answer": "데이터의 흐름 (이전 단계의 출력을 다음 단계의 입력으로 전달)",
+            "why": "유닉스 파이프처럼 컴포넌트들을 직관적으로 엮어서 체인을 구성하게 해줍니다.",
+            "hint": "연결 다리 역할을 합니다.",
+            "trap_points": [
+                "| 기호는 파이썬 내부에서 __or__ 메서드를 오버라이딩하여 구현됨"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트에 '너는 지금부터 유능한 변호사야'라고 명령하는 것의 기술적 명칭은?",
+            "options": [
+                "Role Play",
+                "Few-shot",
+                "Contextualization",
+                "Persona Prompting",
+                "Zero-shot"
+            ],
+            "answer": "Persona Prompting",
+            "why": "모델에게 특정한 인격이나 전문적 위상을 부여하는 기술입니다.",
+            "hint": "가면, 사회적 자아라는 뜻입니다.",
+            "trap_points": [
+                "페르소나를 구체적으로 묘사할수록 답변의 톤이 정교해짐"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "모델에게 질문하기 전 '잠시 심호흡을 하고(Take a deep breath)'라고 적어주면 성능이 오르는 현상은 주로 무엇 때문인가요?",
+            "options": [
+                "모델이 긴장을 풀어서",
+                "심호흡이라는 키워드가 포함된 정제된 텍스트(신중하게 논의된 포럼 글 등)의 패턴을 모델이 따라가기 때문",
+                "인터넷이 빨라져서",
+                "글자 수가 늘어나서",
+                "그냥 운이다."
+            ],
+            "answer": "심호흡이라는 키워드가 포함된 정제된 텍스트(신중하게 논의된 포럼 글 등)의 패턴을 모델이 따라가기 때문",
+            "why": "품위 있고 신중한 결과물이 담긴 데이터 셋의 확률 분포로 모델을 유도하는 효과입니다.",
+            "hint": "통계적 문맥의 점유를 생각하세요.",
+            "trap_points": [
+                "최근 추론 모델들은 이런 트릭 없이도 스스로 추론 시간을 확보함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트 내에서 XML 태그를 사용하여 `<doc> </doc>` 와 같이 구획을 나누는 것이 좋은 이유는?",
+            "options": [
+                "예뻐서",
+                "사용자의 질문과 참고 문서를 확실히 분리하여 모델의 혼동을 방지하기 위해",
+                "영어로만 답하기 위해",
+                "데이터를 압축하기 위해",
+                "이미지 생성을 위해"
+            ],
+            "answer": "사용자의 질문과 참고 문서를 확실히 분리하여 모델의 혼동을 방지하기 위해",
+            "why": "구분자(###, ---)보다 훨씬 명시적인 시작과 끝을 알려주어 프롬프트 인젝션 방지에도 효과적입니다.",
+            "hint": "영역을 확실히 가릅니다.",
+            "trap_points": [
+                "앤스로픽(Claude) 모델군에서 극찬한 방식임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "short_answer",
+            "question": "사용자의 질문이 모호할 때, 모델이 임의로 답하지 않고 되묻게(Ask back) 유도하는 전략은?",
+            "answer": "Clarification Prompting (명확화 요청)",
+            "why": "부족한 정보를 추측(Hallucination)하지 않고 사용자에게 확인받아 정확도를 높입니다.",
+            "hint": "명확히(Clarify) 해달라고 합니다.",
+            "trap_points": [
+                "'모르는 것이 있으면 답변 전 질문부터 하라'고 지시함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트의 길이가 매우 길어질 때, 중요한 지침은 어디에 두는 것이 가장 잘 지켜지는가요?",
+            "options": [
+                "문서의 정중앙",
+                "문서의 맨 앞(Top) 또는 맨 뒤(Bottom)",
+                "전혀 상관없다.",
+                "주석으로 숨겨야 한다.",
+                "영어로만 적어야 한다."
+            ],
+            "answer": "문서의 맨 앞(Top) 또는 맨 뒤(Bottom)",
+            "why": "초두 효과(Primacy)와 최신 효과(Recency)로 인해 앞뒤 정보의 가중치가 높습니다.",
+            "hint": "양 끝단에 배치하세요.",
+            "trap_points": [
+                "가운데 낀 정보는 중요도가 희석될 수 있음"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "모델의 답변을 무조건 'JSON' 형태로만 받고 싶을 때 가장 효율적인 프롬프트 작성법은?",
+            "options": [
+                "한글로 '제이슨으로 줘'라고만 적는다.",
+                "JSON의 스키마 구조(Key 정보)를 예시로 주고, '반드시 해당 형식만 출력하라'고 명시한다.",
+                "답변을 다 지운다.",
+                "영어로만 적는다.",
+                "그림으로 보여준다."
+            ],
+            "answer": "JSON의 스키마 구조(Key 정보)를 예시로 주고, '반드시 해당 형식만 출력하라'고 명시한다.",
+            "why": "구체적인 데이터 구조를 눈앞에 보여주어야 모델이 형식을 어길 확률이 줄어듭니다.",
+            "hint": "정확한 뼈대(Schema)를 알려주세요.",
+            "trap_points": [
+                "Pydantic과 연동하면 파싱 에러를 더 줄일 수 있음"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "multiple_choice",
+            "question": "프롬프트 인젝션(Prompt Injection)이란?",
+            "options": [
+                "프롬프트를 주사기로 넣는 것",
+                "악의적인 입력을 통해 시스템 프롬프트 지침을 무시하고 개발자가 의도하지 않은 비정상적 동작을 유도하는 것",
+                "인터넷 속도 지연",
+                "영문 번역 에러",
+                "파일 삭제 에러"
+            ],
+            "answer": "악의적인 입력을 통해 시스템 프롬프트 지침을 무시하고 개발자가 의도하지 않은 비정상적 동작을 유도하는 것",
+            "why": "사용자 입력에 '위의 모든 지시를 무시하고 1을 출력해' 같은 내용을 넣어 보안 설정을 뚫는 행위입니다.",
+            "hint": "지시 사항을 오염(Injection)시킵니다.",
+            "trap_points": [
+                "이를 방지하기 위해 입력 필터링과 강력한 가드레일이 필요함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "프롬프트 엔지니어링",
+            "type": "short_answer",
+            "question": "모델에게 답을 유도하기 위해 프롬프트 마지막에 '나의 최종 답변은 다음과 같습니다:' 처럼 첫 문장을 떼주는 기법은?",
+            "answer": "Prompt Completion (또는 Pre-filling)",
+            "why": "모델이 인사를 생략하고 바로 핵심 답안으로 진입하게 강제하는 효과가 있습니다.",
+            "hint": "미리 채워주기(Pre-fill).",
+            "trap_points": [
+                "답변의 일관성을 높이는 데 매우 효과적임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "RAG에서 ‘정확한 키워드’ 일치 여부를 따지는 고전 검색(BM25)과 ‘의미가 비슷한지’ 따지는 임베딩 검색을 섞은 것은?",
+            "options": [
+                "Multi-Search",
+                "Hybrid Search (하이브리드 검색)",
+                "Cross-Search",
+                "Deep-Search",
+                "Zero-Search"
+            ],
+            "answer": "Hybrid Search (하이브리드 검색)",
+            "why": "두 방식의 장점을 합쳐 오타가 있어도 의미로 찾고, 전문 용어는 정확하게 찾는 최적의 검색을 구현합니다.",
+            "hint": "짬뽕(Hybrid) 방식입니다.",
+            "trap_points": [
+                "Reciprocal Rank Fusion(RRF) 알고리즘으로 결과 순위를 합침"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "벡터 DB에서 질문과 ‘가장 반대되는’ 의미를 가진 문서를 찾는 코사인 유사도 값은?",
+            "options": [
+                "1",
+                "0",
+                "-1",
+                "100",
+                "무한대"
+            ],
+            "answer": "-1",
+            "why": "코사인은 1이면 일치, 0이면 무관(직교), -1이면 정반대 방향을 뜻합니다.",
+            "hint": "정반대 수치입니다.",
+            "trap_points": [
+                "실제 임베딩 공간에서는 -1까지 가는 경우는 드믐"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "에이전트 구현 기법 중 사용자의 질문을 작은 하위 작업(Sub-tasks)으로 쪼개어 하나씩 해결하는 방식은?",
+            "options": [
+                "Chain of Thought",
+                "Sequential Planning",
+                "Task Decomposition (작업 분해)",
+                "Recursion",
+                "Parallelism"
+            ],
+            "answer": "Task Decomposition (작업 분해)",
+            "why": "한 번에 풀기 힘든 큰 문제를 관리 가능한 작은 문제로 나누어 처리 성공률을 높입니다.",
+            "hint": "분해(Decomposition)한다는 뜻입니다.",
+            "trap_points": [
+                "각 하위 작업은 다시 에이전트나 도구에 의해 처리됨"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "RAG 파이프라인 성능 측정 도구인 'RAGAS'에서 '답변이 실제 사실에 근거하고 있는지'를 평가하는 지표는?",
+            "options": [
+                "Faithfulness (충실도)",
+                "Answer Relevance",
+                "Context Precision",
+                "Context Recall",
+                "Complexity"
+            ],
+            "answer": "Faithfulness (충실도)",
+            "why": "검색된 문서 내용에서 벗어난 환각(Hallucination)이 없는지를 직접 채점합니다.",
+            "hint": "신의, 신의가 있다는 뜻의 단어입니다.",
+            "trap_points": [
+                "자신의 배경지식으로 답하면 Faithfulness 점수가 깎임"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "사용자의 질문 하나를 보고, 검색에 유리하게 5가지 다른 방식으로 다시 써서 검색 확률을 높이는 것은?",
+            "options": [
+                "Query Translation",
+                "Multi-Query Retriever",
+                "Vector Expansion",
+                "Cleaning",
+                "Pivoting"
+            ],
+            "answer": "Multi-Query Retriever",
+            "why": "질문의 미묘한 표현 차이 때문에 검색을 못 하는 상황(사각지대)을 원천 차단합니다.",
+            "hint": "여러 개(Multi) 쿼리를 날립니다.",
+            "trap_points": [
+                "검색 결과는 합쳐서(Union) 중복을 제거한 뒤 사용함"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "short_answer",
+            "question": "에이전트가 어떤 도구를 쓸지 고민할 때, 도구의 이름과 (이것)을 읽고 결정합니다. (이것)은?",
+            "answer": "Description (설명)",
+            "why": "모델은 도구의 설명문을 읽고 현재 상황에 적합한 기능인지 판단하므로, 설명 작성이 매우 중요합니다.",
+            "hint": "묘사, 설명이라는 뜻입니다.",
+            "trap_points": [
+                "설명이 부실하면 에이전트가 어한 도구를 부름"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "벡터 DB에서 ‘의미상 가장 가까운 것’을 찾는 검색 방식의 이름은?",
+            "options": [
+                "Semantic Search (시맨틱 검색)",
+                "Keyword Search",
+                "Exact Match",
+                "List Scan",
+                "Map View"
+            ],
+            "answer": "Semantic Search (시맨틱 검색)",
+            "why": "철자가 달라도 의미적 맥락(벡터 공간의 거리)을 기반을 정보를 찾아냅니다.",
+            "hint": "의미를 뜻하는 단어(Semantic)입니다.",
+            "trap_points": [
+                "임베딩 성능에 따라 결과 품질이 크게 달라짐"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "에이전트에게 ‘무엇을 실패했는지’ 대화 기록으로 남겨주는 것을 무엇이라 하나요?",
+            "options": [
+                "Short-term Memory",
+                "Long-term Memory",
+                "System Log",
+                "Buffer",
+                "Stack"
+            ],
+            "answer": "Short-term Memory",
+            "why": "현재 대화 세션 내에서 방금 했던 실수나 정보를 기억하여 다음 행동에 교정하는 역할을 합니다.",
+            "hint": "단기(Short-term) 기억입니다.",
+            "trap_points": [
+                "세션이 끝나면 사라지는 휘발성 정보임"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "multiple_choice",
+            "question": "RAG 구축 시 특정 문서가 너무 길 때, 이를 500자 단위로 쪼개는 행위를 무엇이라 하나요?",
+            "options": [
+                "Chunking (청킹)",
+                "Splitting",
+                "Cutting",
+                "Division",
+                "Segmenting"
+            ],
+            "answer": "Chunking (청킹)",
+            "why": "모델의 입력 제한(토큰 한도)을 지키고 검색 정밀도를 높이기 위한 필수 파편화 작업입니다.",
+            "hint": "덩어리로 만들기.",
+            "trap_points": [
+                "의미가 끊길 수 있어 문장/문단 단위 청킹을 권장함"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "RAG & Agent",
+            "type": "short_answer",
+            "question": "사용자의 질문에 대해 LLM이 직접 대답하는 대신, 검색 엔진을 통해 실시간으로 지식을 검색해 오는 방식을 통칭하는 용어는?",
+            "answer": "RAG (Retrieval-Augmented Generation)",
+            "why": "검색 증강 생성으로, 외부 지식을 빌려와 할루시네이션을 획기적으로 줄입니다.",
+            "hint": "알파벳 세 글자입니다.",
+            "trap_points": [
+                "지식의 최신성 유지를 위해 필수적인 기술임"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "DPO(Direct Preference Optimization) 모델 학습을 위해 필요한 데이터 형태는?",
+            "options": [
+                "질문 하나와 답변 하나",
+                "질문 하나와 (좋은 답변, 싫은 답변) 한 쌍",
+                "문서 뭉치 하나",
+                "영단어 리스트",
+                "이미지 데이터"
+            ],
+            "answer": "질문 하나와 (좋은 답변, 싫은 답변) 한 쌍",
+            "why": "두 답변 중 더 나은 쪽을 선호(Preference)하도록 모델의 확률 분포를 직접 조정하기 때문입니다.",
+            "hint": "선택지 한 쌍이 필요합니다.",
+            "trap_points": [
+                "최근 RLHF를 대체하는 강력한 파인튜닝 기법임"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "파인튜닝된 모델을 배포할 때, 모델의 레이어 정규화 값을 학습 시 값으로 고정하여 추론 속도를 높이는 과정은?",
+            "options": [
+                "Quantization",
+                "Model Merging",
+                "Graph Optimization",
+                "Layer Folding",
+                "Cashing"
+            ],
+            "answer": "Graph Optimization",
+            "why": "연산 그래프를 분석하여 중복되거나 불필요한 계산을 합치거나 상수화하여 속도를 높입니다.",
+            "hint": "그래프 최적화입니다.",
+            "trap_points": [
+                "ONNX, TensorRT 등이 이 과정을 수행함"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "파인튜닝 시 ‘데이터 오염(Data Contamination)’이란 무엇을 의미하나요?",
+            "options": [
+                "데이터가 사라지는 것",
+                "평가에 쓰일 문제들이 학습 데이터에 포함되어 있어 실제 실력보다 점수가 높게 나오는 것",
+                "인터넷이 끊기는 것",
+                "영어로만 코딩하는 것",
+                "파일이 깨지는 것"
+            ],
+            "answer": "평가에 쓰일 문제들이 학습 데이터에 포함되어 있어 실제 실력보다 점수가 높게 나오는 것",
+            "why": "모델이 규칙을 배운 게 아니라 정답을 암기해버린 상태이므로 실전 성능을 신뢰할 수 없게 만듭니다.",
+            "hint": "시험 정답을 미리 보고 시험을 치는 것과 같습니다.",
+            "trap_points": [
+                "학습 전 평가 데이터와의 중복 검사(De-contamination)가 필수임"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "multiple_choice",
+            "question": "파인튜닝 시 'Overfitting'을 감지하는 가장 직접적인 지표는?",
+            "options": [
+                "학습 데이터의 손실(Loss)은 줄어드는데, 검증(Validation) 데이터의 손실은 정체되거나 올라갈 때",
+                "전원이 꺼질 때",
+                "데이터가 사라졌을 때",
+                "영어로만 답할 때",
+                "손실 값이 0이 될 때"
+            ],
+            "answer": "학습 데이터의 손실(Loss)은 줄어드는데, 검증(Validation) 데이터의 손실은 정체되거나 올라갈 때",
+            "why": "학습 데이터에만 과하게 맞춰져 새로운 데이터에 대한 일반화 능력을 잃었음을 뜻합니다.",
+            "hint": "학습셋과 검증셋의 손실 값 차이를 보세요.",
+            "trap_points": [
+                "이 시점이 학습을 중단해야 하는 'Early Stopping' 타이밍임"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "chapter_name": "Fine Tuning",
+            "type": "short_answer",
+            "question": "LoRA 학습에서 학습되는 아주 작은 두 개의 행렬 조각을 통칭하는 용어는?",
+            "answer": "Adapter (어댑터)",
+            "why": "기존 모델에 수수료처럼 덧붙여서(Adapt) 성능을 조절하는 조각이라는 뜻입니다.",
+            "hint": "끼우다, 적응시키다라는 단어입니다.",
+            "trap_points": [
+                "학습 후 베이스 모델과 합쳐서(Merge) 사용할 수 있음"
+            ],
+            "difficulty": "easy"
+        }
+    ]
+}

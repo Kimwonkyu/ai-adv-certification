@@ -1,0 +1,577 @@
+[
+  {
+    "id": "0006",
+    "question": "파이썬에서 문자열 내의 정규표현식 등을 작성할 때 백슬래시 등을 그대로 처리하기 위해 문자열 앞에 붙이는 기호는?",
+    "answer": "r"
+  },
+  {
+    "id": "0010",
+    "question": "파이썬에서 변수의 이름을 모르고 '문자열'로 된 이름만 있을 때, 해당 변수나 속성을 가져오는 함수는?",
+    "answer": "getattr()"
+  },
+  {
+    "id": "0020",
+    "question": "파이썬에서 현재 작업 디렉토리나 환경 변수를 조작하기 위해 사용하는 표준 라이브러리 모듈은?",
+    "answer": "os"
+  },
+  {
+    "id": "0025",
+    "question": "문자열 '  Hello  '의 좌우 공백을 제거하는 메서드는?",
+    "answer": "strip()"
+  },
+  {
+    "id": "0030",
+    "question": "파이썬 딕셔너리에서 모든 '키(Key)'들만 모아서 반환하는 메서드는?",
+    "answer": "keys()"
+  },
+  {
+    "id": "0036",
+    "question": "에러가 발생할 가능성이 있는 코드를 감싸고 예외를 처리할 때 사용하는 구문 세트는?",
+    "answer": "try, except"
+  },
+  {
+    "id": "0040",
+    "question": "파이썬 패키지를 설치할 때 사용하는 표준 패키지 관리자 도구의 이름은?",
+    "answer": "pip"
+  },
+  {
+    "id": "0048",
+    "question": "파이썬 패키지를 설치할 때 특정 버전을 강제하는 기호는? (예: requests 2.25.1)",
+    "answer": "=="
+  },
+  {
+    "id": "0052",
+    "question": "파이썬에서 한 줄에 여러 개의 변수를 선언하고 할당하는 표현 방식(예: a, b = 1, 2)을 무엇이라 하나요?",
+    "answer": "언패킹 (Unpacking) 또는 다중 할당"
+  },
+  {
+    "id": "0056",
+    "question": "파이썬 3.8부터 도입된, 표현식 내부에서 변수에 할당까지 수행하는 연산자(:=)의 별명은?",
+    "answer": "바다표범 연산자 (Walrus Operator)"
+  },
+  {
+    "id": "0063",
+    "question": "파이썬에서 모듈 내의 전역 변수나 함수 목록을 리스트 형태로 출력해 주는 내장 함수는?",
+    "answer": "dir()"
+  },
+  {
+    "id": "0067",
+    "question": "함수 내부에서 외부 함수(중첩 함수 상황)의 변수를 수정하려 할 때 사용하는 키워드는?",
+    "answer": "nonlocal"
+  },
+  {
+    "id": "0068",
+    "question": "파이썬에서 여러 객체를 동시에 순회할 때 사용하는 내장 함수는?",
+    "answer": "zip()"
+  },
+  {
+    "id": "0075",
+    "question": "파이썬에서 이미 불러온 모듈을 소스 코드 변경 후 다시 불러오고 싶을 때 사용하는 `importlib`의 함수는?",
+    "answer": "reload()"
+  },
+  {
+    "id": "0081",
+    "question": "파이썬에서 모듈을 불러온 후 `as` 키워드를 사용하여 짧은 이름으로 별명을 붙이는 행위를 무엇이라 하나요?",
+    "answer": "Aliasing (에일리어싱/별칭 지정)"
+  },
+  {
+    "id": "0085",
+    "question": "컴퓨터 사양을 넘어서는 큰 정수를 파이썬은 어떻게 처리하나요?",
+    "answer": "메모리가 허용하는 한 무제한으로 지원함"
+  },
+  {
+    "id": "0091",
+    "question": "파이썬에서 모듈을 불러올 때 사용하는 키워드는?",
+    "answer": "import"
+  },
+  {
+    "id": "0095",
+    "question": "파이썬에서 객체의 메모리 주소가 동일한지(동일성) 비교하는 연산자는?",
+    "answer": "is"
+  },
+  {
+    "id": "0126",
+    "question": "데이터 분석 시 두 변수 사이의 관계를 점으로 표현하여 추세나 상관성을 확인하는 차트 이름은?",
+    "answer": "산점도 (Scatter Plot)"
+  },
+  {
+    "id": "0130",
+    "question": "Pandas에서 데이터프레임의 인덱스 정보를 '0, 1, 2...' 로 초기화하면서 기존 인덱스를 삭제하는 코드는?",
+    "answer": "df.reset_index(drop=True)"
+  },
+  {
+    "id": "0136",
+    "question": "Pandas에서 데이터프레임의 특정 열에서만 유일한(Unique) 값들을 리스트 형태로 가져오는 메서드는?",
+    "answer": "unique()"
+  },
+  {
+    "id": "0140",
+    "question": "Numpy에서 행렬 간의 요소별(Element-wise) 나눗셈을 할 때 주의할 점은?",
+    "answer": "분모가 0인 경우 (Divide by zero)"
+  },
+  {
+    "id": "0146",
+    "question": "Numpy에서 행렬의 곱셈(행렬곱)을 수행하는 연산자 기호는?",
+    "answer": "@"
+  },
+  {
+    "id": "0150",
+    "question": "정규표현식에서 공백(Space, Tab, Newline 등)을 의미하는 특수 문자는?",
+    "answer": "\\s"
+  },
+  {
+    "id": "0156",
+    "question": "Pandas에서 두 개의 데이터프레임을 특정 키 값을 기준으로 합치는(SQL의 JOIN과 유사한) 함수는?",
+    "answer": "merge()"
+  },
+  {
+    "id": "0160",
+    "question": "Pandas에서 중복된 행을 제거할 때 사용하는 메서드는?",
+    "answer": "drop_duplicates()"
+  },
+  {
+    "id": "0166",
+    "question": "Pandas에서 여러 개의 열을 하나의 열로 합치는 과정에서, 인덱스를 다중 층(Hierarchical Index)으로 쌓아 올리는 메서드는?",
+    "answer": "stack()"
+  },
+  {
+    "id": "0170",
+    "question": "정규표현식에서 특수 문자( . * + 등) 자체를 문자로 인식하게 하기 위해 앞에 붙이는 기호는?",
+    "answer": "\\ (역슬래시)"
+  },
+  {
+    "id": "0176",
+    "question": "Pandas에서 데이터프레임의 인덱스와 열을 서로 바꾸는(Transpose) 속성은?",
+    "answer": "T"
+  },
+  {
+    "id": "0183",
+    "question": "Numpy에서 배열의 크기를 알려주는 속성은? (예: (3, 4))",
+    "answer": "shape"
+  },
+  {
+    "id": "0187",
+    "question": "정규표현식에서 '임의의 한 글자'를 의미하는 기호는?",
+    "answer": "."
+  },
+  {
+    "id": "0188",
+    "question": "정규표현식에서 숫자를 나타내는 특수 문자는?",
+    "answer": "\\d"
+  },
+  {
+    "id": "0196",
+    "question": "Pandas에서 결측치(NaN)가 하나라도 포함된 행을 통째로 지워버리는 메서드는?",
+    "answer": "dropna()"
+  },
+  {
+    "id": "0202",
+    "question": "텍스트 데이터를 n개의 연속된 단어 묶음으로 표현하여 문맥을 일부 반영하는 기법은?",
+    "answer": "N-gram"
+  },
+  {
+    "id": "0206",
+    "question": "Pandas DataFrame에서 중복된 행을 확인하는(True/False 반환) 메서드는?",
+    "answer": "duplicated()"
+  },
+  {
+    "id": "0212",
+    "question": "Pandas에서 시계렬 데이터의 연도 정보만 추출하기 위해 사용하는 속성은?",
+    "answer": ".dt.year"
+  },
+  {
+    "id": "0216",
+    "question": "Numpy 배열의 모든 요소의 평균을 구하는 메서드는?",
+    "answer": "mean()"
+  },
+  {
+    "id": "0246",
+    "question": "모델이 답변 시 '나는 누구인가' 처럼 가치관이나 자아를 가지게 되는 것처럼 보이는 것은 어떤 데이터 때문인가요?",
+    "answer": "System Prompt (또는 Persona SFT 데이터)"
+  },
+  {
+    "id": "0250",
+    "question": "LLM 학습 시 GPU들을 하나로 묶어 거대한 메모리 공간처럼 활용하는 마이크로소프트의 오픈소스 라이브러리는?",
+    "answer": "DeepSpeed"
+  },
+  {
+    "id": "0256",
+    "question": "LLM이 스스로 이전의 답변을 보고 틀린 부분을 찾아 고치는 능력을 무엇이라 하나요?",
+    "answer": "Self-Correction (자기 수정)"
+  },
+  {
+    "id": "0260",
+    "question": "모델의 학습 과정에서 인간의 선호도를 직접 학습시켜 '인간다운 답변'을 내놓게 하는 최종 정렬 단계를 무엇이라 하나요?",
+    "answer": "RLHF (Reinforcement Learning from Human Feedback)"
+  },
+  {
+    "id": "0266",
+    "question": "LLM 학습 시 방대한 양의 데이터셋으로부터 언어의 일반적인 패턴을 배우는 첫 번째 단계를 무엇이라 하나요?",
+    "answer": "Pre-training (사전 학습)"
+  },
+  {
+    "id": "0270",
+    "question": "하이브리드 처리 기능(텍스트+이미지+음성 등)을 가진 인공지능 모델을 일컫는 용어는?",
+    "answer": "Multimodal (멀티모달)"
+  },
+  {
+    "id": "0276",
+    "question": "LLM이 그럴듯하게 들리지만 사실이 아닌 정보를 생성하는 현상을 무엇이라 하나요?",
+    "answer": "Hallucination (환각)"
+  },
+  {
+    "id": "0280",
+    "question": "모델의 학습이 끝난 시점을 의미하며, 그 이후의 최신 정보를 모델이 알지 못하는 상태를 무엇이라 하나요?",
+    "answer": "Knowledge Cut-off (지식 컷오프)"
+  },
+  {
+    "id": "0286",
+    "question": "구글에서 발표하여 트랜스포머 혁명을 일으킨 논문의 제목은?",
+    "answer": "Attention Is All You Need"
+  },
+  {
+    "id": "0290",
+    "question": "LLM이 코딩, 수학 등 정답이 있는 영역에서 고난도의 단계적 사고를 수행하는 능력을 무엇이라 하나요?",
+    "answer": "Reasoning (추론)"
+  },
+  {
+    "id": "0296",
+    "question": "LLM의 성능을 비약적으로 올리기 위해, 정답이 있는 데이터셋으로 모델을 지도 학습시키는 단계를 무엇이라 하나요?",
+    "answer": "SFT (Supervised Fine-Tuning)"
+  },
+  {
+    "id": "0300",
+    "question": "모델이 답변 시 '나는 인공지능 모델로서...' 라며 거절하거나 도덕적 답변을 하는 현상은 어떤 학습 때문인가요?",
+    "answer": "Safety Alignment (안전 정렬) 또는 RLHF"
+  },
+  {
+    "id": "0309",
+    "question": "LLM 대화 시 이전 대화 내용을 모두 기억하지 못하고 일정 길이가 지나면 잊어버리는 이유는 (이것)의 한계 때문입니다. (이것)은?",
+    "answer": "Context Window (컨텍스트 윈도우/문맥 창)"
+  },
+  {
+    "id": "0315",
+    "question": "모델이 답변 생성 시 스스로 생성한 문장을 다시 입력으로 사용하여 다음 단어를 예측하는 성질을 무엇이라 하나요?",
+    "answer": "Autoregressive (자기회귀)"
+  },
+  {
+    "id": "0319",
+    "question": "신경망이 학습 도중 너무 복잡해져서 훈련 데이터에만 완벽히 적응하고 실전 성능이 나오는 현상은?",
+    "answer": "Overfitting (과적합)"
+  },
+  {
+    "id": "0325",
+    "question": "LLM에서 텍스트를 숫자의 나열인 벡터로 바꾸는 과정을 무엇이라 하나요?",
+    "answer": "Embedding (임베딩)"
+  },
+  {
+    "id": "0329",
+    "question": "단어와 숫자 사이의 단위로, 모델이 이해하는 가장 작은 언어 입력 단위를 무엇이라 하나요?",
+    "answer": "Token (토큰)"
+  },
+  {
+    "id": "0335",
+    "question": "LLM이 인터넷에 노출되지 않은 최신 정보나 비공개 데이터를 아는 것처럼 답하게 하는 기술은?",
+    "answer": "RAG (Retrieval-Augmented Generation)"
+  },
+  {
+    "id": "0339",
+    "question": "모델 학습 시 일부러 네트워크의 일부 연결을 무작위로 끊어 과적합을 방지하는 기술은?",
+    "answer": "Dropout (드롭아웃)"
+  },
+  {
+    "id": "0366",
+    "question": "사용자의 질문이 모호할 때, 모델이 임의로 답하지 않고 되묻게(Ask back) 유도하는 전략은?",
+    "answer": "Clarification Prompting (명확화 요청)"
+  },
+  {
+    "id": "0370",
+    "question": "모델에게 답을 유도하기 위해 프롬프트 마지막에 '나의 최종 답변은 다음과 같습니다:' 처럼 첫 문장을 떼주는 기법은?",
+    "answer": "Prompt Completion (또는 Pre-filling)"
+  },
+  {
+    "id": "0376",
+    "question": "프롬프트 내에 마크다운(Markdown)의 '제목(#, ##)' 기능을 사용하는 주된 이유는?",
+    "answer": "가독성 및 논리 구조화"
+  },
+  {
+    "id": "0379",
+    "question": "프롬프트 엔지니어링에서 지시 사항의 '우선순위'를 정할 때, 가장 영향력이 큰 위치는 일반적으로 어디인가요?",
+    "answer": "프롬프트의 가장 마지막 부분 (Bottom)"
+  },
+  {
+    "id": "0386",
+    "question": "프롬프트에 입력 예제를 하나도 주지 않고 질문만 하는 방식을 무엇이라 하나요?",
+    "answer": "Zero-shot Prompting"
+  },
+  {
+    "id": "0389",
+    "question": "사용자의 세션 정보를 유지하며 이전 대화를 프롬프트에 자동으로 포함시켜 주는 메모리 핵심 클래스는?",
+    "answer": "ConversationBufferMemory"
+  },
+  {
+    "id": "0396",
+    "question": "프롬프트 안에 <Context> </Context> 처럼 태그를 사용하여 영역을 나누는 기법을 무엇이라 하나요?",
+    "answer": "프롬프트 구조화 (Structuring)"
+  },
+  {
+    "id": "0399",
+    "question": "모델의 이전 대화 내용을 기억하게 하여 문맥이 이어지도록 관리하는 컴포넌트는?",
+    "answer": "Memory (메모리)"
+  },
+  {
+    "id": "0406",
+    "question": "사용자의 질문에 대해 거꾸로 모델이 '질문하기'를 유도하여 모호함을 해소하는 기법은?",
+    "answer": "Reverse Prompting (또는 질문 유도)"
+  },
+  {
+    "id": "0409",
+    "question": "프롬프트 마지막에 '{' 기호를 선제적으로 입력하여 모델이 JSON 형식을 강제로 시작하도록 유도하는 기술은?",
+    "answer": "JSON Prefilling (또는 앞글자 채우기)"
+  },
+  {
+    "id": "0416",
+    "question": "모델에게 답변의 '역할'을 부여하여 전문성을 끌어올리는 프롬프트 요소는?",
+    "answer": "Persona (페르소나) 또는 Role (역할)"
+  },
+  {
+    "id": "0420",
+    "question": "모델에게 예제 하나를 보여주고 작업을 시키는 방식을 무엇이라 하나요?",
+    "answer": "One-shot Prompting (원샷 프롬프팅)"
+  },
+  {
+    "id": "0422",
+    "question": "LangChain에서 복잡한 로직을 순차적으로 처리하기 위해 단계별 프롬프트를 쪼개서 연결하는 기술을 무엇이라 합니까?",
+    "answer": "Prompt Chaining"
+  },
+  {
+    "id": "0429",
+    "question": "모델의 답변 도중 '잠시 멈추고 네 답변을 다시 검토해봐 (Self-reflect)' 라고 시키는 고급 기법은?",
+    "answer": "Reflection (또는 성찰/반성 프롬프팅)"
+  },
+  {
+    "id": "0435",
+    "question": "모델의 답변을 표나 불릿 리스트 형태로 출력해달라는 프롬프트 요소는?",
+    "answer": "Format (형식)"
+  },
+  {
+    "id": "0438",
+    "question": "모델에게 답변의 '길이'를 지정(예: 3줄 이내)하여 정보를 압축하는 프롬프트 테크닉은?",
+    "answer": "Length Constraint (길이 제약)"
+  },
+  {
+    "id": "0445",
+    "question": "모델에게 답을 유도하기 위해 프롬프트 마지막에 '자, 이제 시작하세요:' 처럼 마중물을 넣어주는 기법은?",
+    "answer": "Completion Prompting (또는 프리필 Pre-fill)"
+  },
+  {
+    "id": "0448",
+    "question": "사용자의 질문을 다른 언어(영어 등)로 번역하여 최상의 답변을 얻은 뒤 다시 돌려주는 고급 체인 전략은?",
+    "answer": "Translation Chain (또는 영문-한문 브릿지)"
+  },
+  {
+    "id": "0455",
+    "question": "모델의 답변 결과물이 마음에 들지 않을 때, '다시 시도해봐'라고 하기 전 구체적인 수정 방향을 알려주는 행위를 무엇이라 하나요?",
+    "answer": "Iterative Refinement (반복적 개선)"
+  },
+  {
+    "id": "0459",
+    "question": "프롬프트 엔지니어링 도구 중 사용자의 질문을 가장 유사한 '과거 대화'나 '문서'와 결합해 주는 기술은?",
+    "answer": "RAG (Retrieval-Augmented Generation)"
+  },
+  {
+    "id": "0486",
+    "question": "에이전트가 어떤 도구를 쓸지 고민할 때, 도구의 이름과 (이것)을 읽고 결정합니다. (이것)은?",
+    "answer": "Description (설명)"
+  },
+  {
+    "id": "0490",
+    "question": "사용자의 질문에 대해 LLM이 직접 대답하는 대신, 검색 엔진을 통해 실시간으로 지식을 검색해 오는 방식을 통칭하는 용어는?",
+    "answer": "RAG (Retrieval-Augmented Generation)"
+  },
+  {
+    "id": "0495",
+    "question": "AI 에이전트가 어떤 도구를 언제 사용할지 스스로 계획(Plan)을 수립하는 논리 구조를 무엇이라 하나요?",
+    "answer": "Planning (계획)"
+  },
+  {
+    "id": "0499",
+    "question": "에이전트가 목표를 달성할 때까지 생각, 행동, 관찰을 무한히 반복하지 않도록 설정하는 안전 장치는?",
+    "answer": "Max Iterations (최대 반복 횟수)"
+  },
+  {
+    "id": "0505",
+    "question": "검색된 다수의 문서 중 핵심적인 정보가 앞과 뒤에 있을 때보다 중간에 있을 때 모델이 잘 인지하지 못하는 현상은?",
+    "answer": "Lost in the Middle"
+  },
+  {
+    "id": "0509",
+    "question": "인터넷 웹사이트의 정보를 실시간으로 긁어와서 에이전트에게 제공하는 도구(Tool)를 보통 무엇이라 하나요?",
+    "answer": "Search Tool (또는 Web Search/Browsing Tool)"
+  },
+  {
+    "id": "0515",
+    "question": "사용자의 모호한 질문을 명확하게 바꾸거나 검색이 잘 되도록 키워드를 확장하는 단계를 무엇이라 하나요?",
+    "answer": "Query Reformulation (또는 리프레이징)"
+  },
+  {
+    "id": "0519",
+    "question": "PDF 문서의 이미지, 표, 텍스트 구조를 정확히 파싱하여 RAG용 데이터로 변환해 주는 IBM의 오픈소스 도구는?",
+    "answer": "Docling"
+  },
+  {
+    "id": "0525",
+    "question": "질문을 받으면 도구를 사용해야 할지 말지 스스로 판단하고 실행하는 LLM의 실질적 행동 주체를 무엇이라 하나요?",
+    "answer": "AI Agent (에이전트)"
+  },
+  {
+    "id": "0529",
+    "question": "에이전트가 어떤 도구를 실행할지 그 매개변수와 이름을 JSON 형태로 출력하게 하는 LLM의 기초 기술 명칭은?",
+    "answer": "Function Calling (함수 호출)"
+  },
+  {
+    "id": "0536",
+    "question": "RAG에서 원본 문서를 관리할 때, 검색 효율을 위해 한 입 크기로 쪼개진 데이터 덩어리를 무엇이라 부르나요?",
+    "answer": "Chunk (청크)"
+  },
+  {
+    "id": "0540",
+    "question": "에이전트가 작업을 수행하며 생성한 중간 산출물들을 보관하고, 다음 단계의 사고에 활용하는 ‘메모리’ 영역을 비유하는 용어는?",
+    "answer": "Scratchpad (스크래치패드) 또는 Working Memory"
+  },
+  {
+    "id": "0550",
+    "question": "에이전트가 어떤 과제를 수행할 때, 자신의 '생각(Thought)', '행동(Action)', '결과 관찰(Observation)'을 기록하는 방식을 무엇이라 하나요?",
+    "answer": "ReAct (Reason + Act)"
+  },
+  {
+    "id": "0555",
+    "question": "벡터 DB에서 유사도 검색의 속도를 높이기 위해, 정확도는 조금 양보하더라도 대략적으로 가장 가까운 것들을 찾아내는 기술은?",
+    "answer": "ANN (Approximate Nearest Neighbor)"
+  },
+  {
+    "id": "0559",
+    "question": "에이전트 구현 시 '현재 내가 무얼 했고, 앞으로 무얼 해야 할지'를 단계별로 기록하고 관리하는 능력을 무엇이라 하나요?",
+    "answer": "Reasoning (추론) 또는 Planning (계획)"
+  },
+  {
+    "id": "0565",
+    "question": "벡터 DB에 저장하기 전, 긴 문서를 의미 있는 작은 조각으로 나누는 행위를 무엇이라 하나요?",
+    "answer": "Chunking (청킹)"
+  },
+  {
+    "id": "0569",
+    "question": "AI 에이전트가 외부 웹 검색이나 계산기 등을 사용할 수 있도록 연결된 인터페이스를 보통 무엇이라 부르나요?",
+    "answer": "Tool (또는 Function)"
+  },
+  {
+    "id": "0576",
+    "question": "에이전트가 도구를 사용하여 얻운 중간 결과물(시스템 로그, 검색 결과 등)을 관찰하는 단계의 이름은?",
+    "answer": "Observation (관찰)"
+  },
+  {
+    "id": "0580",
+    "question": "사용자의 모호한 질문을 RAG 검색에 최적화된 형태로 LLM을 통해 다시 쓰는 기법은?",
+    "answer": "Query Transformation (질문 변환)"
+  },
+  {
+    "id": "0605",
+    "question": "LoRA 학습에서 학습되는 아주 작은 두 개의 행렬 조각을 통칭하는 용어는?",
+    "answer": "Adapter (어댑터)"
+  },
+  {
+    "id": "0610",
+    "question": "가중치 행렬 중 일부 중요한 값만 남기고 0으로 만들어 모델 용량을 줄이는 최적화 방식은?",
+    "answer": "Pruning (가지치기)"
+  },
+  {
+    "id": "0614",
+    "question": "파인튜닝 데이터를 만들 때, 사람이 직접 적는 대신 AI가 AI용 데이터를 자동으로 생성해 주는 기술은?",
+    "answer": "Synthetic Data Generation (합성 데이터 생성)"
+  },
+  {
+    "id": "0620",
+    "question": "원본 모델의 지식을 유지하면서 4비트 양자화와 LoRA를 결합하여 VRAM 사용량을 극단적으로 낮춘 파인튜닝 기법은?",
+    "answer": "QLoRA"
+  },
+  {
+    "id": "0624",
+    "question": "고성능 모델의 출력값을 정답(Label)으로 삼아 더 작은 모델을 학습시키는 과정을 무엇이라 하나요?",
+    "answer": "Knowledge Distillation (지식 증류)"
+  },
+  {
+    "id": "0630",
+    "question": "파인튜닝 시 이전의 중요한 정보를 잊어버리는 것을 방지하기 위해 사용하는 원본 모델과 파인튜닝 모델 사이의 통계적 거리 제한 기술은?",
+    "answer": "KL Divergence (KL 발산)"
+  },
+  {
+    "id": "0634",
+    "question": "RLHF 방식에서 모델이 보상을 높게 받는 법만 터득하여, 보상 모델의 허점을 파고들어 엉뚱한 답을 내는 현상은?",
+    "answer": "Reward Hacking (보상 해킹)"
+  },
+  {
+    "id": "0640",
+    "question": "학습 데이터가 부족할 때, 데이터의 내용을 약간씩 변형(순서 변경, 유의어 교체 등)하여 양을 늘리는 기법은?",
+    "answer": "Data Augmentation (데이터 증강)"
+  },
+  {
+    "id": "0644",
+    "question": "파인튜닝된 모델이 특정 주제에 대해 답변을 거부하게 만들거나, 특정 정치색을 띠지 않게 정렬하는 최종적이고 미세한 단계를 무엇이라 하나요?",
+    "answer": "Safety Alignment (안전 정렬)"
+  },
+  {
+    "id": "0650",
+    "question": "LoRA 학습에서 원본 모델의 가중치를 전혀 건드리지 않고 ‘얼려두는’ 것을 무엇이라 하나요?",
+    "answer": "Freezing (동결)"
+  },
+  {
+    "id": "0654",
+    "question": "파인튜닝 시 모델이 학습 데이터 속에 숨겨진 개인정보(이메일, 주소 등)를 암기해버리는 문제를 무엇이라 하나요?",
+    "answer": "Data Leakage (데이터 유출) 또는 Privacy Memorization"
+  },
+  {
+    "id": "0657",
+    "question": "모델의 가중치 비트 수를 낮추어(예: 16bit -> 4bit) 모델 크기를 줄이는 기술은?",
+    "answer": "Quantization (양자화)"
+  },
+  {
+    "id": "0664",
+    "question": "고성능 교사 모델(Teacher)의 출력을 학생 모델(Student)이 따라 하게 하여 지식을 전수하는 기법은?",
+    "answer": "Knowledge Distillation (지식 증류)"
+  },
+  {
+    "id": "0668",
+    "question": "파인튜닝 시 특정 데이터를 완전히 잊어버리게 하거나 개인정보를 지우는 기술적 과정은?",
+    "answer": "Machine Unlearning (기계 언러닝)"
+  },
+  {
+    "id": "0674",
+    "question": "거대 모델의 학습을 작은 GPU 여러 대에서 나누어 수행하는 분산 학습 기술 중 하나는?",
+    "answer": "DeepSpeed (또는 FSDP)"
+  },
+  {
+    "id": "0678",
+    "question": "모델의 특정 지층(Layer)만 선택적으로 파인튜닝하여 효율을 높이는 기법은?",
+    "answer": "Selective Fine-tuning"
+  },
+  {
+    "id": "0684",
+    "question": "파인튜닝할 때 베이스 모델의 능력을 보존하면서 특정 지식만 덧씌울 수 있도록, 고정된 모델 가중치에 덧붙여지는 조각을 무엇이라 하나요?",
+    "answer": "Adapter (어댑터)"
+  },
+  {
+    "id": "0689",
+    "question": "LoRA 학습에서 학습되는 아주 작은 두 개의 행렬 조각을 통칭하는 용어는?",
+    "answer": "Adapter (어댑터)"
+  },
+  {
+    "id": "0694",
+    "question": "가중치 행렬 중 일부 중요한 값만 남기고 0으로 만들어 모델 용량을 줄이는 최적화 방식은?",
+    "answer": "Pruning (가지치기)"
+  },
+  {
+    "id": "0698",
+    "question": "파인튜닝 데이터를 만들 때, 사람이 직접 적는 대신 AI가 AI용 데이터를 자동으로 생성해 주는 기술은?",
+    "answer": "Synthetic Data Generation (합성 데이터 생성)"
+  }
+]
