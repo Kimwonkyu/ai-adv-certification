@@ -26,8 +26,8 @@ Topic: {topic_line}
 Requirements:
 - Chapter Name: "LLM 튜닝"
 - Type: "{q_type}"
-- Difficulty: "{difficulty}" (If easy: plausible distractors. If medium: scenario-based. If hard: complex debugging/trade-offs).
-- Question Text: Must be in Korean.
+- Difficulty: "{difficulty}" (Do NOT use complex paragraph-long scenarios. Just ask a straightforward conceptual or theoretical question, but make the distractors appropriately difficult).
+- Question Text: Must be short, direct, and in Korean. (e.g., "다음 중 ~에 대한 설명으로 옳은 것은?", "~의 주된 원인은?", "~ 기법은?")
 - Answer/Options/Why/Hint: Must be in Korean.
 
 For '객관식', provide exactly 5 'options' strings.
