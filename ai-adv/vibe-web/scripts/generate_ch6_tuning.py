@@ -24,7 +24,7 @@ Create a high-quality Korean exam question based strictly on this topic:
 Topic: {topic_line}
 
 Requirements:
-- Chapter Name: "LLM 튜닝"
+- Chapter Name: "Fine Tuning"
 - Type: "{q_type}"
 - Difficulty: "{difficulty}" (Do NOT use complex paragraph-long scenarios. Just ask a straightforward conceptual or theoretical question, but make the distractors appropriately difficult).
 - Question Text: Must be short, direct, and in Korean. (e.g., "다음 중 ~에 대한 설명으로 옳은 것은?", "~의 주된 원인은?", "~ 기법은?")
@@ -35,7 +35,7 @@ For '코드 완성형', do NOT provide 'options' field. Instead, put a valid Pyt
 
 Respond ONLY with a valid JSON object matching this schema exactly:
 {{
-  "chapter_name": "LLM 튜닝",
+  "chapter_name": "Fine Tuning",
   "type": "{q_type}",
   "difficulty": "{difficulty}",
   "id": "6{index+1:03d}",
@@ -53,7 +53,7 @@ Respond ONLY with a valid JSON object matching this schema exactly:
             data = json.loads(response.text)
             # Enforce metadata
             data['id'] = f"6{index+1:03d}"
-            data['chapter_name'] = "LLM 튜닝"
+            data['chapter_name'] = "Fine Tuning"
             data['type'] = q_type
             data['difficulty'] = difficulty
             
